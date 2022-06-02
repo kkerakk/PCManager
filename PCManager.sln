@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCManager", "PCManager\PCManager.csproj", "{02651C0C-8B0B-42A1-9229-CA977AA6A92A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShutdownComputer", "H:\ShutdownComputer26052022\ShutdownComputer\ShutdownComputer.csproj", "{1A4194E7-DC18-43E0-BC88-D405F5FDADB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{02651C0C-8B0B-42A1-9229-CA977AA6A92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02651C0C-8B0B-42A1-9229-CA977AA6A92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02651C0C-8B0B-42A1-9229-CA977AA6A92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4194E7-DC18-43E0-BC88-D405F5FDADB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4194E7-DC18-43E0-BC88-D405F5FDADB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4194E7-DC18-43E0-BC88-D405F5FDADB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4194E7-DC18-43E0-BC88-D405F5FDADB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
