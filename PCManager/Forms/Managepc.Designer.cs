@@ -33,13 +33,14 @@
             this.btnServices = new System.Windows.Forms.Button();
             this.btnPowershell = new System.Windows.Forms.Button();
             this.btnCmd = new System.Windows.Forms.Button();
+            this.btnDeviceManager = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSetWiredAutoconfig
             // 
             this.btnSetWiredAutoconfig.BackColor = System.Drawing.Color.IndianRed;
             this.btnSetWiredAutoconfig.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnSetWiredAutoconfig.Location = new System.Drawing.Point(28, 211);
+            this.btnSetWiredAutoconfig.Location = new System.Drawing.Point(28, 313);
             this.btnSetWiredAutoconfig.Name = "btnSetWiredAutoconfig";
             this.btnSetWiredAutoconfig.Size = new System.Drawing.Size(132, 40);
             this.btnSetWiredAutoconfig.TabIndex = 25;
@@ -91,12 +92,24 @@
             this.btnCmd.UseVisualStyleBackColor = true;
             this.btnCmd.Click += new System.EventHandler(this.btnCmd_Click);
             // 
+            // btnDeviceManager
+            // 
+            this.btnDeviceManager.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnDeviceManager.Location = new System.Drawing.Point(28, 211);
+            this.btnDeviceManager.Name = "btnDeviceManager";
+            this.btnDeviceManager.Size = new System.Drawing.Size(132, 40);
+            this.btnDeviceManager.TabIndex = 26;
+            this.btnDeviceManager.Text = "Menedżer Urządzeń";
+            this.btnDeviceManager.UseVisualStyleBackColor = true;
+            this.btnDeviceManager.Click += new System.EventHandler(this.btnDeviceManager_Click);
+            // 
             // Managepc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeviceManager);
             this.Controls.Add(this.btnSetWiredAutoconfig);
             this.Controls.Add(this.btnPowerSupply);
             this.Controls.Add(this.btnServices);
@@ -115,5 +128,6 @@
         private System.Windows.Forms.Button btnServices;
         private System.Windows.Forms.Button btnPowershell;
         private System.Windows.Forms.Button btnCmd;
+        private System.Windows.Forms.Button btnDeviceManager;
     }
 }

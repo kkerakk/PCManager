@@ -36,6 +36,10 @@ namespace PCManager.Forms
         {
             Process.Start("powercfg.cpl");
         }
+        private void btnDeviceManager_Click(object sender, EventArgs e)
+        {
+            Process.Start("devmgmt.msc");
+        }
         private void ExecuteAsAdmin(string fileName)
         {
             Process proc = new Process();

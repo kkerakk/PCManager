@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>H:\ShutdownComputer26052022\packages\Cake.Powershell.1.0.1\lib\net46\System.Management.Automation.dll</HintPath>
     </Reference>
@@ -71,6 +72,18 @@
     <Compile Include="Forms\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Websites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Websites.Designer.cs">
+      <DependentUpon>Websites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebsitesSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebsitesSettings.Designer.cs">
+      <DependentUpon>WebsitesSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +101,12 @@
     <EmbeddedResource Include="Forms\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Websites.resx">
+      <DependentUpon>Websites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebsitesSettings.resx">
+      <DependentUpon>WebsitesSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -113,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Icons\www_geography-24.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,11 @@
+http://www.wspol.edu.int/
+https://helpdesk.wspol.edu.pl/admin/
+http://dzeta.wspol.edu.int/
+https://wu.wspol.edu.pl/web/guest/home;jsessionid=BADCC201FDECA6BA99FC91BE31D10E0F.WU02?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Flogin&locale=pl
+https://irk.wspol.edu.pl/irk/irk/strony/logowaniedziekanat.html
+https://irk.wspol.edu.pl/konfigurator/start.faces
+https://irk.wspol.edu.pl/irk/.magnolia
+https://syrop.simple.com.pl
+http://192.168.132.251:8080
+https://polon2.opi.org.pl/home/login
+https://jsa.opi.org.pl/home/login

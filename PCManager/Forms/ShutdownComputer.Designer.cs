@@ -31,6 +31,8 @@
             this.btnCancelShutdown = new System.Windows.Forms.Button();
             this.btnShutdown = new System.Windows.Forms.Button();
             this.txtShutdownTime = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancelShutdown
@@ -65,6 +67,24 @@
             this.txtShutdownTime.Name = "txtShutdownTime";
             this.txtShutdownTime.Size = new System.Drawing.Size(43, 20);
             this.txtShutdownTime.TabIndex = 11;
+            this.txtShutdownTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShutdownTime_KeyPress);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(347, 287);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(347, 100);
+            this.txtTest.MaxLength = 4;
+            this.txtTest.MinimumSize = new System.Drawing.Size(20, 20);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(137, 20);
+            this.txtTest.TabIndex = 13;
             // 
             // ShutdownComputer
             // 
@@ -72,6 +92,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTest);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnShutdown);
             this.Controls.Add(this.txtShutdownTime);
             this.Controls.Add(this.btnCancelShutdown);
@@ -87,5 +109,7 @@
         private System.Windows.Forms.Button btnCancelShutdown;
         private System.Windows.Forms.Button btnShutdown;
         public System.Windows.Forms.TextBox txtShutdownTime;
+        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txtTest;
     }
 }

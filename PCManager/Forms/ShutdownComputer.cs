@@ -23,8 +23,13 @@ namespace PCManager.Forms
         {
             using (PowerShell PowershellInstance = PowerShell.Create())
             {
+                if (String.IsNullOrEmpty(txtShutdownTime.Text))
+                {
+                    txtShutdownTime.Text = "0";
+                }                
                 int time = int.Parse(txtShutdownTime.Text);
-                if (time == 0 || time.Equals(""))
+
+                if (time == 0 || String.IsNullOrEmpty(time.ToString()))
                 {
                     DialogResult dialogResult = MessageBox.Show("Czy chcesz wyłączyć komputer?", "Wyłącz komputer", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -42,6 +47,15 @@ namespace PCManager.Forms
         {
             using (PowerShell PowershellInstance = PowerShell.Create())
             {
+                PowershellInstance.AddScript($"shutdown -a; shutdown -s -t {time};");
+                Collection<PSObject> PSOutput = PowershellInstance.Invoke();
+            }
+        }
+
+        void RestartPC(int time)
+        {
+            using (PowerShell PowershellInstance = PowerShell.Create())
+            {
                 PowershellInstance.AddScript($"shutdown -a; shutdown -r -t {time};");
                 Collection<PSObject> PSOutput = PowershellInstance.Invoke();
             }
@@ -54,6 +68,10 @@ namespace PCManager.Forms
                 PowershellInstance.AddScript("shutdown -a");
                 Collection<PSObject> PSOutput = PowershellInstance.Invoke();
             }
+        }
+        private void txtShutdownTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

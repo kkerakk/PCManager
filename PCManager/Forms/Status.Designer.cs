@@ -34,6 +34,9 @@
             this.txtAddressIP = new System.Windows.Forms.TextBox();
             this.lblHostname = new System.Windows.Forms.Label();
             this.txtHostname = new System.Windows.Forms.TextBox();
+            this.lblProcessorArchitecture = new System.Windows.Forms.Label();
+            this.lblWindowsVersion = new System.Windows.Forms.Label();
+            this.lblProcessor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCheckServiceStatus
@@ -87,12 +90,45 @@
             this.txtHostname.Size = new System.Drawing.Size(100, 20);
             this.txtHostname.TabIndex = 4;
             // 
+            // lblProcessorArchitecture
+            // 
+            this.lblProcessorArchitecture.AutoSize = true;
+            this.lblProcessorArchitecture.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblProcessorArchitecture.Location = new System.Drawing.Point(19, 170);
+            this.lblProcessorArchitecture.Name = "lblProcessorArchitecture";
+            this.lblProcessorArchitecture.Size = new System.Drawing.Size(111, 13);
+            this.lblProcessorArchitecture.TabIndex = 6;
+            this.lblProcessorArchitecture.Text = "ProcessorArchitecture";
+            // 
+            // lblWindowsVersion
+            // 
+            this.lblWindowsVersion.AutoSize = true;
+            this.lblWindowsVersion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblWindowsVersion.Location = new System.Drawing.Point(19, 144);
+            this.lblWindowsVersion.Name = "lblWindowsVersion";
+            this.lblWindowsVersion.Size = new System.Drawing.Size(89, 13);
+            this.lblWindowsVersion.TabIndex = 7;
+            this.lblWindowsVersion.Text = "Windows Version";
+            // 
+            // lblProcessor
+            // 
+            this.lblProcessor.AutoSize = true;
+            this.lblProcessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblProcessor.Location = new System.Drawing.Point(19, 194);
+            this.lblProcessor.Name = "lblProcessor";
+            this.lblProcessor.Size = new System.Drawing.Size(54, 13);
+            this.lblProcessor.TabIndex = 8;
+            this.lblProcessor.Text = "Processor";
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblProcessor);
+            this.Controls.Add(this.lblWindowsVersion);
+            this.Controls.Add(this.lblProcessorArchitecture);
             this.Controls.Add(this.lblHostname);
             this.Controls.Add(this.txtHostname);
             this.Controls.Add(this.lblAddressIP);
@@ -114,5 +150,8 @@
         private System.Windows.Forms.TextBox txtAddressIP;
         private System.Windows.Forms.Label lblHostname;
         private System.Windows.Forms.TextBox txtHostname;
+        private System.Windows.Forms.Label lblProcessorArchitecture;
+        private System.Windows.Forms.Label lblWindowsVersion;
+        private System.Windows.Forms.Label lblProcessor;
     }
 }
