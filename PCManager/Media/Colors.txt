@@ -1,0 +1,12 @@
+Color [A=255, R=64, G=0, B=128]
+Color [Teal]
+Color [A=255, R=255, G=128, B=0]
+4
+Color [A=255, R=255, G=128, B=0]
+6
+Color [A=255, R=64, G=0, B=128]
+8
+Color [A=255, R=128, G=0, B=64]
+10
+Color [Lime]
+12

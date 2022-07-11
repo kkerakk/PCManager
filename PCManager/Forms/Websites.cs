@@ -105,6 +105,7 @@ namespace PCManager.Forms
             btnWeb09.Text = wbs.txtBoxBtn09.Text;
             btnWeb10.Text = wbs.txtBoxBtn10.Text;
             btnWeb11.Text = wbs.txtBoxBtn11.Text;
+            btnWeb12.Text = wbs.txtBoxBtn12.Text;
         }
 
 
