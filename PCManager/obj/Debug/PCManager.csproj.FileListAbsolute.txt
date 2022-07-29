@@ -17,3 +17,22 @@ E:\C#\PCManager\PCManager\bin\Debug\Cake.Powershell.xml
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CopyComplete
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Websites.resources
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.WebsitesSettings.resources
+I:\DYSK G\C#\PCManager\PCManager\bin\Debug\PCManager.exe.config
+I:\DYSK G\C#\PCManager\PCManager\bin\Debug\PCManager.exe
+I:\DYSK G\C#\PCManager\PCManager\bin\Debug\PCManager.pdb
+I:\DYSK G\C#\PCManager\PCManager\bin\Debug\Cake.Powershell.pdb
+I:\DYSK G\C#\PCManager\PCManager\bin\Debug\Cake.Powershell.xml
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.AssemblyReference.cache
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.SuggestedBindingRedirects.cache
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Managepc.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.ShutdownComputer.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Status.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Websites.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.WebsitesSettings.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Main.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.Properties.Resources.resources
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.GenerateResource.cache
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CoreCompileInputs.cache
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CopyComplete
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.exe
+I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.pdb

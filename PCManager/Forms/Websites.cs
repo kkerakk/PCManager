@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,111 +14,232 @@ namespace PCManager.Forms
     public partial class Websites : Form
     {
         WebsitesSettings wbs = new WebsitesSettings();
+        List<Button> listWbButtons = new List<Button>();
+
+        public Button[] buttons;
+
+
         public Websites()
         {
             InitializeComponent();
+            LoadDataToArrays();
             LoadDefaultData();
+            ChangeButtonColor();
         }
 
+        private void LoadDataToArrays()
+        {
+            try
+            {
+                foreach (Button button in FLPWebsitesMain.Controls)
+                {
+                    listWbButtons.Add(button);
+                }
+
+                buttons = listWbButtons.ToArray();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private void LoadDefaultData()
+        {
+            try
+            {
+                foreach (var tuple in buttons.Zip(wbs.textBoxes, (x, y) => (x, y)))
+                {
+                    tuple.x.Text = tuple.y.Text;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private void ChangeButtonColor()
+        {
+            try
+            {
+                foreach (var tuple in buttons.Zip(wbs.pictureBoxes, (x, y) => (x, y)))
+                {
+                    tuple.x.BackColor = tuple.y.BackColor;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private int GetButtonID(object sender)
+        {
+            string id = ((Button)sender).Name.ToString();
+            int intID = int.Parse(id.Substring(id.Length - 2, 2));
+            return intID;
+        }
+        private void openWebsite(object sender)
+        {
+            try
+            {
+                string website = wbs.buttonsURL[GetButtonID(sender) - 1].Text;
+                Process.Start(website);
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message, "Błąd");
+            }
+            
+        }
         private void btnWeb01_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL01.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb02_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL02.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb03_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL03.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb04_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL04.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb05_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL05.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb06_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL06.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb07_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL07.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb08_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL08.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb09_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL09.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb10_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL10.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb11_Click(object sender, EventArgs e)
         {
-            string website = wbs.txtBoxURL11.Text;
-            Process.Start(website);
+            openWebsite(sender);
         }
 
         private void btnWeb12_Click(object sender, EventArgs e)
         {
-
+            openWebsite(sender);
         }
 
-        private void LoadDefaultData()
+        private void btnWeb13_Click(object sender, EventArgs e)
         {
-            btnWeb01.Text = wbs.txtBoxBtn01.Text;
-            btnWeb02.Text = wbs.txtBoxBtn02.Text;
-            btnWeb03.Text = wbs.txtBoxBtn03.Text;
-            btnWeb04.Text = wbs.txtBoxBtn04.Text;
-            btnWeb05.Text = wbs.txtBoxBtn05.Text;
-            btnWeb06.Text = wbs.txtBoxBtn06.Text;
-            btnWeb07.Text = wbs.txtBoxBtn07.Text;
-            btnWeb08.Text = wbs.txtBoxBtn08.Text;
-            btnWeb09.Text = wbs.txtBoxBtn09.Text;
-            btnWeb10.Text = wbs.txtBoxBtn10.Text;
-            btnWeb11.Text = wbs.txtBoxBtn11.Text;
-            btnWeb12.Text = wbs.txtBoxBtn12.Text;
+            openWebsite(sender);
         }
 
+        private void btnWeb14_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
 
+        private void btnWeb15_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
 
-        //private void btnWebsitesSettings_Click(object sender, EventArgs e)
-        //{
-        //    if (FLPWebsitesMain.Visible == true)
-        //    {
-        //        FLPWebsitesMain.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        FLPWebsitesMain.Visible = true;
-        //    }
-        //}
+        private void btnWeb16_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb17_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb18_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb19_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb20_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb21_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb22_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb23_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb24_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb25_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb26_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb27_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb28_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb29_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
+
+        private void btnWeb30_Click(object sender, EventArgs e)
+        {
+            openWebsite(sender);
+        }
     }
 }

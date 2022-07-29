@@ -34,6 +34,7 @@
             this.btnPowershell = new System.Windows.Forms.Button();
             this.btnCmd = new System.Windows.Forms.Button();
             this.btnDeviceManager = new System.Windows.Forms.Button();
+            this.btnRemoteDesktop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSetWiredAutoconfig
@@ -103,12 +104,24 @@
             this.btnDeviceManager.UseVisualStyleBackColor = true;
             this.btnDeviceManager.Click += new System.EventHandler(this.btnDeviceManager_Click);
             // 
+            // btnRemoteDesktop
+            // 
+            this.btnRemoteDesktop.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnRemoteDesktop.Location = new System.Drawing.Point(28, 257);
+            this.btnRemoteDesktop.Name = "btnRemoteDesktop";
+            this.btnRemoteDesktop.Size = new System.Drawing.Size(132, 40);
+            this.btnRemoteDesktop.TabIndex = 27;
+            this.btnRemoteDesktop.Text = "Pulpit Zdalny";
+            this.btnRemoteDesktop.UseVisualStyleBackColor = true;
+            this.btnRemoteDesktop.Click += new System.EventHandler(this.btnRemoteDesktop_Click);
+            // 
             // Managepc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRemoteDesktop);
             this.Controls.Add(this.btnDeviceManager);
             this.Controls.Add(this.btnSetWiredAutoconfig);
             this.Controls.Add(this.btnPowerSupply);
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button btnPowershell;
         private System.Windows.Forms.Button btnCmd;
         private System.Windows.Forms.Button btnDeviceManager;
+        private System.Windows.Forms.Button btnRemoteDesktop;
     }
 }

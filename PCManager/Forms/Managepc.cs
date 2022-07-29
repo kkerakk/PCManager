@@ -20,41 +20,77 @@ namespace PCManager.Forms
 
         private void btnCmd_Click(object sender, EventArgs e)
         {
-            Process.Start("cmd");
+            RunViaCMD("cmd");
         }
-
         private void btnPowershell_Click(object sender, EventArgs e)
         {
-            ExecuteAsAdmin("powershell.exe");
+            ExecuteAsAdmin("powershell");
         }
         private void btnServices_Click(object sender, EventArgs e)
         {
-            Process.Start("services.msc");
+            RunViaCMD("services.msc");
         }
-
         private void btnPowerSupply_Click(object sender, EventArgs e)
         {
-            Process.Start("powercfg.cpl");
+            RunViaCMD("powercfg.cpl");
         }
         private void btnDeviceManager_Click(object sender, EventArgs e)
         {
-            Process.Start("devmgmt.msc");
-        }
-        private void ExecuteAsAdmin(string fileName)
-        {
-            Process proc = new Process();
-            proc.StartInfo.FileName = fileName;
-            proc.StartInfo.UseShellExecute = true;
-            proc.StartInfo.Verb = "runas";
-            proc.Start();
+            RunViaCMD("devmgmt.msc");
         }
         private void btnSetWiredAutoconfig_Click(object sender, EventArgs e)
         {
             SetWiredAutoConfig();
         }
-        void SetWiredAutoConfig()
+        private void SetWiredAutoConfig()
         {
             ExecuteAsAdmin("D:/C#/ShutdownComputer/_additional/SetWiredAutoConfig.bat");
+        }
+        private void btnRemoteDesktop_Click(object sender, EventArgs e)
+        {
+            RunViaCMD("cmd", "mstsc");
+        }
+        private void ExecuteAsAdmin(string fileName)
+        {
+            try
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = fileName;
+                proc.StartInfo.UseShellExecute = true;
+                proc.StartInfo.Verb = "runas";
+                proc.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private void RunViaCMD(string fileName)
+        {
+            try
+            {
+                ProcessStartInfo proc = new ProcessStartInfo();
+                proc.FileName = $@"C:\windows\system32\{fileName}";
+                Process.Start(proc);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message,"Błąd");
+            }
+        }
+        private void RunViaCMD(string fileName, string argument)
+        {
+            try
+            {
+                ProcessStartInfo proc = new ProcessStartInfo();
+                proc.FileName = $@"C:\windows\system32\{fileName}.exe";
+                proc.Arguments = $@"/c {argument}";
+                Process.Start(proc);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
         }
     }
 }

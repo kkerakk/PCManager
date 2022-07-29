@@ -8,130 +8,404 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace PCManager.Forms
 {
     public partial class WebsitesSettings : Form
     {
-        private string fileNameButtons = "E:\\C#\\PCManager\\PCManager\\Media\\WebsitesButtons.txt";
-        private string fileNameWebsites = "E:\\C#\\PCManager\\PCManager\\Media\\Websites.txt";
-        private string fileNameColors = "E:\\C#\\PCManager\\PCManager\\Media\\Colors.txt";
+        private string fileNameButtons = "./../../Media/WebsitesButtons.txt";
+        private string fileNameWebsites = "./../../Media/Websites.txt";
+        private string fileNameColors = "./../../Media/Colors.txt";
+
+        List<PictureBox> listPictureBoxes = new List<PictureBox>();
+        List<TextBox> listTextBoxes = new List<TextBox>();
+        List<TextBox> listButtonsURL = new List<TextBox>();
+
+        public TextBox[] textBoxes;
+        public PictureBox[] pictureBoxes;
+        public TextBox[] buttonsURL;
+
+        List<string> strPictureBoxes = new List<string>();
+        List<string> strTextBoxes = new List<string>();
+        List<string> strButtonsURL = new List<string>();
+
         public WebsitesSettings()
         {
             InitializeComponent();
             LoadDataButtons();
             LoadDataWebsites();
+            LoadDataColors();
+            LoadDataToArrays();
         }
+        public void LoadDataToArrays()
+        {
+            foreach (PictureBox pictureBox in FLPpbBtn.Controls)
+            {
+                listPictureBoxes.Add(pictureBox);
+            }
+
+            foreach (TextBox textBox in FLPtxtBoxBtn.Controls)
+            {
+                listTextBoxes.Add(textBox);
+            }
+
+            foreach (TextBox textBoxURL in FLPtxtBoxURL.Controls)
+            {
+                listButtonsURL.Add(textBoxURL);
+            }
+
+            pictureBoxes = listPictureBoxes.ToArray();
+            textBoxes = listTextBoxes.ToArray();
+            buttonsURL = listButtonsURL.ToArray();
+        }
+        public void LoadTextNameToStringArrays()
+        {
+            foreach (TextBox textBox in FLPtxtBoxBtn.Controls)
+            {
+                strTextBoxes.Add((string)textBox.Text);
+            }
+            foreach (TextBox textBox in FLPtxtBoxURL.Controls)
+            {
+                strButtonsURL.Add((string)textBox.Text);
+            }
+            foreach (PictureBox pictureBox in FLPpbBtn.Controls)
+            {
+                strPictureBoxes.Add((string)pictureBox.BackColor.ToArgb().ToString());
+            }
+        }
+
         private void LoadDataButtons()
         {
-            //txtBoxBtn01.Text = File.ReadLines(fileNameButtons).Take(1).First();
-            //txtBoxBtn02.Text = File.ReadLines(fileNameButtons).Skip(1).Take(1).First();
-            //txtBoxBtn03.Text = File.ReadLines(fileNameButtons).Skip(2).Take(1).First();
-            //txtBoxBtn04.Text = File.ReadLines(fileNameButtons).Skip(3).Take(1).First();
-            //txtBoxBtn05.Text = File.ReadLines(fileNameButtons).Skip(4).Take(1).First();
-            //txtBoxBtn06.Text = File.ReadLines(fileNameButtons).Skip(5).Take(1).First();
-            //txtBoxBtn07.Text = File.ReadLines(fileNameButtons).Skip(6).Take(1).First();
-            //txtBoxBtn08.Text = File.ReadLines(fileNameButtons).Skip(7).Take(1).First();
-            //txtBoxBtn09.Text = File.ReadLines(fileNameButtons).Skip(8).Take(1).First();
-            //txtBoxBtn10.Text = File.ReadLines(fileNameButtons).Skip(9).Take(1).First();
-            //txtBoxBtn11.Text = File.ReadLines(fileNameButtons).Skip(10).Take(1).First();
-
-            List<TextBox> listLoadData = new List<TextBox>();
-
-            foreach (TextBox txtBox in FLPtxtBoxBtn.Controls)
+            try
             {
-                listLoadData.Add(txtBox);
-                int index = listLoadData.IndexOf(txtBox);
-                txtBox.Text = File.ReadLines(fileNameButtons).Skip(index).Take(1).First();
-            }            
+                List<TextBox> listLoadData = new List<TextBox>();
+
+                foreach (TextBox textBox in FLPtxtBoxBtn.Controls)
+                {
+                    listLoadData.Add(textBox);
+                    int index = listLoadData.IndexOf(textBox);
+                    textBox.Text = File.ReadLines(fileNameButtons).Skip(index).Take(1).First();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
         }
         private void LoadDataWebsites()
         {
-            txtBoxURL01.Text = File.ReadLines(fileNameWebsites).Take(1).First();
-            txtBoxURL02.Text = File.ReadLines(fileNameWebsites).Skip(1).Take(1).First();
-            txtBoxURL03.Text = File.ReadLines(fileNameWebsites).Skip(2).Take(1).First();
-            txtBoxURL04.Text = File.ReadLines(fileNameWebsites).Skip(3).Take(1).First();
-            txtBoxURL05.Text = File.ReadLines(fileNameWebsites).Skip(4).Take(1).First();
-            txtBoxURL06.Text = File.ReadLines(fileNameWebsites).Skip(5).Take(1).First();
-            txtBoxURL07.Text = File.ReadLines(fileNameWebsites).Skip(6).Take(1).First();
-            txtBoxURL08.Text = File.ReadLines(fileNameWebsites).Skip(7).Take(1).First();
-            txtBoxURL09.Text = File.ReadLines(fileNameWebsites).Skip(8).Take(1).First();
-            txtBoxURL10.Text = File.ReadLines(fileNameWebsites).Skip(9).Take(1).First();
-            txtBoxURL11.Text = File.ReadLines(fileNameWebsites).Skip(10).Take(1).First();
-        }
+            try
+            {
+                List<TextBox> listLoadData = new List<TextBox>();
 
+                foreach (TextBox textBox in FLPtxtBoxURL.Controls)
+                {
+                    listLoadData.Add(textBox);
+                    int index = listLoadData.IndexOf(textBox);
+                    textBox.Text = File.ReadLines(fileNameWebsites).Skip(index).Take(1).First();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private void LoadDataColors()
+        {
+            try
+            {
+                List<PictureBox> listLoadData = new List<PictureBox>();
+
+                foreach (PictureBox pictureBox in FLPpbBtn.Controls)
+                {
+                    listLoadData.Add(pictureBox);
+                    int index = listLoadData.IndexOf(pictureBox);
+                    pictureBox.BackColor = Color.FromArgb(Int32.Parse(File.ReadLines(fileNameColors).Skip(index).Take(1).First()));
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }
+        }
+        private int GetButtonID(object sender)
+        {
+            string id = ((PictureBox)sender).Name.ToString();
+            int intID = int.Parse(id.Substring(id.Length - 2, 2));
+            return intID;
+        }
         private void pbBtn01_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn01,1);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id-1], id);
+            //MessageBox.Show(GetButtonID(sender).GetType().ToString() + "\n" + GetButtonID(sender).ToString());
         }
         private void pbBtn02_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn02, 2);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn03_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn03, 3);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn04_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn04, 4);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn05_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn05, 5);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn06_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn06, 6);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn07_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn07, 7);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn08_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn08, 8);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn09_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn09, 9);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn10_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn10, 10);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn11_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn11, 11);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
 
         private void pbBtn12_Click(object sender, EventArgs e)
         {
-            ChangeColor(pbBtn12, 12);
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
         }
-        public void ChangeColor(PictureBox pictureBox, int id)
+        private void pbBtn13_Click(object sender, EventArgs e)
         {
-            ColorDialog colorPicker = new ColorDialog();
-            if (colorPicker.ShowDialog() == DialogResult.OK)
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn14_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn15_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn16_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn17_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn18_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn19_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn20_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn21_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn22_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn23_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn24_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn25_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn26_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn27_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn28_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn29_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+
+        private void pbBtn30_Click(object sender, EventArgs e)
+        {
+            int id = GetButtonID(sender);
+            ChangePictureBoxColor(pictureBoxes[id - 1], id);
+        }
+        private void ChangePictureBoxColor(PictureBox pictureBox, int id)
+        {
+            try
             {
-                pictureBox.BackColor = colorPicker.Color;
-                LoadFromTxt(pictureBox, id);
+                ColorDialog colorPicker = new ColorDialog();
+                if (colorPicker.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox.BackColor = colorPicker.Color;
+                    //SaveToTXT(pictureBox, id);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
             }
         }
-        void LoadFromTxt(PictureBox pictureBox, int id)
+        void SaveToTXT(PictureBox pictureBox, int id)
         {
-            string[] arrLine = File.ReadAllLines(fileNameColors);
-            arrLine[id - 1] = pictureBox.BackColor.ToString();
-            File.WriteAllLines(fileNameColors, arrLine);
+            try
+            {
+                string[] arrLine = File.ReadAllLines(fileNameColors);
+                arrLine[id - 1] = pictureBox.BackColor.ToArgb().ToString();
+                File.WriteAllLines(fileNameColors, arrLine);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Błąd");
+            }            
+        }
+        private void ResetPictureBoxColor()
+        {
+            List<PictureBox> listResetPicBoxColor = new List<PictureBox>();
+
+            foreach (PictureBox pictureBox in FLPpbBtn.Controls)
+            {
+                pictureBox.BackColor = Color.AntiqueWhite;
+            }
+        }
+
+        private void btnResetPicBoxColor_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Czy chcesz wyczyścić kolory z przycisków?", "Czy wyczyścić kolory?", messageBoxButtons);
+            if (result == DialogResult.Yes)
+            {
+                ResetPictureBoxColor();
+            }
+        }
+
+        private void btnHideShowButtons_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int pbControlsCount = FLPpbBtn.Controls.Count;
+                string userAnswer = Interaction.InputBox($"Ile przycisków ma być widocznych?\nMin ilość przycisków: 1\nMax ilość przycisków: {pbControlsCount}", "Ukryj/Odkryj przycisk");
+                int.TryParse(userAnswer, out int amountInt);
+
+                for (int i = 0; i < pbControlsCount; i++)
+                {
+                    if (i + 1 <= amountInt)
+                    {
+                        pictureBoxes[i].Visible = true;
+                        textBoxes[i].Visible = true;
+                        buttonsURL[i].Visible = true;
+                        //websites.buttons[i].Visible = true;
+
+                    }
+                    else
+                    {
+                        pictureBoxes[i].Visible = false;
+                        textBoxes[i].Visible = false;
+                        buttonsURL[i].Visible = false;
+                        //websites.buttons[1].Visible = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Czy chcesz zapisać zmiany?", "Zapisać zmiany?", messageBoxButtons);
+            if (result == DialogResult.Yes)
+            {
+                LoadTextNameToStringArrays();
+                File.WriteAllLines(fileNameButtons, strTextBoxes);
+                File.WriteAllLines(fileNameWebsites, strButtonsURL);
+                File.WriteAllLines(fileNameColors, strPictureBoxes);
+            }
         }
     }
 }

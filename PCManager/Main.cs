@@ -18,7 +18,6 @@ namespace PCManager
         public Main()
         {
             InitializeComponent();
-            //CheckActiveForm();
             testTextBox();
         }
 
@@ -62,12 +61,6 @@ namespace PCManager
                 btnSettings.Visible = false;
             }
         }
-
-        //private void DefaultForm()
-        //{
-        //    Forms.Status status = new Forms.Status();
-        //    status.Show();
-        //}
 
         private void testTextBox()
         {
