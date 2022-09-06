@@ -13,6 +13,7 @@ namespace PCManager.Forms
 {
     public partial class Managepc : Form
     {
+        Helper helper = new Helper();
         public Managepc()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace PCManager.Forms
 
         private void btnCmd_Click(object sender, EventArgs e)
         {
-            RunViaCMD("cmd");
+            helper.RunViaCMD("cmd",@"c: && cd C:\Users\%username%",true);
         }
         private void btnPowershell_Click(object sender, EventArgs e)
         {
@@ -28,15 +29,15 @@ namespace PCManager.Forms
         }
         private void btnServices_Click(object sender, EventArgs e)
         {
-            RunViaCMD("services.msc");
+            helper.RunViaCMD("services.msc");
         }
         private void btnPowerSupply_Click(object sender, EventArgs e)
         {
-            RunViaCMD("powercfg.cpl");
+            helper.RunViaCMD("powercfg.cpl");
         }
         private void btnDeviceManager_Click(object sender, EventArgs e)
         {
-            RunViaCMD("devmgmt.msc");
+            helper.RunViaCMD("devmgmt.msc");
         }
         private void btnSetWiredAutoconfig_Click(object sender, EventArgs e)
         {
@@ -48,7 +49,7 @@ namespace PCManager.Forms
         }
         private void btnRemoteDesktop_Click(object sender, EventArgs e)
         {
-            RunViaCMD("cmd", "mstsc");
+            helper.RunViaCMD("mstsc");
         }
         private void ExecuteAsAdmin(string fileName)
         {
@@ -65,32 +66,15 @@ namespace PCManager.Forms
                 MessageBox.Show(e.Message, "Błąd");
             }
         }
-        private void RunViaCMD(string fileName)
+
+        private void btnPing_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ProcessStartInfo proc = new ProcessStartInfo();
-                proc.FileName = $@"C:\windows\system32\{fileName}";
-                Process.Start(proc);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message,"Błąd");
-            }
+            helper.RunViaCMD("cmd","ping www.wp.pl");
         }
-        private void RunViaCMD(string fileName, string argument)
+
+        private void btnConnectionsFolder_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ProcessStartInfo proc = new ProcessStartInfo();
-                proc.FileName = $@"C:\windows\system32\{fileName}.exe";
-                proc.Arguments = $@"/c {argument}";
-                Process.Start(proc);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Błąd");
-            }
+            helper.RunViaCMD("cmd", "start shell:ConnectionsFolder");
         }
     }
 }

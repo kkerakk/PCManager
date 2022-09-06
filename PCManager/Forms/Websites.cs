@@ -18,7 +18,6 @@ namespace PCManager.Forms
 
         public Button[] buttons;
 
-
         public Websites()
         {
             InitializeComponent();
@@ -26,7 +25,6 @@ namespace PCManager.Forms
             LoadDefaultData();
             ChangeButtonColor();
         }
-
         private void LoadDataToArrays()
         {
             try

@@ -36,3 +36,4 @@ I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CoreCompileInputs.ca
 I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CopyComplete
 I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.exe
 I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.pdb
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Timer.resources

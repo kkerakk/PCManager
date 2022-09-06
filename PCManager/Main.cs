@@ -12,13 +12,16 @@ namespace PCManager
 {
     public partial class Main : Form
     {
+        Forms.Helper helper = new Forms.Helper();
+
         private Button currentButton;
         private Form activeForm;
         private static string formName;
+        private static string path = "./../../Media/Temp.txt";
         public Main()
         {
             InitializeComponent();
-            testTextBox();
+            GetPasswordExpiration();
         }
 
         private void ActivateButton(object btnSender)
@@ -61,10 +64,10 @@ namespace PCManager
                 btnSettings.Visible = false;
             }
         }
-
-        private void testTextBox()
+        private void GetPasswordExpiration()
         {
-            //textBox1.Text = Forms.WebsitesSettings.
+            string str;
+            str = helper.RunViaPowerShell($"(net user /domain $env:UserName | Select -Index 11).Substring(35,10) | Set-Content -Path {path}", true);
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
@@ -90,6 +93,51 @@ namespace PCManager
         private void btnSettings_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.WebsitesSettings(), sender);
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.Timer(), sender);
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            bool bHandled = false;
+            switch (keyData)
+            {
+                case Keys.F7:
+                    ChangeSizePanel();
+                    bHandled = true;
+                    break;
+                case Keys.F8:
+                    DefaultSizePanel();
+                    bHandled = true;
+                    break;
+            }
+            return bHandled;
+        }
+        private void ChangeSizePanel()
+        {
+            panelLeftMenu.Width = 35;
+            ////nie działa :(
+            //foreach (Button button in panelLeftMenu.Controls)
+            //{
+            //    //button.Text = "";
+            //}
+            btnStatus.Text = "";
+            btnManagePC.Text = "";
+            btnShutdownComputer.Text = "";
+            btnWebsites.Text = "";
+            btnTimer.Text = "";
+        }
+        private void DefaultSizePanel()
+        {
+            panelLeftMenu.Width = 150;
+
+            btnStatus.Text = "  Status";
+            btnManagePC.Text = "  Manage PC";
+            btnShutdownComputer.Text = "  Shutdown PC";
+            btnWebsites.Text = "  Websites";
+            btnTimer.Text = "  Timer";
         }
     }
 }

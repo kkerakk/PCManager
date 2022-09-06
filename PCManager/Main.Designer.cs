@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
+            this.btnTimer = new System.Windows.Forms.Button();
             this.btnWebsites = new System.Windows.Forms.Button();
             this.btnShutdownComputer = new System.Windows.Forms.Button();
             this.btnManagePC = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnTimer);
             this.panelLeftMenu.Controls.Add(this.btnWebsites);
             this.panelLeftMenu.Controls.Add(this.btnShutdownComputer);
             this.panelLeftMenu.Controls.Add(this.btnManagePC);
@@ -55,6 +57,26 @@
             this.panelLeftMenu.Name = "panelLeftMenu";
             this.panelLeftMenu.Size = new System.Drawing.Size(150, 491);
             this.panelLeftMenu.TabIndex = 0;
+            // 
+            // btnTimer
+            // 
+            this.btnTimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTimer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTimer.FlatAppearance.BorderSize = 0;
+            this.btnTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTimer.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnTimer.Image = ((System.Drawing.Image)(resources.GetObject("btnTimer.Image")));
+            this.btnTimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimer.Location = new System.Drawing.Point(0, 210);
+            this.btnTimer.Name = "btnTimer";
+            this.btnTimer.Size = new System.Drawing.Size(150, 40);
+            this.btnTimer.TabIndex = 5;
+            this.btnTimer.Text = "  Timer";
+            this.btnTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimer.UseVisualStyleBackColor = true;
+            this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
             // 
             // btnWebsites
             // 
@@ -207,6 +229,7 @@
         private System.Windows.Forms.Button btnShutdownComputer;
         private System.Windows.Forms.Button btnWebsites;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnTimer;
     }
 }
 

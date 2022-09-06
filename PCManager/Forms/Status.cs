@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Management; //ManagementObjectSearcher  //This namespace is used to work with WMI classes. For using this namespace add reference of System.Management.dll
 using System.Net; //dns, IPAddress
@@ -15,12 +16,17 @@ namespace PCManager.Forms
 {
     public partial class Status : Form
     {
+        Helper helper = new Helper();
+
+        static string pathTemp = @"./../../Media/temp.txt";
         public Status()
         {
             InitializeComponent();
             checkServiceStatus("dot3svc");
             GetHostName();
             GetComputerInfo();
+            GetPasswordExpiration();
+            //helper.LoadDataFromFile(pathTemp);
         }
         private string checkServiceStatus(string service)
         {
@@ -76,6 +82,18 @@ namespace PCManager.Forms
                     }
                 }
             }
+        }
+
+        private void GetPasswordExpiration()
+        {
+            //str = helper.RunViaPowerShell("(net user /domain $env:UserName | Select -Index 11).Substring(35,10)", true);
+
+            //if (str != null)
+            //    txtPasswordExpiration.Text = str;
+            //str = helper.RunViaPowerShell("(net user /domain $env:UserName | Select -Index 11).Substring(35,10) | Set-Content -Path ./temp.txt", true);
+            string str = helper.LoadDataFromFile(pathTemp);
+            if (str != null)
+                txtPasswordExpiration.Text = str;
         }
     }
 }

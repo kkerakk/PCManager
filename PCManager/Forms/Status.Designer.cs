@@ -37,11 +37,13 @@
             this.lblProcessorArchitecture = new System.Windows.Forms.Label();
             this.lblWindowsVersion = new System.Windows.Forms.Label();
             this.lblProcessor = new System.Windows.Forms.Label();
+            this.lblPasswordExpired = new System.Windows.Forms.Label();
+            this.txtPasswordExpiration = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCheckServiceStatus
             // 
-            this.txtCheckServiceStatus.Location = new System.Drawing.Point(118, 34);
+            this.txtCheckServiceStatus.Location = new System.Drawing.Point(155, 34);
             this.txtCheckServiceStatus.Name = "txtCheckServiceStatus";
             this.txtCheckServiceStatus.ReadOnly = true;
             this.txtCheckServiceStatus.Size = new System.Drawing.Size(100, 20);
@@ -67,7 +69,7 @@
             // 
             // txtAddressIP
             // 
-            this.txtAddressIP.Location = new System.Drawing.Point(118, 59);
+            this.txtAddressIP.Location = new System.Drawing.Point(155, 59);
             this.txtAddressIP.Name = "txtAddressIP";
             this.txtAddressIP.ReadOnly = true;
             this.txtAddressIP.Size = new System.Drawing.Size(100, 20);
@@ -84,7 +86,7 @@
             // 
             // txtHostname
             // 
-            this.txtHostname.Location = new System.Drawing.Point(118, 85);
+            this.txtHostname.Location = new System.Drawing.Point(155, 85);
             this.txtHostname.Name = "txtHostname";
             this.txtHostname.ReadOnly = true;
             this.txtHostname.Size = new System.Drawing.Size(100, 20);
@@ -94,7 +96,7 @@
             // 
             this.lblProcessorArchitecture.AutoSize = true;
             this.lblProcessorArchitecture.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblProcessorArchitecture.Location = new System.Drawing.Point(19, 170);
+            this.lblProcessorArchitecture.Location = new System.Drawing.Point(19, 200);
             this.lblProcessorArchitecture.Name = "lblProcessorArchitecture";
             this.lblProcessorArchitecture.Size = new System.Drawing.Size(111, 13);
             this.lblProcessorArchitecture.TabIndex = 6;
@@ -104,28 +106,47 @@
             // 
             this.lblWindowsVersion.AutoSize = true;
             this.lblWindowsVersion.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblWindowsVersion.Location = new System.Drawing.Point(19, 144);
+            this.lblWindowsVersion.Location = new System.Drawing.Point(19, 151);
             this.lblWindowsVersion.Name = "lblWindowsVersion";
-            this.lblWindowsVersion.Size = new System.Drawing.Size(89, 13);
+            this.lblWindowsVersion.Size = new System.Drawing.Size(130, 13);
             this.lblWindowsVersion.TabIndex = 7;
-            this.lblWindowsVersion.Text = "Windows Version";
+            this.lblWindowsVersion.Text = "Wersja Systemu Windows";
             // 
             // lblProcessor
             // 
             this.lblProcessor.AutoSize = true;
             this.lblProcessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblProcessor.Location = new System.Drawing.Point(19, 194);
+            this.lblProcessor.Location = new System.Drawing.Point(19, 177);
             this.lblProcessor.Name = "lblProcessor";
             this.lblProcessor.Size = new System.Drawing.Size(54, 13);
             this.lblProcessor.TabIndex = 8;
             this.lblProcessor.Text = "Processor";
+            // 
+            // lblPasswordExpired
+            // 
+            this.lblPasswordExpired.AutoSize = true;
+            this.lblPasswordExpired.Location = new System.Drawing.Point(19, 114);
+            this.lblPasswordExpired.Name = "lblPasswordExpired";
+            this.lblPasswordExpired.Size = new System.Drawing.Size(75, 13);
+            this.lblPasswordExpired.TabIndex = 11;
+            this.lblPasswordExpired.Text = "Hasło wygasa";
+            // 
+            // txtPasswordExpiration
+            // 
+            this.txtPasswordExpiration.Location = new System.Drawing.Point(155, 111);
+            this.txtPasswordExpiration.Name = "txtPasswordExpiration";
+            this.txtPasswordExpiration.ReadOnly = true;
+            this.txtPasswordExpiration.Size = new System.Drawing.Size(100, 20);
+            this.txtPasswordExpiration.TabIndex = 10;
             // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(680, 450);
+            this.Controls.Add(this.lblPasswordExpired);
+            this.Controls.Add(this.txtPasswordExpiration);
             this.Controls.Add(this.lblProcessor);
             this.Controls.Add(this.lblWindowsVersion);
             this.Controls.Add(this.lblProcessorArchitecture);
@@ -153,5 +174,7 @@
         private System.Windows.Forms.Label lblProcessorArchitecture;
         private System.Windows.Forms.Label lblWindowsVersion;
         private System.Windows.Forms.Label lblProcessor;
+        private System.Windows.Forms.Label lblPasswordExpired;
+        private System.Windows.Forms.TextBox txtPasswordExpiration;
     }
 }

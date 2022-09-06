@@ -321,7 +321,6 @@ namespace PCManager.Forms
                 if (colorPicker.ShowDialog() == DialogResult.OK)
                 {
                     pictureBox.BackColor = colorPicker.Color;
-                    //SaveToTXT(pictureBox, id);
                 }
             }
             catch (Exception e)
@@ -377,15 +376,12 @@ namespace PCManager.Forms
                         pictureBoxes[i].Visible = true;
                         textBoxes[i].Visible = true;
                         buttonsURL[i].Visible = true;
-                        //websites.buttons[i].Visible = true;
-
                     }
                     else
                     {
                         pictureBoxes[i].Visible = false;
                         textBoxes[i].Visible = false;
                         buttonsURL[i].Visible = false;
-                        //websites.buttons[1].Visible = false;
                     }
                 }
             }

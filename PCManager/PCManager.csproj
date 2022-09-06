@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Helper.cs" />
     <Compile Include="Forms\Managepc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,12 @@
     </Compile>
     <Compile Include="Forms\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Websites.cs">
       <SubType>Form</SubType>
@@ -101,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Websites.resx">
       <DependentUpon>Websites.cs</DependentUpon>

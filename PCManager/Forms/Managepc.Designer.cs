@@ -35,13 +35,15 @@
             this.btnCmd = new System.Windows.Forms.Button();
             this.btnDeviceManager = new System.Windows.Forms.Button();
             this.btnRemoteDesktop = new System.Windows.Forms.Button();
+            this.btnPing = new System.Windows.Forms.Button();
+            this.btnConnectionsFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSetWiredAutoconfig
             // 
             this.btnSetWiredAutoconfig.BackColor = System.Drawing.Color.IndianRed;
             this.btnSetWiredAutoconfig.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnSetWiredAutoconfig.Location = new System.Drawing.Point(28, 313);
+            this.btnSetWiredAutoconfig.Location = new System.Drawing.Point(166, 303);
             this.btnSetWiredAutoconfig.Name = "btnSetWiredAutoconfig";
             this.btnSetWiredAutoconfig.Size = new System.Drawing.Size(132, 40);
             this.btnSetWiredAutoconfig.TabIndex = 25;
@@ -115,12 +117,36 @@
             this.btnRemoteDesktop.UseVisualStyleBackColor = true;
             this.btnRemoteDesktop.Click += new System.EventHandler(this.btnRemoteDesktop_Click);
             // 
+            // btnPing
+            // 
+            this.btnPing.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnPing.Location = new System.Drawing.Point(28, 303);
+            this.btnPing.Name = "btnPing";
+            this.btnPing.Size = new System.Drawing.Size(132, 40);
+            this.btnPing.TabIndex = 28;
+            this.btnPing.Text = "Ping";
+            this.btnPing.UseVisualStyleBackColor = true;
+            this.btnPing.Click += new System.EventHandler(this.btnPing_Click);
+            // 
+            // btnConnectionsFolder
+            // 
+            this.btnConnectionsFolder.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnConnectionsFolder.Location = new System.Drawing.Point(28, 349);
+            this.btnConnectionsFolder.Name = "btnConnectionsFolder";
+            this.btnConnectionsFolder.Size = new System.Drawing.Size(132, 40);
+            this.btnConnectionsFolder.TabIndex = 29;
+            this.btnConnectionsFolder.Text = "Połączenia sieciowe";
+            this.btnConnectionsFolder.UseVisualStyleBackColor = true;
+            this.btnConnectionsFolder.Click += new System.EventHandler(this.btnConnectionsFolder_Click);
+            // 
             // Managepc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnConnectionsFolder);
+            this.Controls.Add(this.btnPing);
             this.Controls.Add(this.btnRemoteDesktop);
             this.Controls.Add(this.btnDeviceManager);
             this.Controls.Add(this.btnSetWiredAutoconfig);
@@ -143,5 +169,7 @@
         private System.Windows.Forms.Button btnCmd;
         private System.Windows.Forms.Button btnDeviceManager;
         private System.Windows.Forms.Button btnRemoteDesktop;
+        private System.Windows.Forms.Button btnPing;
+        private System.Windows.Forms.Button btnConnectionsFolder;
     }
 }
