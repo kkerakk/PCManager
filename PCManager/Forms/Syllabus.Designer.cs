@@ -45,10 +45,6 @@
             this.btnSyllabusGenerate = new System.Windows.Forms.Button();
             this.lblYear = new System.Windows.Forms.Label();
             this.LBYear = new System.Windows.Forms.ListBox();
-            this.txtHTMLSyllabusPath = new System.Windows.Forms.TextBox();
-            this.lblHTMLSyllabusPath = new System.Windows.Forms.Label();
-            this.lblPathCounter = new System.Windows.Forms.Label();
-            this.lblHTMLPathCounter = new System.Windows.Forms.Label();
             this.FLPSyllabus.SuspendLayout();
             this.PanelTopSyllabus.SuspendLayout();
             this.SuspendLayout();
@@ -59,9 +55,9 @@
             this.FLPSyllabus.AutoSize = true;
             this.FLPSyllabus.Controls.Add(this.rtxtSyllabus);
             this.FLPSyllabus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.FLPSyllabus.Location = new System.Drawing.Point(0, 205);
+            this.FLPSyllabus.Location = new System.Drawing.Point(0, 157);
             this.FLPSyllabus.Name = "FLPSyllabus";
-            this.FLPSyllabus.Size = new System.Drawing.Size(715, 256);
+            this.FLPSyllabus.Size = new System.Drawing.Size(715, 304);
             this.FLPSyllabus.TabIndex = 1;
             // 
             // rtxtSyllabus
@@ -69,7 +65,7 @@
             this.rtxtSyllabus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rtxtSyllabus.Location = new System.Drawing.Point(3, 3);
             this.rtxtSyllabus.Name = "rtxtSyllabus";
-            this.rtxtSyllabus.Size = new System.Drawing.Size(705, 250);
+            this.rtxtSyllabus.Size = new System.Drawing.Size(705, 298);
             this.rtxtSyllabus.TabIndex = 0;
             this.rtxtSyllabus.Text = "";
             // 
@@ -96,10 +92,6 @@
             // 
             // PanelTopSyllabus
             // 
-            this.PanelTopSyllabus.Controls.Add(this.lblHTMLPathCounter);
-            this.PanelTopSyllabus.Controls.Add(this.lblPathCounter);
-            this.PanelTopSyllabus.Controls.Add(this.lblHTMLSyllabusPath);
-            this.PanelTopSyllabus.Controls.Add(this.txtHTMLSyllabusPath);
             this.PanelTopSyllabus.Controls.Add(this.lblYear);
             this.PanelTopSyllabus.Controls.Add(this.LBYear);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusGenerate);
@@ -117,7 +109,7 @@
             this.PanelTopSyllabus.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTopSyllabus.Location = new System.Drawing.Point(0, 0);
             this.PanelTopSyllabus.Name = "PanelTopSyllabus";
-            this.PanelTopSyllabus.Size = new System.Drawing.Size(715, 199);
+            this.PanelTopSyllabus.Size = new System.Drawing.Size(715, 155);
             this.PanelTopSyllabus.TabIndex = 2;
             // 
             // btnSyllabusClear
@@ -175,7 +167,7 @@
             this.LBLevelOfStudy.Items.AddRange(new object[] {
             "I_stopien",
             "II_stopien"});
-            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 154);
+            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 108);
             this.LBLevelOfStudy.Name = "LBLevelOfStudy";
             this.LBLevelOfStudy.Size = new System.Drawing.Size(120, 34);
             this.LBLevelOfStudy.TabIndex = 5;
@@ -183,7 +175,7 @@
             // lblLevelOfStudy
             // 
             this.lblLevelOfStudy.AutoSize = true;
-            this.lblLevelOfStudy.Location = new System.Drawing.Point(257, 138);
+            this.lblLevelOfStudy.Location = new System.Drawing.Point(257, 92);
             this.lblLevelOfStudy.Name = "lblLevelOfStudy";
             this.lblLevelOfStudy.Size = new System.Drawing.Size(73, 13);
             this.lblLevelOfStudy.TabIndex = 6;
@@ -192,7 +184,7 @@
             // lblFieldOfStudy
             // 
             this.lblFieldOfStudy.AutoSize = true;
-            this.lblFieldOfStudy.Location = new System.Drawing.Point(131, 138);
+            this.lblFieldOfStudy.Location = new System.Drawing.Point(131, 92);
             this.lblFieldOfStudy.Name = "lblFieldOfStudy";
             this.lblFieldOfStudy.Size = new System.Drawing.Size(69, 13);
             this.lblFieldOfStudy.TabIndex = 8;
@@ -208,7 +200,7 @@
             "Informatyka",
             "KRYM",
             "NOP"});
-            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 154);
+            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 108);
             this.LBFieldOfStudy.Name = "LBFieldOfStudy";
             this.LBFieldOfStudy.Size = new System.Drawing.Size(120, 34);
             this.LBFieldOfStudy.TabIndex = 7;
@@ -216,7 +208,7 @@
             // lblSemester
             // 
             this.lblSemester.AutoSize = true;
-            this.lblSemester.Location = new System.Drawing.Point(383, 138);
+            this.lblSemester.Location = new System.Drawing.Point(383, 92);
             this.lblSemester.Name = "lblSemester";
             this.lblSemester.Size = new System.Drawing.Size(51, 13);
             this.lblSemester.TabIndex = 10;
@@ -230,7 +222,7 @@
             this.LBSemester.Items.AddRange(new object[] {
             "letni",
             "zimowy"});
-            this.LBSemester.Location = new System.Drawing.Point(383, 154);
+            this.LBSemester.Location = new System.Drawing.Point(383, 108);
             this.LBSemester.Name = "LBSemester";
             this.LBSemester.Size = new System.Drawing.Size(120, 34);
             this.LBSemester.TabIndex = 9;
@@ -254,7 +246,7 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(5, 138);
+            this.lblYear.Location = new System.Drawing.Point(5, 92);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(69, 13);
             this.lblYear.TabIndex = 13;
@@ -269,46 +261,10 @@
             "2022",
             "2023",
             "2024"});
-            this.LBYear.Location = new System.Drawing.Point(5, 154);
+            this.LBYear.Location = new System.Drawing.Point(5, 108);
             this.LBYear.Name = "LBYear";
             this.LBYear.Size = new System.Drawing.Size(120, 34);
             this.LBYear.TabIndex = 12;
-            // 
-            // txtHTMLSyllabusPath
-            // 
-            this.txtHTMLSyllabusPath.Location = new System.Drawing.Point(5, 114);
-            this.txtHTMLSyllabusPath.Margin = new System.Windows.Forms.Padding(5);
-            this.txtHTMLSyllabusPath.Name = "txtHTMLSyllabusPath";
-            this.txtHTMLSyllabusPath.Size = new System.Drawing.Size(645, 20);
-            this.txtHTMLSyllabusPath.TabIndex = 14;
-            this.txtHTMLSyllabusPath.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHTMLSyllabusPath_KeyUp);
-            // 
-            // lblHTMLSyllabusPath
-            // 
-            this.lblHTMLSyllabusPath.AutoSize = true;
-            this.lblHTMLSyllabusPath.Location = new System.Drawing.Point(5, 98);
-            this.lblHTMLSyllabusPath.Name = "lblHTMLSyllabusPath";
-            this.lblHTMLSyllabusPath.Size = new System.Drawing.Size(62, 13);
-            this.lblHTMLSyllabusPath.TabIndex = 15;
-            this.lblHTMLSyllabusPath.Text = "HTML Path";
-            // 
-            // lblPathCounter
-            // 
-            this.lblPathCounter.AutoSize = true;
-            this.lblPathCounter.Location = new System.Drawing.Point(653, 96);
-            this.lblPathCounter.Name = "lblPathCounter";
-            this.lblPathCounter.Size = new System.Drawing.Size(44, 13);
-            this.lblPathCounter.TabIndex = 16;
-            this.lblPathCounter.Text = "Counter";
-            // 
-            // lblHTMLPathCounter
-            // 
-            this.lblHTMLPathCounter.AutoSize = true;
-            this.lblHTMLPathCounter.Location = new System.Drawing.Point(653, 117);
-            this.lblHTMLPathCounter.Name = "lblHTMLPathCounter";
-            this.lblHTMLPathCounter.Size = new System.Drawing.Size(13, 13);
-            this.lblHTMLPathCounter.TabIndex = 17;
-            this.lblHTMLPathCounter.Text = "0";
             // 
             // Syllabus
             // 
@@ -342,14 +298,10 @@
         private System.Windows.Forms.ListBox LBLevelOfStudy;
         private System.Windows.Forms.Label lblFieldOfStudy;
         private System.Windows.Forms.ListBox LBFieldOfStudy;
-        private System.Windows.Forms.Label lblHTMLSyllabusPath;
-        private System.Windows.Forms.TextBox txtHTMLSyllabusPath;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.ListBox LBYear;
         private System.Windows.Forms.Button btnSyllabusGenerate;
         private System.Windows.Forms.Label lblSemester;
         private System.Windows.Forms.ListBox LBSemester;
-        private System.Windows.Forms.Label lblPathCounter;
-        private System.Windows.Forms.Label lblHTMLPathCounter;
     }
 }

@@ -102,11 +102,6 @@ namespace PCManager.Forms
         {
             ClearData();
         }
-        private void txtHTMLSyllabusPath_KeyUp(object sender, KeyEventArgs e)
-        {
-            lblHTMLPathCounter.Text = txtHTMLSyllabusPath.Text.Length.ToString();
-        }
-
         private void btnSyllabusGenerate_Click(object sender, EventArgs e)
         {
             CreateViewSyllabus();
