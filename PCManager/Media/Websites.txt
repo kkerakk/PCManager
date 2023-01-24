@@ -12,8 +12,8 @@ https://jsa.opi.org.pl/home/login
 file:///L:/mateusz/Bazus/bazus_schemat/index.html
 www.wp.pl
 www.onet.pl
-15
-16
+https://isoriver.com/
+http://repo.wspol.edu.int/raporty/.WSPOL/
 17
 18
 19
@@ -27,4 +27,4 @@ www.onet.pl
 27
 28
 29
-30
+E:\Portable\PuTTYPortable\Putty.exe

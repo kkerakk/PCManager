@@ -5,15 +5,17 @@ using System.Diagnostics;//process
 using System.IO;
 using System.Linq;
 using System.Management.Automation;//powershell
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PCManager.Forms
 {
-    internal class Helper
+    public static class Helper
     {
-        public void RunViaCMD(string fileName)
+        static Main formMain = new Main();
+        public static void RunViaCMD(string fileName)
         {
             try
             {
@@ -26,11 +28,11 @@ namespace PCManager.Forms
                 MessageBox.Show(e.Message, "Błąd");
             }
         }
-        public void RunViaCMD(string fileName, string argument, bool openConsole = false)
+        public static void RunViaCMD(string fileName, string argument, bool openConsole = false)
         {
             try
             {
-                if (true)
+                if (openConsole == true)
                 {
                     ProcessStartInfo proc = new ProcessStartInfo();
                     proc.FileName = $@"C:\windows\system32\{fileName}.exe";
@@ -44,14 +46,13 @@ namespace PCManager.Forms
                     proc.Arguments = $@"/c {argument}";
                     Process.Start(proc);
                 }
-
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Błąd");
             }
         }
-        public void RunViaPowerShell(string argument)
+        public static void RunViaPowerShell(string argument)
         {
             using (PowerShell PowershellInstance = PowerShell.Create())
             {
@@ -59,7 +60,7 @@ namespace PCManager.Forms
                 Collection<PSObject> PSOutput = PowershellInstance.Invoke();
             }
         }
-        public void RunViaPowerShell(string argument, int time)
+        public static void RunViaPowerShell(string argument, int time)
         {
             using (PowerShell PowershellInstance = PowerShell.Create())
             {
@@ -67,7 +68,7 @@ namespace PCManager.Forms
                 Collection<PSObject> PSOutput = PowershellInstance.Invoke();
             }
         }
-        public string RunViaPowerShell(string argument, bool getvalue)
+        public static string RunViaPowerShell(string argument, bool getvalue)
         {
             using (PowerShell PowershellInstance = PowerShell.Create())
             {
@@ -83,8 +84,7 @@ namespace PCManager.Forms
                 return line;
             }
         }
-
-        public string LoadDataFromFile(string path)
+        public static string LoadDataFromFile(string path)
         {
             string line;
             using (StreamReader sr = new StreamReader(path))
@@ -96,6 +96,31 @@ namespace PCManager.Forms
                 }
             }
             return line;
+        }
+        public static void GetComputerComponentInfo(string varName, string varClass, Label label)
+        {
+            using (ManagementObjectSearcher win32Class = new ManagementObjectSearcher($"select {varName} from {varClass}"))
+            {
+                foreach (ManagementObject managementObject in win32Class.Get())
+                {
+                    if (managementObject[$"{varName}"] != null)
+                    {
+                        label.Text = managementObject[$"{varName}"].ToString();
+                    }
+                }
+            }
+        }
+        public static void TestMsgPopUp(string variable)
+        {
+            MessageBox.Show($"{variable}", "Testing string");
+        }
+        public static void TestMsgPopUp(decimal variable)
+        {
+            MessageBox.Show($"{variable}","Testing decimal").ToString();
+        }
+        public static void X()        
+        {
+
         }
     }
 }

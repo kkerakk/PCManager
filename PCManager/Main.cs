@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PCManager.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace PCManager
 {
     public partial class Main : Form
     {
-        Forms.Helper helper = new Forms.Helper();
+        //Forms.Helper helper = new Forms.Helper();
 
         private Button currentButton;
         private Form activeForm;
@@ -63,41 +57,46 @@ namespace PCManager
                 btnSettings.Enabled = false;
                 btnSettings.Visible = false;
             }
+
+            lblMessageInfo.ForeColor = lblMessageInfo.BackColor;
         }
         private void GetPasswordExpiration()
         {
-            string str;
-            str = helper.RunViaPowerShell($"(net user /domain $env:UserName | Select -Index 11).Substring(35,10) | Set-Content -Path {path}", true);
+            string str = Helper.RunViaPowerShell($"(net user /domain $env:UserName | Select -Index 11).Substring(35,10) | Set-Content -Path {path}", true);
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Status(), sender);
+            OpenChildForm(new Status(), sender);
         }
 
         private void btnManagePC_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Managepc(), sender);
+            OpenChildForm(new Managepc(), sender);
         }
 
         private void btnShutdownComputer_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ShutdownComputer(), sender);
+            OpenChildForm(new ShutdownComputer(), sender);
         }
 
         private void btnWebsites_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Websites(), sender);
+            OpenChildForm(new Websites(), sender);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.WebsitesSettings(), sender);
+            OpenChildForm(new WebsitesSettings(), sender);
         }
 
         private void btnTimer_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Timer(), sender);
+        }
+        private void btnSyllabus_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Syllabus(), sender);
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -128,6 +127,7 @@ namespace PCManager
             btnShutdownComputer.Text = "";
             btnWebsites.Text = "";
             btnTimer.Text = "";
+            btnSyllabus.Text = "";
         }
         private void DefaultSizePanel()
         {
@@ -138,6 +138,7 @@ namespace PCManager
             btnShutdownComputer.Text = "  Shutdown PC";
             btnWebsites.Text = "  Websites";
             btnTimer.Text = "  Timer";
+            btnSyllabus.Text = "  Syllabus";
         }
     }
 }

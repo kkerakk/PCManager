@@ -9,12 +9,12 @@ using System.Management.Automation; //powershell
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace PCManager.Forms
 {
     public partial class ShutdownComputer : Form
-    {
-        Helper helper = new Helper();
+    {        
         private string action = "";
         public ShutdownComputer()
         {
@@ -28,12 +28,12 @@ namespace PCManager.Forms
                 if (String.IsNullOrEmpty(txtShutdownTime.Text))
                 {
                     txtShutdownTime.Text = "0";
-                }                
+                }
                 int time = int.Parse(txtShutdownTime.Text);
 
                 if (time == 0 || String.IsNullOrEmpty(time.ToString()))
                 {
-                    DialogResult dialogResult = MessageBox.Show("Czy chcesz wyłączyć komputer?", "Wyłącz komputer", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Czy chcesz kontynuować?", "Kontynuować?", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         //ShutdownPC(time);
@@ -53,39 +53,51 @@ namespace PCManager.Forms
             switch (action)
             {
                 case "Shutdown":
-                    //MessageBox.Show("Shutdown");
-                    helper.RunViaPowerShell("shutdown -a; shutdown -s -t", time);
+                    //helper.RunViaPowerShell("shutdown -a; shutdown -s -t", time);
+                    ShutdownPC(time);
                     break;
                 case "Restart":
-                    //MessageBox.Show("Restart");
-                    helper.RunViaPowerShell("shutdown -a; shutdown -r -t", time);
+                    RestartPC(time);
+                    //helper.RunViaPowerShell("shutdown -a; shutdown -r -t", time);
                     break;
                 case "Hibernate":
-                    MessageBox.Show("Hibernate");
-                    //helper.RunViaPowerShell($"shutdown -a; timeout {time} shutdown -h");
+                    //can't cancel
+                    Hibernate(time);
                     break;
                 case "Log Off":
-                    MessageBox.Show("Log Off");
+                    //can't cancel
+                    LogOff(time);
                     break;
                 default:
                     MessageBox.Show("Error occured");
                     break;
             }
         }
+        #region ManageShutdownButtonOptions
+        private async void Hibernate(int time)
+        {
+            await Task.Delay(time * 1000);
+            Helper.RunViaCMD("shutdown -h");
+        }
+        private async void LogOff(int time)
+        {
+            await Task.Delay(time * 1000);
+            Helper.RunViaCMD("shutdown -l");
+        }
 
         private void ShutdownPC(int time)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", time);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", time);
         }
-
+        #endregion
         private void RestartPC(int time)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -r -t", time);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -r -t", time);
         }
 
         private void btnCancelShutdown_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a");
+            Helper.RunViaPowerShell("shutdown -a");
         }
         private void txtShutdownTime_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -100,50 +112,49 @@ namespace PCManager.Forms
                 DialogResult dialogResult = MessageBox.Show("Czy chcesz wyłączyć komputer?", "Wyłącz komputer", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //ShutdownPC(time);
-                    helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 0);
+                    Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 0);
                 }
             }            
         }
 
         private void btnShutdown5min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 300);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 300);
         }
 
         private void btnShutdown10min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 600);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 600);
         }
 
         private void btnShutdown15min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 900);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 900);
         }
 
         private void btnShutdown30min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 1800);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 1800);
         }
 
         private void btnShutdown60min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 3600);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 3600);
         }
 
         private void btnShutdown120min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 7200);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 7200);
         }
 
         private void btnShutdown180min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 10800);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 10800);
         }
 
         private void btnShutdown240min_Click(object sender, EventArgs e)
         {
-            helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 14400);
+            Helper.RunViaPowerShell("shutdown -a; shutdown -s -t", 14400);
         }
         #endregion
         #region radioButtons

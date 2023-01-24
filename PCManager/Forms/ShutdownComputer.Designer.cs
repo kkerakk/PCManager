@@ -312,7 +312,6 @@
             // rbLogOff
             // 
             this.rbLogOff.AutoSize = true;
-            this.rbLogOff.Enabled = false;
             this.rbLogOff.Location = new System.Drawing.Point(7, 89);
             this.rbLogOff.Name = "rbLogOff";
             this.rbLogOff.Size = new System.Drawing.Size(60, 17);
@@ -324,7 +323,6 @@
             // rbHibernate
             // 
             this.rbHibernate.AutoSize = true;
-            this.rbHibernate.Enabled = false;
             this.rbHibernate.Location = new System.Drawing.Point(7, 66);
             this.rbHibernate.Name = "rbHibernate";
             this.rbHibernate.Size = new System.Drawing.Size(71, 17);

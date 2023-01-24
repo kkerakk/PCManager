@@ -12,8 +12,8 @@ JSA
 Schemat tabel Bazus
 WP
 Onet
-15
-16
+ISO River
+Repo Bazus
 17
 18
 19
@@ -27,4 +27,4 @@ Onet
 27
 28
 29
-30
+Putty

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
+            this.btnSyllabus = new System.Windows.Forms.Button();
             this.btnTimer = new System.Windows.Forms.Button();
             this.btnWebsites = new System.Windows.Forms.Button();
             this.btnShutdownComputer = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelBottomMenu = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.lblMessageInfo = new System.Windows.Forms.Label();
             this.panelLeftMenu.SuspendLayout();
             this.panelBottomMenu.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +48,7 @@
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnSyllabus);
             this.panelLeftMenu.Controls.Add(this.btnTimer);
             this.panelLeftMenu.Controls.Add(this.btnWebsites);
             this.panelLeftMenu.Controls.Add(this.btnShutdownComputer);
@@ -57,6 +60,26 @@
             this.panelLeftMenu.Name = "panelLeftMenu";
             this.panelLeftMenu.Size = new System.Drawing.Size(150, 491);
             this.panelLeftMenu.TabIndex = 0;
+            // 
+            // btnSyllabus
+            // 
+            this.btnSyllabus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSyllabus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSyllabus.FlatAppearance.BorderSize = 0;
+            this.btnSyllabus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabus.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabus.Image = global::PCManager.Properties.Resources.document_2_24;
+            this.btnSyllabus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSyllabus.Location = new System.Drawing.Point(0, 250);
+            this.btnSyllabus.Name = "btnSyllabus";
+            this.btnSyllabus.Size = new System.Drawing.Size(150, 40);
+            this.btnSyllabus.TabIndex = 6;
+            this.btnSyllabus.Text = "  Syllabus";
+            this.btnSyllabus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSyllabus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSyllabus.UseVisualStyleBackColor = true;
+            this.btnSyllabus.Click += new System.EventHandler(this.btnSyllabus_Click);
             // 
             // btnTimer
             // 
@@ -180,6 +203,7 @@
             // panelBottomMenu
             // 
             this.panelBottomMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(8)))), ((int)(((byte)(69)))));
+            this.panelBottomMenu.Controls.Add(this.lblMessageInfo);
             this.panelBottomMenu.Controls.Add(this.btnSettings);
             this.panelBottomMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottomMenu.Location = new System.Drawing.Point(150, 460);
@@ -199,6 +223,17 @@
             this.btnSettings.Visible = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // lblMessageInfo
+            // 
+            this.lblMessageInfo.AutoSize = true;
+            this.lblMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMessageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(8)))), ((int)(((byte)(69)))));
+            this.lblMessageInfo.Location = new System.Drawing.Point(6, 4);
+            this.lblMessageInfo.Name = "lblMessageInfo";
+            this.lblMessageInfo.Size = new System.Drawing.Size(102, 20);
+            this.lblMessageInfo.TabIndex = 1;
+            this.lblMessageInfo.Text = "MessageInfo";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +248,7 @@
             this.Text = "PCManager";
             this.panelLeftMenu.ResumeLayout(false);
             this.panelBottomMenu.ResumeLayout(false);
+            this.panelBottomMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +266,8 @@
         private System.Windows.Forms.Button btnWebsites;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnTimer;
+        private System.Windows.Forms.Button btnSyllabus;
+        public System.Windows.Forms.Label lblMessageInfo;
     }
 }
 

@@ -63,6 +63,16 @@ namespace PCManager.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_2_24 {
+            get {
+                object obj = ResourceManager.GetObject("document-2-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap www_geography_24 {
             get {
                 object obj = ResourceManager.GetObject("www_geography-24", resourceCulture);

@@ -37,3 +37,7 @@ I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.csproj.CopyComplete
 I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.exe
 I:\DYSK G\C#\PCManager\PCManager\obj\Debug\PCManager.pdb
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Timer.resources
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Syllabus.resources
+E:\C#\PCManager\PCManager\bin\Debug\BouncyCastle.Crypto.dll
+E:\C#\PCManager\PCManager\bin\Debug\itextsharp.dll
+E:\C#\PCManager\PCManager\bin\Debug\itextsharp.xml
