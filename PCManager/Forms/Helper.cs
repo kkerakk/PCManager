@@ -9,12 +9,12 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace PCManager.Forms
 {
     public static class Helper
     {
-        static Main formMain = new Main();
         public static void RunViaCMD(string fileName)
         {
             try
@@ -118,7 +118,16 @@ namespace PCManager.Forms
         {
             MessageBox.Show($"{variable}","Testing decimal").ToString();
         }
-        public static void X()        
+        public static void SaveToJSON(object obj)        
+        {
+            var databaseName = "DataStorage.json";
+            var directory = @".\..\..\Data\";
+            var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
+            var filePath = Path.Combine(directory,databaseName);
+
+            File.WriteAllText(filePath, json);
+        }
+        public static void ReadFromJSON()
         {
 
         }

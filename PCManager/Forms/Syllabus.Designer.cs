@@ -33,18 +33,18 @@
             this.txtDirectoryPath = new System.Windows.Forms.TextBox();
             this.lblDirectoryPath = new System.Windows.Forms.LinkLabel();
             this.PanelTopSyllabus = new System.Windows.Forms.Panel();
-            this.btnSyllabusClear = new System.Windows.Forms.Button();
-            this.btnSyllabusLoad = new System.Windows.Forms.Button();
-            this.btnSyllabusAddPath = new System.Windows.Forms.Button();
-            this.LBLevelOfStudy = new System.Windows.Forms.ListBox();
-            this.lblLevelOfStudy = new System.Windows.Forms.Label();
-            this.lblFieldOfStudy = new System.Windows.Forms.Label();
-            this.LBFieldOfStudy = new System.Windows.Forms.ListBox();
-            this.lblSemester = new System.Windows.Forms.Label();
-            this.LBSemester = new System.Windows.Forms.ListBox();
-            this.btnSyllabusGenerate = new System.Windows.Forms.Button();
             this.lblYear = new System.Windows.Forms.Label();
             this.LBYear = new System.Windows.Forms.ListBox();
+            this.btnSyllabusGenerate = new System.Windows.Forms.Button();
+            this.lblSemester = new System.Windows.Forms.Label();
+            this.LBSemester = new System.Windows.Forms.ListBox();
+            this.lblFieldOfStudy = new System.Windows.Forms.Label();
+            this.LBFieldOfStudy = new System.Windows.Forms.ListBox();
+            this.lblLevelOfStudy = new System.Windows.Forms.Label();
+            this.LBLevelOfStudy = new System.Windows.Forms.ListBox();
+            this.btnSyllabusAddPath = new System.Windows.Forms.Button();
+            this.btnSyllabusClear = new System.Windows.Forms.Button();
+            this.btnSyllabusLoad = new System.Windows.Forms.Button();
             this.FLPSyllabus.SuspendLayout();
             this.PanelTopSyllabus.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,6 @@
             // 
             // rtxtSyllabus
             // 
-            this.rtxtSyllabus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rtxtSyllabus.Location = new System.Drawing.Point(3, 3);
             this.rtxtSyllabus.Name = "rtxtSyllabus";
             this.rtxtSyllabus.Size = new System.Drawing.Size(705, 298);
@@ -112,6 +111,128 @@
             this.PanelTopSyllabus.Size = new System.Drawing.Size(715, 155);
             this.PanelTopSyllabus.TabIndex = 2;
             // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(5, 92);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(69, 13);
+            this.lblYear.TabIndex = 13;
+            this.lblYear.Text = "Year of study";
+            // 
+            // LBYear
+            // 
+            this.LBYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBYear.FormattingEnabled = true;
+            this.LBYear.ItemHeight = 15;
+            this.LBYear.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "2024"});
+            this.LBYear.Location = new System.Drawing.Point(5, 108);
+            this.LBYear.Name = "LBYear";
+            this.LBYear.Size = new System.Drawing.Size(120, 34);
+            this.LBYear.TabIndex = 12;
+            // 
+            // btnSyllabusGenerate
+            // 
+            this.btnSyllabusGenerate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusGenerate.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusGenerate.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusGenerate.Location = new System.Drawing.Point(197, 49);
+            this.btnSyllabusGenerate.Name = "btnSyllabusGenerate";
+            this.btnSyllabusGenerate.Size = new System.Drawing.Size(90, 40);
+            this.btnSyllabusGenerate.TabIndex = 11;
+            this.btnSyllabusGenerate.Text = "Generate";
+            this.btnSyllabusGenerate.UseVisualStyleBackColor = false;
+            this.btnSyllabusGenerate.Click += new System.EventHandler(this.btnSyllabusGenerate_Click);
+            // 
+            // lblSemester
+            // 
+            this.lblSemester.AutoSize = true;
+            this.lblSemester.Location = new System.Drawing.Point(383, 92);
+            this.lblSemester.Name = "lblSemester";
+            this.lblSemester.Size = new System.Drawing.Size(51, 13);
+            this.lblSemester.TabIndex = 10;
+            this.lblSemester.Text = "Semester";
+            // 
+            // LBSemester
+            // 
+            this.LBSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBSemester.FormattingEnabled = true;
+            this.LBSemester.ItemHeight = 15;
+            this.LBSemester.Items.AddRange(new object[] {
+            "letni",
+            "zimowy"});
+            this.LBSemester.Location = new System.Drawing.Point(383, 108);
+            this.LBSemester.Name = "LBSemester";
+            this.LBSemester.Size = new System.Drawing.Size(120, 34);
+            this.LBSemester.TabIndex = 9;
+            // 
+            // lblFieldOfStudy
+            // 
+            this.lblFieldOfStudy.AutoSize = true;
+            this.lblFieldOfStudy.Location = new System.Drawing.Point(131, 92);
+            this.lblFieldOfStudy.Name = "lblFieldOfStudy";
+            this.lblFieldOfStudy.Size = new System.Drawing.Size(69, 13);
+            this.lblFieldOfStudy.TabIndex = 8;
+            this.lblFieldOfStudy.Text = "Field of study";
+            // 
+            // LBFieldOfStudy
+            // 
+            this.LBFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBFieldOfStudy.FormattingEnabled = true;
+            this.LBFieldOfStudy.ItemHeight = 15;
+            this.LBFieldOfStudy.Items.AddRange(new object[] {
+            "BW",
+            "Informatyka",
+            "KRYM",
+            "NOP"});
+            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 108);
+            this.LBFieldOfStudy.Name = "LBFieldOfStudy";
+            this.LBFieldOfStudy.Size = new System.Drawing.Size(120, 34);
+            this.LBFieldOfStudy.TabIndex = 7;
+            // 
+            // lblLevelOfStudy
+            // 
+            this.lblLevelOfStudy.AutoSize = true;
+            this.lblLevelOfStudy.Location = new System.Drawing.Point(257, 92);
+            this.lblLevelOfStudy.Name = "lblLevelOfStudy";
+            this.lblLevelOfStudy.Size = new System.Drawing.Size(73, 13);
+            this.lblLevelOfStudy.TabIndex = 6;
+            this.lblLevelOfStudy.Text = "Level of study";
+            // 
+            // LBLevelOfStudy
+            // 
+            this.LBLevelOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBLevelOfStudy.FormattingEnabled = true;
+            this.LBLevelOfStudy.ItemHeight = 15;
+            this.LBLevelOfStudy.Items.AddRange(new object[] {
+            "I_stopien",
+            "II_stopien"});
+            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 108);
+            this.LBLevelOfStudy.Name = "LBLevelOfStudy";
+            this.LBLevelOfStudy.Size = new System.Drawing.Size(120, 34);
+            this.LBLevelOfStudy.TabIndex = 5;
+            // 
+            // btnSyllabusAddPath
+            // 
+            this.btnSyllabusAddPath.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusAddPath.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusAddPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusAddPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusAddPath.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSyllabusAddPath.Location = new System.Drawing.Point(653, 21);
+            this.btnSyllabusAddPath.Name = "btnSyllabusAddPath";
+            this.btnSyllabusAddPath.Size = new System.Drawing.Size(23, 20);
+            this.btnSyllabusAddPath.TabIndex = 4;
+            this.btnSyllabusAddPath.Text = "+";
+            this.btnSyllabusAddPath.UseVisualStyleBackColor = false;
+            this.btnSyllabusAddPath.Click += new System.EventHandler(this.btnSyllabusAddPath_Click);
+            // 
             // btnSyllabusClear
             // 
             this.btnSyllabusClear.BackColor = System.Drawing.Color.MidnightBlue;
@@ -143,128 +264,6 @@
             this.btnSyllabusLoad.Text = "Load";
             this.btnSyllabusLoad.UseVisualStyleBackColor = false;
             this.btnSyllabusLoad.Click += new System.EventHandler(this.btnSyllabusLoad_Click);
-            // 
-            // btnSyllabusAddPath
-            // 
-            this.btnSyllabusAddPath.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusAddPath.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusAddPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusAddPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusAddPath.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSyllabusAddPath.Location = new System.Drawing.Point(653, 21);
-            this.btnSyllabusAddPath.Name = "btnSyllabusAddPath";
-            this.btnSyllabusAddPath.Size = new System.Drawing.Size(23, 20);
-            this.btnSyllabusAddPath.TabIndex = 4;
-            this.btnSyllabusAddPath.Text = "+";
-            this.btnSyllabusAddPath.UseVisualStyleBackColor = false;
-            this.btnSyllabusAddPath.Click += new System.EventHandler(this.btnSyllabusAddPath_Click);
-            // 
-            // LBLevelOfStudy
-            // 
-            this.LBLevelOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBLevelOfStudy.FormattingEnabled = true;
-            this.LBLevelOfStudy.ItemHeight = 15;
-            this.LBLevelOfStudy.Items.AddRange(new object[] {
-            "I_stopien",
-            "II_stopien"});
-            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 108);
-            this.LBLevelOfStudy.Name = "LBLevelOfStudy";
-            this.LBLevelOfStudy.Size = new System.Drawing.Size(120, 34);
-            this.LBLevelOfStudy.TabIndex = 5;
-            // 
-            // lblLevelOfStudy
-            // 
-            this.lblLevelOfStudy.AutoSize = true;
-            this.lblLevelOfStudy.Location = new System.Drawing.Point(257, 92);
-            this.lblLevelOfStudy.Name = "lblLevelOfStudy";
-            this.lblLevelOfStudy.Size = new System.Drawing.Size(73, 13);
-            this.lblLevelOfStudy.TabIndex = 6;
-            this.lblLevelOfStudy.Text = "Level of study";
-            // 
-            // lblFieldOfStudy
-            // 
-            this.lblFieldOfStudy.AutoSize = true;
-            this.lblFieldOfStudy.Location = new System.Drawing.Point(131, 92);
-            this.lblFieldOfStudy.Name = "lblFieldOfStudy";
-            this.lblFieldOfStudy.Size = new System.Drawing.Size(69, 13);
-            this.lblFieldOfStudy.TabIndex = 8;
-            this.lblFieldOfStudy.Text = "Field of study";
-            // 
-            // LBFieldOfStudy
-            // 
-            this.LBFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBFieldOfStudy.FormattingEnabled = true;
-            this.LBFieldOfStudy.ItemHeight = 15;
-            this.LBFieldOfStudy.Items.AddRange(new object[] {
-            "BW",
-            "Informatyka",
-            "KRYM",
-            "NOP"});
-            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 108);
-            this.LBFieldOfStudy.Name = "LBFieldOfStudy";
-            this.LBFieldOfStudy.Size = new System.Drawing.Size(120, 34);
-            this.LBFieldOfStudy.TabIndex = 7;
-            // 
-            // lblSemester
-            // 
-            this.lblSemester.AutoSize = true;
-            this.lblSemester.Location = new System.Drawing.Point(383, 92);
-            this.lblSemester.Name = "lblSemester";
-            this.lblSemester.Size = new System.Drawing.Size(51, 13);
-            this.lblSemester.TabIndex = 10;
-            this.lblSemester.Text = "Semester";
-            // 
-            // LBSemester
-            // 
-            this.LBSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBSemester.FormattingEnabled = true;
-            this.LBSemester.ItemHeight = 15;
-            this.LBSemester.Items.AddRange(new object[] {
-            "letni",
-            "zimowy"});
-            this.LBSemester.Location = new System.Drawing.Point(383, 108);
-            this.LBSemester.Name = "LBSemester";
-            this.LBSemester.Size = new System.Drawing.Size(120, 34);
-            this.LBSemester.TabIndex = 9;
-            // 
-            // btnSyllabusGenerate
-            // 
-            this.btnSyllabusGenerate.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusGenerate.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusGenerate.Location = new System.Drawing.Point(197, 49);
-            this.btnSyllabusGenerate.Name = "btnSyllabusGenerate";
-            this.btnSyllabusGenerate.Size = new System.Drawing.Size(90, 40);
-            this.btnSyllabusGenerate.TabIndex = 11;
-            this.btnSyllabusGenerate.Text = "Generate";
-            this.btnSyllabusGenerate.UseVisualStyleBackColor = false;
-            this.btnSyllabusGenerate.Click += new System.EventHandler(this.btnSyllabusGenerate_Click);
-            // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(5, 92);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(69, 13);
-            this.lblYear.TabIndex = 13;
-            this.lblYear.Text = "Year of study";
-            // 
-            // LBYear
-            // 
-            this.LBYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBYear.FormattingEnabled = true;
-            this.LBYear.ItemHeight = 15;
-            this.LBYear.Items.AddRange(new object[] {
-            "2022",
-            "2023",
-            "2024"});
-            this.LBYear.Location = new System.Drawing.Point(5, 108);
-            this.LBYear.Name = "LBYear";
-            this.LBYear.Size = new System.Drawing.Size(120, 34);
-            this.LBYear.TabIndex = 12;
             // 
             // Syllabus
             // 

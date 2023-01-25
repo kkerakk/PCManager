@@ -96,7 +96,15 @@ namespace PCManager.Forms
         }
         private void btnSyllabusAddPath_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txtDirectoryPath.Text))
+            {
+                MessageBox.Show("The path is empty", "Error");
+                return;
+            }
+            List<string> list = new List<string>();
+            var valueStr = txtDirectoryPath.Text;
+            list.Add(valueStr);
+            Helper.SaveToJSON(list);
         }
         private void btnSyllabusClear_Click(object sender, EventArgs e)
         {

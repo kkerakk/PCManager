@@ -41,3 +41,5 @@ E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Syllabus.resources
 E:\C#\PCManager\PCManager\bin\Debug\BouncyCastle.Crypto.dll
 E:\C#\PCManager\PCManager\bin\Debug\itextsharp.dll
 E:\C#\PCManager\PCManager\bin\Debug\itextsharp.xml
+E:\C#\PCManager\PCManager\bin\Debug\Newtonsoft.Json.dll
+E:\C#\PCManager\PCManager\bin\Debug\Newtonsoft.Json.xml
