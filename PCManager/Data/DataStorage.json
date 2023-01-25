@@ -1,3 +1,9 @@
 [
-  "E:\\Dokumenty\\PDF\\Sylabus\\2022_2023_sl_powershell\\2022\\BW\\I_stopien\\zimowy"
+  {
+    "FormsName": "Syllabus",
+    "Name": "MessageBox.Show($\"Database json doesn't exist. You need to create new \\\"{databaseName}\\\" in location \\\"{directory }\\\"\",\"Database error\");",
+    "NameButton": null,
+    "NameWebsite": null,
+    "NameColor": null
+  }
 ]

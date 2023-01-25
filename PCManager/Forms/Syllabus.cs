@@ -1,17 +1,21 @@
 ﻿using iTextSharp.text.pdf;
+using PCManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PCManager.Forms
 {
     public partial class Syllabus : Form
     {
+        //List<DataStorage> dataStorage = new List<DataStorage>();
         public Syllabus()
         {
             InitializeComponent();
+            //ReadDataFromJSON();
         }
         FileInfo[] arrayFI;
         #region Methods
@@ -72,7 +76,10 @@ namespace PCManager.Forms
         {
             if (string.IsNullOrEmpty(rtxtSyllabus.Text))
                 return;
+            if (true)
+            {
 
+            }
             var combinedString = $@"{LBYear.SelectedItem}\{LBFieldOfStudy.SelectedItem}\{LBLevelOfStudy.SelectedItem}\{LBSemester.SelectedItem}\";
             var pathBegin = $"<p><a href=\"http://wu.wspol.edu.pl/uploaded/SYLABUSY/";
             var pathMiddle = $"\" target = \"_blank\"> <img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\" /> <span style = \"font-size: 16px;\">";
@@ -83,6 +90,34 @@ namespace PCManager.Forms
             {
                 rtxtSyllabus.Text += $@"{pathBegin}{combinedString}{item}{pathMiddle}{item}{pathEnd} " + Environment.NewLine;
             }
+        }
+        private void ReadDataFromJSON()
+        {
+            List<DataStorage> dataStorages = new List<DataStorage>();
+
+            Helper.ReadFromJSON(ref dataStorages);
+            if (dataStorages.Count == 0)
+            {
+                return;
+            }
+            txtDirectoryPath.Text = dataStorages[0].Name;
+        }
+        private void AddPathToJSON(TextBox tb)
+        {
+
+            if (string.IsNullOrEmpty(tb.Text))
+            {
+                MessageBox.Show("The path is empty", "Error");
+                return;
+            }
+            var nameExist = Helper.dataStorages.Any(x => x.Name == tb.Text);
+            if (nameExist)
+            {
+                MessageBox.Show("The path already exist", "Error");
+                return;
+            }
+            var valueStr = new DataStorage { FormsName = "Syllabus", Name = tb.Text };
+            Helper.SaveToJSON(valueStr);
         }
         #endregion
 
@@ -96,15 +131,7 @@ namespace PCManager.Forms
         }
         private void btnSyllabusAddPath_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDirectoryPath.Text))
-            {
-                MessageBox.Show("The path is empty", "Error");
-                return;
-            }
-            List<string> list = new List<string>();
-            var valueStr = txtDirectoryPath.Text;
-            list.Add(valueStr);
-            Helper.SaveToJSON(list);
+            AddPathToJSON(txtDirectoryPath);
         }
         private void btnSyllabusClear_Click(object sender, EventArgs e)
         {
@@ -113,6 +140,11 @@ namespace PCManager.Forms
         private void btnSyllabusGenerate_Click(object sender, EventArgs e)
         {
             CreateViewSyllabus();
+        }
+
+        private void btnSyllabusSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

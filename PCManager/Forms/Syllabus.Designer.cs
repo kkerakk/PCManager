@@ -45,6 +45,7 @@
             this.btnSyllabusAddPath = new System.Windows.Forms.Button();
             this.btnSyllabusClear = new System.Windows.Forms.Button();
             this.btnSyllabusLoad = new System.Windows.Forms.Button();
+            this.btnSyllabusSave = new System.Windows.Forms.Button();
             this.FLPSyllabus.SuspendLayout();
             this.PanelTopSyllabus.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // PanelTopSyllabus
             // 
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusSave);
             this.PanelTopSyllabus.Controls.Add(this.lblYear);
             this.PanelTopSyllabus.Controls.Add(this.LBYear);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusGenerate);
@@ -265,6 +267,22 @@
             this.btnSyllabusLoad.UseVisualStyleBackColor = false;
             this.btnSyllabusLoad.Click += new System.EventHandler(this.btnSyllabusLoad_Click);
             // 
+            // btnSyllabusSave
+            // 
+            this.btnSyllabusSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusSave.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusSave.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusSave.Location = new System.Drawing.Point(293, 49);
+            this.btnSyllabusSave.Name = "btnSyllabusSave";
+            this.btnSyllabusSave.Size = new System.Drawing.Size(90, 40);
+            this.btnSyllabusSave.TabIndex = 14;
+            this.btnSyllabusSave.Text = "Save";
+            this.btnSyllabusSave.UseVisualStyleBackColor = false;
+            this.btnSyllabusSave.Click += new System.EventHandler(this.btnSyllabusSave_Click);
+            // 
             // Syllabus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +320,6 @@
         private System.Windows.Forms.Button btnSyllabusGenerate;
         private System.Windows.Forms.Label lblSemester;
         private System.Windows.Forms.ListBox LBSemester;
+        private System.Windows.Forms.Button btnSyllabusSave;
     }
 }

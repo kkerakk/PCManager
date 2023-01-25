@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;//collection<psobject>
 using System.Diagnostics;//process
 using System.IO;
-using System.Linq;
 using System.Management.Automation;//powershell
 using System.Management;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using PCManager.Models;
 
 namespace PCManager.Forms
 {
     public static class Helper
     {
+        public static List<DataStorage> dataStorages { get; set; } = new List<DataStorage>();
+
+        static string databaseName = "DataStorage.json";
+        static string directory = @".\..\..\Data\";
         public static void RunViaCMD(string fileName)
         {
             try
@@ -118,18 +120,44 @@ namespace PCManager.Forms
         {
             MessageBox.Show($"{variable}","Testing decimal").ToString();
         }
-        public static void SaveToJSON(object obj)        
+        public static void SaveToJSON(DataStorage ds)        
         {
-            var databaseName = "DataStorage.json";
-            var directory = @".\..\..\Data\";
-            var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
-            var filePath = Path.Combine(directory,databaseName);
+            var filePath = Path.Combine(directory, databaseName);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show($"Database json doesn't exist. You need to create new \"{databaseName}\" in location \"{directory }\"", "Database error");
+                var jsonLocal = JsonConvert.SerializeObject(dataStorages, Formatting.Indented);
+                File.WriteAllText(filePath, jsonLocal);
+                MessageBox.Show($"Database \"{databaseName}\" was created in location \"{directory }\"", "Database created");
+                return;
+            }
+            
+            var jsonRead = File.ReadAllText(filePath);
+            dataStorages = JsonConvert.DeserializeObject<List<DataStorage>>(jsonRead);
 
+            dataStorages.Add(ds);
+
+            var json = JsonConvert.SerializeObject(dataStorages, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
-        public static void ReadFromJSON()
+        public static void ReadFromJSON(ref List<DataStorage> dataStorages)
         {
-
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            var filePath = Path.Combine(directory, databaseName);
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Database json doesn't exist");
+                return;
+            }
+            var json = File.ReadAllText(filePath);
+            dataStorages = JsonConvert.DeserializeObject<List<DataStorage>>(json);
         }
     }
 }
