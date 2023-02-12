@@ -1,8 +1,10 @@
 ﻿using iTextSharp.text.pdf;
+using Org.BouncyCastle.Crypto.Macs;
 using PCManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -40,17 +42,9 @@ namespace PCManager.Forms
         {
             var path = txtDirectoryPath.Text;
 
-            if (string.IsNullOrEmpty(path))
-            {
-
-                MessageBox.Show("The path is empty", "Path error");
+            string folderPath = txtDirectoryPath.Text;
+            if (!Helper.CheckIfPathExist(folderPath))
                 return null;
-            }
-            if (!Directory.Exists(path))
-            {
-                MessageBox.Show("The path doesn't exist", "Path error");
-                return null;
-            }
 
             var di = new DirectoryInfo(path);
             FileInfo[] fi = di.GetFiles();
@@ -70,19 +64,15 @@ namespace PCManager.Forms
         private void ClearData()
         {
             rtxtSyllabus.Clear();
-            txtDirectoryPath.Clear();
         }
         private void CreateViewSyllabus()
         {
             if (string.IsNullOrEmpty(rtxtSyllabus.Text))
                 return;
-            if (true)
-            {
 
-            }
-            var combinedString = $@"{LBYear.SelectedItem}\{LBFieldOfStudy.SelectedItem}\{LBLevelOfStudy.SelectedItem}\{LBSemester.SelectedItem}\";
+            var combinedString = $@"{LBYear.SelectedItem}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
             var pathBegin = $"<p><a href=\"http://wu.wspol.edu.pl/uploaded/SYLABUSY/";
-            var pathMiddle = $"\" target = \"_blank\"> <img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\" /> <span style = \"font-size: 16px;\">";
+            var pathMiddle = $"\" target = \"_blank\"><img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\"/><span style = \"font-size: 16px;\">";
             var pathEnd = $"</span></a></p>";
 
             rtxtSyllabus.Clear();
@@ -93,45 +83,53 @@ namespace PCManager.Forms
         }
         private void ReadDataFromJSON()
         {
-            List<DataStorage> dataStorages = new List<DataStorage>();
+            //Helper.ReadFromJSON(ref dataStorages);
+            //if (true)
+            //{
 
-            Helper.ReadFromJSON(ref dataStorages);
-            if (dataStorages.Count == 0)
-            {
-                return;
-            }
-            txtDirectoryPath.Text = dataStorages[0].Name;
+            //}
+            //if (dataStorages.Count == 0)
+            //{
+            //    return;
+            //}
+            //txtDirectoryPath.Text = dataStorages[0].Name;
         }
-        private void AddPathToJSON(TextBox tb)
+        private void ChangeNamesInDirectory()
         {
+            string folderPath = txtDirectoryPath.Text;
+            if (!Helper.CheckIfPathExist(folderPath))
+                return;
 
-            if (string.IsNullOrEmpty(tb.Text))
-            {
-                MessageBox.Show("The path is empty", "Error");
+            if (!Helper.YesNoPrompt())
                 return;
-            }
-            var nameExist = Helper.dataStorages.Any(x => x.Name == tb.Text);
-            if (nameExist)
+
+            foreach (string filePath in Directory.GetFiles(folderPath))
             {
-                MessageBox.Show("The path already exist", "Error");
-                return;
+                string newFilePath = Path.Combine(
+                    Path.GetDirectoryName(filePath),
+                    Path.GetFileNameWithoutExtension(filePath)
+                    .ToLower()
+                    .Replace(' ', '_')
+                    + Path.GetExtension(filePath)
+                );
+                File.Move(filePath, newFilePath);
             }
-            var valueStr = new DataStorage { FormsName = "Syllabus", Name = tb.Text };
-            Helper.SaveToJSON(valueStr);
+        }
+
+        private void CopyAll(RichTextBox richTextBox)
+        {
+            richTextBox.SelectAll();
+            richTextBox.Copy();
         }
         #endregion
 
-        private void lblDirectoryPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
-        }
         private void btnSyllabusLoad_Click(object sender, EventArgs e)
         {
             LoadSyllabus();
         }
-        private void btnSyllabusAddPath_Click(object sender, EventArgs e)
+        private void btnSyllabusClearPath_Click(object sender, EventArgs e)
         {
-            AddPathToJSON(txtDirectoryPath);
+            txtDirectoryPath.Clear();
         }
         private void btnSyllabusClear_Click(object sender, EventArgs e)
         {
@@ -141,10 +139,17 @@ namespace PCManager.Forms
         {
             CreateViewSyllabus();
         }
-
         private void btnSyllabusSave_Click(object sender, EventArgs e)
         {
 
+        }
+        private void btnSyllabusChangeName_Click(object sender, EventArgs e)
+        {
+            ChangeNamesInDirectory();
+        }
+        private void btnSyllabusCopy_Click(object sender, EventArgs e)
+        {
+            CopyAll(rtxtSyllabus);
         }
     }
 }

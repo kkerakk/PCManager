@@ -159,5 +159,26 @@ namespace PCManager.Forms
             var json = File.ReadAllText(filePath);
             dataStorages = JsonConvert.DeserializeObject<List<DataStorage>>(json);
         }
+        public static bool CheckIfPathExist(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                MessageBox.Show("The path is empty", "Path error");
+                return false;
+            }
+            if (!Directory.Exists(path))
+            {
+                MessageBox.Show("The path doesn't exist", "Path error");
+                return false;
+            }
+            return true;
+        }
+        public static bool YesNoPrompt(string text = "Are you sure you want to continue", string caption = "confirmation")
+        {
+            DialogResult result = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                return true;
+            return false;
+        }
     }
 }
