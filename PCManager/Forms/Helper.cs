@@ -8,6 +8,9 @@ using System.Management;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using PCManager.Models;
+using System.Linq;
+using System.Text;
+using System.Globalization;
 
 namespace PCManager.Forms
 {
@@ -180,5 +183,41 @@ namespace PCManager.Forms
                 return true;
             return false;
         }
+        public static string FirstLetterToUpper(this string input) => string.Concat(input[0].ToString().ToUpper(), input.Substring(1));
+        public static string ReplaceSpaces(this string input, char replacement) => input.Replace(' ', replacement);
+        public static string DeleteBeforeFirstSpace(this string input)
+        {
+            int index = input.IndexOf(' ');
+            if (index == -1) // jeśli nie ma spacji w łańcuchu, zwracamy go w całości
+                return input;
+            else
+                return input.Substring(index + 1);
+        }
+        public static string ReplacePolishCharacters(this string input)
+        {
+            input = input.Normalize(NormalizationForm.FormD); // zamiana liter na formę dekomponowaną
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in input)
+            {
+                UnicodeCategory category = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (category != UnicodeCategory.NonSpacingMark) // ignorujemy znaki diakrytyczne
+                {
+                    switch (c)
+                    {
+                        case 'ą': sb.Append('a'); break;
+                        case 'ć': sb.Append('c'); break;
+                        case 'ę': sb.Append('e'); break;
+                        case 'ł': sb.Append('l'); break;
+                        case 'ń': sb.Append('n'); break;
+                        case 'ó': sb.Append('o'); break;
+                        case 'ś': sb.Append('s'); break;
+                        case 'ź': sb.Append('s'); break;
+                        case 'ż': sb.Append('z'); break;
+                        default: sb.Append(c); break;
+                    }
+                }
+            }
+            return sb.ToString();
+        }        
     }
 }

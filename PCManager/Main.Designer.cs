@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnSyllabus = new System.Windows.Forms.Button();
             this.btnTimer = new System.Windows.Forms.Button();
             this.btnWebsites = new System.Windows.Forms.Button();
@@ -39,8 +40,8 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelBottomMenu = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.lblMessageInfo = new System.Windows.Forms.Label();
+            this.btnSettingss = new System.Windows.Forms.Button();
             this.panelLeftMenu.SuspendLayout();
             this.panelBottomMenu.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnSettings);
             this.panelLeftMenu.Controls.Add(this.btnSyllabus);
             this.panelLeftMenu.Controls.Add(this.btnTimer);
             this.panelLeftMenu.Controls.Add(this.btnWebsites);
@@ -60,6 +62,26 @@
             this.panelLeftMenu.Name = "panelLeftMenu";
             this.panelLeftMenu.Size = new System.Drawing.Size(150, 491);
             this.panelLeftMenu.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(0, 290);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(150, 40);
+            this.btnSettings.TabIndex = 7;
+            this.btnSettings.Text = "  Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnSyllabus
             // 
@@ -204,24 +226,12 @@
             // 
             this.panelBottomMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(8)))), ((int)(((byte)(69)))));
             this.panelBottomMenu.Controls.Add(this.lblMessageInfo);
-            this.panelBottomMenu.Controls.Add(this.btnSettings);
+            this.panelBottomMenu.Controls.Add(this.btnSettingss);
             this.panelBottomMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottomMenu.Location = new System.Drawing.Point(150, 460);
             this.panelBottomMenu.Name = "panelBottomMenu";
             this.panelBottomMenu.Size = new System.Drawing.Size(714, 31);
             this.panelBottomMenu.TabIndex = 1;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSettings.Location = new System.Drawing.Point(639, 0);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(75, 31);
-            this.btnSettings.TabIndex = 0;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Visible = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // lblMessageInfo
             // 
@@ -233,6 +243,18 @@
             this.lblMessageInfo.Size = new System.Drawing.Size(102, 20);
             this.lblMessageInfo.TabIndex = 1;
             this.lblMessageInfo.Text = "MessageInfo";
+            // 
+            // btnSettingss
+            // 
+            this.btnSettingss.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSettingss.Location = new System.Drawing.Point(639, 0);
+            this.btnSettingss.Name = "btnSettingss";
+            this.btnSettingss.Size = new System.Drawing.Size(75, 31);
+            this.btnSettingss.TabIndex = 0;
+            this.btnSettingss.Text = "Settings";
+            this.btnSettingss.UseVisualStyleBackColor = true;
+            this.btnSettingss.Visible = false;
+            this.btnSettingss.Click += new System.EventHandler(this.btnSettingss_Click);
             // 
             // Main
             // 
@@ -264,10 +286,11 @@
         private System.Windows.Forms.Button btnManagePC;
         private System.Windows.Forms.Button btnShutdownComputer;
         private System.Windows.Forms.Button btnWebsites;
-        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnSettingss;
         private System.Windows.Forms.Button btnTimer;
         private System.Windows.Forms.Button btnSyllabus;
         public System.Windows.Forms.Label lblMessageInfo;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

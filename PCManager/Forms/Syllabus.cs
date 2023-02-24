@@ -1,12 +1,8 @@
-﻿using iTextSharp.text.pdf;
-using Org.BouncyCastle.Crypto.Macs;
-using PCManager.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PCManager.Forms
@@ -17,27 +13,14 @@ namespace PCManager.Forms
         public Syllabus()
         {
             InitializeComponent();
-            //ReadDataFromJSON();
+            GetCurrentAcademicYear();
+
+            btnSyllabusSaveAsText.Enabled = false;
+            btnSyllabusSaveAsHTML.Enabled = false;
         }
         FileInfo[] arrayFI;
         #region Methods
-        private List<string> GetPdfTitles(string directoryPath)
-        {
-            List<string> titles = new List<string>();
-            string[] pdfFiles = Directory.GetFiles(directoryPath, "*.pdf");
-            foreach (string pdfFile in pdfFiles)
-            {
-                using (PdfReader reader = new PdfReader(pdfFile))
-                {
-                    string title = reader.Info["Title"];
-                    if (!string.IsNullOrEmpty(title))
-                    {
-                        titles.Add(title);
-                    }
-                }
-            }
-            return titles;
-        }
+
         private FileInfo[] GetFilesName()
         {
             var path = txtDirectoryPath.Text;
@@ -70,7 +53,7 @@ namespace PCManager.Forms
             if (string.IsNullOrEmpty(rtxtSyllabus.Text))
                 return;
 
-            var combinedString = $@"{LBYear.SelectedItem}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
+            var combinedString = $@"{dtpYearOfStudy.Text}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
             var pathBegin = $"<p><a href=\"http://wu.wspol.edu.pl/uploaded/SYLABUSY/";
             var pathMiddle = $"\" target = \"_blank\"><img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\"/><span style = \"font-size: 16px;\">";
             var pathEnd = $"</span></a></p>";
@@ -78,21 +61,10 @@ namespace PCManager.Forms
             rtxtSyllabus.Clear();
             foreach (var item in arrayFI)
             {
-                rtxtSyllabus.Text += $@"{pathBegin}{combinedString}{item}{pathMiddle}{item}{pathEnd} " + Environment.NewLine;
+                rtxtSyllabus.Text += $@"{pathBegin}{combinedString}{item
+                    .ToString().DeleteBeforeFirstSpace().FirstLetterToUpper().ReplacePolishCharacters().ReplaceSpaces('_')}{pathMiddle}{item
+                    .ToString().DeleteBeforeFirstSpace().FirstLetterToUpper()}{pathEnd} " + Environment.NewLine;
             }
-        }
-        private void ReadDataFromJSON()
-        {
-            //Helper.ReadFromJSON(ref dataStorages);
-            //if (true)
-            //{
-
-            //}
-            //if (dataStorages.Count == 0)
-            //{
-            //    return;
-            //}
-            //txtDirectoryPath.Text = dataStorages[0].Name;
         }
         private void ChangeNamesInDirectory()
         {
@@ -108,22 +80,91 @@ namespace PCManager.Forms
                 string newFilePath = Path.Combine(
                     Path.GetDirectoryName(filePath),
                     Path.GetFileNameWithoutExtension(filePath)
-                    .ToLower()
-                    .Replace(' ', '_')
+                    .DeleteBeforeFirstSpace()
+                    .FirstLetterToUpper()
+                    .ReplacePolishCharacters()
+                    .ReplaceSpaces('_')
                     + Path.GetExtension(filePath)
                 );
                 File.Move(filePath, newFilePath);
             }
         }
-
         private void CopyAll(RichTextBox richTextBox)
         {
             richTextBox.SelectAll();
             richTextBox.Copy();
         }
+        public void GetCurrentAcademicYear()
+        {
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+
+            if (month >= 1 && month < 9)
+                year -= 1;
+
+            dtpYearOfStudy.Value = new DateTime(year, 1, 1);
+        }
+        private void AutoFillData()
+        {
+            var path = txtDirectoryPath.Text;
+
+            if (String.IsNullOrEmpty(path))
+                return;
+
+            LBFieldOfStudy.SelectedItem = LBFieldOfStudy.Items.Cast<string>().FirstOrDefault(item => path.Contains(item));
+
+            var finalPath = path.Substring(path.Length - 2) == "II" ? "II_stopien" : "I_stopien";
+
+            LBLevelOfStudy.SelectedItem = finalPath;
+
+            LBSemester.SelectedItem = LBSemester.Items.Cast<string>().FirstOrDefault(semester => path.Contains(semester));
+        }
+        private void btnSyllabus_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            ttSyllabus.ShowAlways = true;
+
+            switch (btn.Name)
+            {
+                case "btnSyllabusSaveAsHTML":
+                    ttSyllabus.Show("Save as HTML", btn);
+                    break;
+                case "btnSyllabusClearPath":
+                    ttSyllabus.Show("Clear path", btn);
+                    break;
+                case "btnSyllabusClear":
+                    ttSyllabus.Show("Clear listbox", btn);
+                    break;
+                case "btnSyllabusSaveAsText":
+                    ttSyllabus.Show("Save as text", btn);
+                    break;
+                case "btnSyllabusCopy":
+                    ttSyllabus.Show("Copy", btn);
+                    break;
+                case "btnSyllabusCheck":
+                    ttSyllabus.Show("Check", btn);
+                    break;
+                case "btnSyllabusLoadNames":
+                    ttSyllabus.Show("Load Names", btn);
+                    break;
+                case "btnSyllabusGenerate":
+                    ttSyllabus.Show("Generate", btn);
+                    break;
+                case "btnSyllabusChangeNames":
+                    ttSyllabus.Show("Change names in directory", btn);
+                    break;
+                case "btnSyllabusClearAll":
+                    ttSyllabus.Show("Clear all data from listbox and path", btn);
+                    break;
+                default:
+                    ttSyllabus.Show($"No info about {btn.Name}", btn);
+                    break;
+            }
+        }
+
         #endregion
 
-        private void btnSyllabusLoad_Click(object sender, EventArgs e)
+        private void btnSyllabusLoadNames_Click(object sender, EventArgs e)
         {
             LoadSyllabus();
         }
@@ -139,11 +180,7 @@ namespace PCManager.Forms
         {
             CreateViewSyllabus();
         }
-        private void btnSyllabusSave_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnSyllabusChangeName_Click(object sender, EventArgs e)
+        private void btnSyllabusChangeNames_Click(object sender, EventArgs e)
         {
             ChangeNamesInDirectory();
         }
@@ -151,5 +188,22 @@ namespace PCManager.Forms
         {
             CopyAll(rtxtSyllabus);
         }
+        private void btnSyllabusCheck_Click(object sender, EventArgs e)
+        {
+            AutoFillData();
+        }
+        private void btnSyllabusSaveAsText_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void btnSyllabusSaveAsHTML_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void btnSyllabusClearAll_Click(object sender, EventArgs e)
+        {
+            ClearData();
+            txtDirectoryPath.Clear();
+        }
     }
-}
+}   

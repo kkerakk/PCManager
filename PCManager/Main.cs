@@ -49,13 +49,13 @@ namespace PCManager
             //private void CheckActiveForm()
             if (formName == "Websites")
             {
-                btnSettings.Enabled = true;
-                btnSettings.Visible = true;
+                btnSettingss.Enabled = true;
+                btnSettingss.Visible = true;
             }
             else
             {
-                btnSettings.Enabled = false;
-                btnSettings.Visible = false;
+                btnSettingss.Enabled = false;
+                btnSettingss.Visible = false;
             }
 
             lblMessageInfo.ForeColor = lblMessageInfo.BackColor;
@@ -85,7 +85,7 @@ namespace PCManager
             OpenChildForm(new Websites(), sender);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnSettingss_Click(object sender, EventArgs e)
         {
             OpenChildForm(new WebsitesSettings(), sender);
         }
@@ -97,6 +97,10 @@ namespace PCManager
         private void btnSyllabus_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Syllabus(), sender);
+        }
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Settings(), sender);
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -128,6 +132,7 @@ namespace PCManager
             btnWebsites.Text = "";
             btnTimer.Text = "";
             btnSyllabus.Text = "";
+            btnSettings.Text = "";
         }
         private void DefaultSizePanel()
         {
@@ -139,6 +144,9 @@ namespace PCManager
             btnWebsites.Text = "  Websites";
             btnTimer.Text = "  Timer";
             btnSyllabus.Text = "  Syllabus";
+            btnSettings.Text = "  Settings";
         }
+
+
     }
 }

@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Syllabus));
             this.txtDirectoryPath = new System.Windows.Forms.TextBox();
             this.PanelTopSyllabus = new System.Windows.Forms.Panel();
+            this.btnSyllabusSaveAsHTML = new System.Windows.Forms.Button();
+            this.btnSyllabusCheck = new System.Windows.Forms.Button();
+            this.dtpYearOfStudy = new System.Windows.Forms.DateTimePicker();
+            this.btnSyllabusCopy = new System.Windows.Forms.Button();
             this.lblDirectoryPath = new System.Windows.Forms.Label();
-            this.btnSyllabusChangeName = new System.Windows.Forms.Button();
-            this.btnSyllabusSave = new System.Windows.Forms.Button();
+            this.btnSyllabusChangeNames = new System.Windows.Forms.Button();
+            this.btnSyllabusSaveAsText = new System.Windows.Forms.Button();
             this.lblYear = new System.Windows.Forms.Label();
-            this.LBYear = new System.Windows.Forms.ListBox();
             this.btnSyllabusGenerate = new System.Windows.Forms.Button();
             this.lblSemester = new System.Windows.Forms.Label();
             this.LBSemester = new System.Windows.Forms.ListBox();
@@ -44,9 +49,10 @@
             this.LBLevelOfStudy = new System.Windows.Forms.ListBox();
             this.btnSyllabusClearPath = new System.Windows.Forms.Button();
             this.btnSyllabusClear = new System.Windows.Forms.Button();
-            this.btnSyllabusLoad = new System.Windows.Forms.Button();
+            this.btnSyllabusLoadNames = new System.Windows.Forms.Button();
             this.rtxtSyllabus = new System.Windows.Forms.RichTextBox();
-            this.btnSyllabusCopy = new System.Windows.Forms.Button();
+            this.ttSyllabus = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSyllabusClearAll = new System.Windows.Forms.Button();
             this.PanelTopSyllabus.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,12 +68,15 @@
             // PanelTopSyllabus
             // 
             this.PanelTopSyllabus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusClearAll);
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusSaveAsHTML);
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusCheck);
+            this.PanelTopSyllabus.Controls.Add(this.dtpYearOfStudy);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusCopy);
             this.PanelTopSyllabus.Controls.Add(this.lblDirectoryPath);
-            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusChangeName);
-            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusSave);
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusChangeNames);
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusSaveAsText);
             this.PanelTopSyllabus.Controls.Add(this.lblYear);
-            this.PanelTopSyllabus.Controls.Add(this.LBYear);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusGenerate);
             this.PanelTopSyllabus.Controls.Add(this.lblSemester);
             this.PanelTopSyllabus.Controls.Add(this.LBSemester);
@@ -77,13 +86,76 @@
             this.PanelTopSyllabus.Controls.Add(this.LBLevelOfStudy);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusClearPath);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusClear);
-            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusLoad);
+            this.PanelTopSyllabus.Controls.Add(this.btnSyllabusLoadNames);
             this.PanelTopSyllabus.Controls.Add(this.txtDirectoryPath);
             this.PanelTopSyllabus.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTopSyllabus.Location = new System.Drawing.Point(0, 0);
             this.PanelTopSyllabus.Name = "PanelTopSyllabus";
             this.PanelTopSyllabus.Size = new System.Drawing.Size(691, 166);
             this.PanelTopSyllabus.TabIndex = 2;
+            // 
+            // btnSyllabusSaveAsHTML
+            // 
+            this.btnSyllabusSaveAsHTML.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusSaveAsHTML.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusSaveAsHTML.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusSaveAsHTML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusSaveAsHTML.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusSaveAsHTML.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusSaveAsHTML.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusSaveAsHTML.Image")));
+            this.btnSyllabusSaveAsHTML.Location = new System.Drawing.Point(181, 116);
+            this.btnSyllabusSaveAsHTML.Name = "btnSyllabusSaveAsHTML";
+            this.btnSyllabusSaveAsHTML.Size = new System.Drawing.Size(44, 40);
+            this.btnSyllabusSaveAsHTML.TabIndex = 20;
+            this.btnSyllabusSaveAsHTML.UseVisualStyleBackColor = false;
+            this.btnSyllabusSaveAsHTML.Click += new System.EventHandler(this.btnSyllabusSaveAsHTML_Click);
+            this.btnSyllabusSaveAsHTML.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
+            // 
+            // btnSyllabusCheck
+            // 
+            this.btnSyllabusCheck.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusCheck.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusCheck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusCheck.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCheck.Image")));
+            this.btnSyllabusCheck.Location = new System.Drawing.Point(509, 76);
+            this.btnSyllabusCheck.Name = "btnSyllabusCheck";
+            this.btnSyllabusCheck.Size = new System.Drawing.Size(36, 34);
+            this.btnSyllabusCheck.TabIndex = 19;
+            this.btnSyllabusCheck.UseVisualStyleBackColor = false;
+            this.btnSyllabusCheck.Click += new System.EventHandler(this.btnSyllabusCheck_Click);
+            this.btnSyllabusCheck.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
+            // 
+            // dtpYearOfStudy
+            // 
+            this.dtpYearOfStudy.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dtpYearOfStudy.CustomFormat = "yyyy";
+            this.dtpYearOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dtpYearOfStudy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpYearOfStudy.Location = new System.Drawing.Point(5, 89);
+            this.dtpYearOfStudy.Name = "dtpYearOfStudy";
+            this.dtpYearOfStudy.ShowUpDown = true;
+            this.dtpYearOfStudy.Size = new System.Drawing.Size(117, 24);
+            this.dtpYearOfStudy.TabIndex = 18;
+            // 
+            // btnSyllabusCopy
+            // 
+            this.btnSyllabusCopy.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusCopy.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusCopy.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusCopy.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCopy.Image")));
+            this.btnSyllabusCopy.Location = new System.Drawing.Point(224, 116);
+            this.btnSyllabusCopy.Name = "btnSyllabusCopy";
+            this.btnSyllabusCopy.Size = new System.Drawing.Size(47, 40);
+            this.btnSyllabusCopy.TabIndex = 17;
+            this.btnSyllabusCopy.UseVisualStyleBackColor = false;
+            this.btnSyllabusCopy.Click += new System.EventHandler(this.btnSyllabusCopy_Click);
+            this.btnSyllabusCopy.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // lblDirectoryPath
             // 
@@ -95,37 +167,39 @@
             this.lblDirectoryPath.TabIndex = 16;
             this.lblDirectoryPath.Text = "Directory Path";
             // 
-            // btnSyllabusChangeName
+            // btnSyllabusChangeNames
             // 
-            this.btnSyllabusChangeName.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusChangeName.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusChangeName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusChangeName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusChangeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusChangeName.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusChangeName.Location = new System.Drawing.Point(485, 112);
-            this.btnSyllabusChangeName.Name = "btnSyllabusChangeName";
-            this.btnSyllabusChangeName.Size = new System.Drawing.Size(90, 40);
-            this.btnSyllabusChangeName.TabIndex = 15;
-            this.btnSyllabusChangeName.Text = "Change names";
-            this.btnSyllabusChangeName.UseVisualStyleBackColor = false;
-            this.btnSyllabusChangeName.Click += new System.EventHandler(this.btnSyllabusChangeName_Click);
+            this.btnSyllabusChangeNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusChangeNames.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusChangeNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusChangeNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusChangeNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusChangeNames.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusChangeNames.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusChangeNames.Image")));
+            this.btnSyllabusChangeNames.Location = new System.Drawing.Point(277, 116);
+            this.btnSyllabusChangeNames.Name = "btnSyllabusChangeNames";
+            this.btnSyllabusChangeNames.Size = new System.Drawing.Size(38, 40);
+            this.btnSyllabusChangeNames.TabIndex = 15;
+            this.btnSyllabusChangeNames.UseVisualStyleBackColor = false;
+            this.btnSyllabusChangeNames.Click += new System.EventHandler(this.btnSyllabusChangeNames_Click);
+            this.btnSyllabusChangeNames.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
-            // btnSyllabusSave
+            // btnSyllabusSaveAsText
             // 
-            this.btnSyllabusSave.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusSave.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusSave.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusSave.Location = new System.Drawing.Point(293, 112);
-            this.btnSyllabusSave.Name = "btnSyllabusSave";
-            this.btnSyllabusSave.Size = new System.Drawing.Size(90, 40);
-            this.btnSyllabusSave.TabIndex = 14;
-            this.btnSyllabusSave.Text = "Save";
-            this.btnSyllabusSave.UseVisualStyleBackColor = false;
-            this.btnSyllabusSave.Click += new System.EventHandler(this.btnSyllabusSave_Click);
+            this.btnSyllabusSaveAsText.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusSaveAsText.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusSaveAsText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusSaveAsText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusSaveAsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusSaveAsText.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusSaveAsText.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusSaveAsText.Image")));
+            this.btnSyllabusSaveAsText.Location = new System.Drawing.Point(131, 116);
+            this.btnSyllabusSaveAsText.Name = "btnSyllabusSaveAsText";
+            this.btnSyllabusSaveAsText.Size = new System.Drawing.Size(44, 40);
+            this.btnSyllabusSaveAsText.TabIndex = 14;
+            this.btnSyllabusSaveAsText.UseVisualStyleBackColor = false;
+            this.btnSyllabusSaveAsText.Click += new System.EventHandler(this.btnSyllabusSaveAsText_Click);
+            this.btnSyllabusSaveAsText.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // lblYear
             // 
@@ -137,35 +211,22 @@
             this.lblYear.TabIndex = 13;
             this.lblYear.Text = "Year of study";
             // 
-            // LBYear
-            // 
-            this.LBYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBYear.FormattingEnabled = true;
-            this.LBYear.ItemHeight = 15;
-            this.LBYear.Items.AddRange(new object[] {
-            "2022",
-            "2023",
-            "2024"});
-            this.LBYear.Location = new System.Drawing.Point(5, 69);
-            this.LBYear.Name = "LBYear";
-            this.LBYear.Size = new System.Drawing.Size(120, 34);
-            this.LBYear.TabIndex = 12;
-            // 
             // btnSyllabusGenerate
             // 
-            this.btnSyllabusGenerate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusGenerate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSyllabusGenerate.FlatAppearance.BorderSize = 0;
             this.btnSyllabusGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSyllabusGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyllabusGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSyllabusGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusGenerate.Location = new System.Drawing.Point(197, 112);
+            this.btnSyllabusGenerate.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusGenerate.Image")));
+            this.btnSyllabusGenerate.Location = new System.Drawing.Point(93, 116);
             this.btnSyllabusGenerate.Name = "btnSyllabusGenerate";
-            this.btnSyllabusGenerate.Size = new System.Drawing.Size(90, 40);
+            this.btnSyllabusGenerate.Size = new System.Drawing.Size(34, 40);
             this.btnSyllabusGenerate.TabIndex = 11;
-            this.btnSyllabusGenerate.Text = "Generate";
             this.btnSyllabusGenerate.UseVisualStyleBackColor = false;
             this.btnSyllabusGenerate.Click += new System.EventHandler(this.btnSyllabusGenerate_Click);
+            this.btnSyllabusGenerate.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // lblSemester
             // 
@@ -179,15 +240,16 @@
             // 
             // LBSemester
             // 
-            this.LBSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBSemester.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LBSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LBSemester.FormattingEnabled = true;
-            this.LBSemester.ItemHeight = 15;
+            this.LBSemester.ItemHeight = 18;
             this.LBSemester.Items.AddRange(new object[] {
             "letni",
             "zimowy"});
-            this.LBSemester.Location = new System.Drawing.Point(383, 69);
+            this.LBSemester.Location = new System.Drawing.Point(383, 76);
             this.LBSemester.Name = "LBSemester";
-            this.LBSemester.Size = new System.Drawing.Size(120, 34);
+            this.LBSemester.Size = new System.Drawing.Size(120, 36);
             this.LBSemester.TabIndex = 9;
             // 
             // lblFieldOfStudy
@@ -202,17 +264,18 @@
             // 
             // LBFieldOfStudy
             // 
-            this.LBFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBFieldOfStudy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LBFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LBFieldOfStudy.FormattingEnabled = true;
-            this.LBFieldOfStudy.ItemHeight = 15;
+            this.LBFieldOfStudy.ItemHeight = 18;
             this.LBFieldOfStudy.Items.AddRange(new object[] {
             "BW",
             "Informatyka",
             "KRYM",
             "NOP"});
-            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 69);
+            this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 76);
             this.LBFieldOfStudy.Name = "LBFieldOfStudy";
-            this.LBFieldOfStudy.Size = new System.Drawing.Size(120, 34);
+            this.LBFieldOfStudy.Size = new System.Drawing.Size(120, 36);
             this.LBFieldOfStudy.TabIndex = 7;
             // 
             // lblLevelOfStudy
@@ -227,65 +290,70 @@
             // 
             // LBLevelOfStudy
             // 
-            this.LBLevelOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBLevelOfStudy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LBLevelOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LBLevelOfStudy.FormattingEnabled = true;
-            this.LBLevelOfStudy.ItemHeight = 15;
+            this.LBLevelOfStudy.ItemHeight = 18;
             this.LBLevelOfStudy.Items.AddRange(new object[] {
             "I_stopien",
             "II_stopien"});
-            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 69);
+            this.LBLevelOfStudy.Location = new System.Drawing.Point(257, 76);
             this.LBLevelOfStudy.Name = "LBLevelOfStudy";
-            this.LBLevelOfStudy.Size = new System.Drawing.Size(120, 34);
+            this.LBLevelOfStudy.Size = new System.Drawing.Size(120, 36);
             this.LBLevelOfStudy.TabIndex = 5;
             // 
             // btnSyllabusClearPath
             // 
-            this.btnSyllabusClearPath.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusClearPath.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSyllabusClearPath.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusClearPath.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSyllabusClearPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyllabusClearPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSyllabusClearPath.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSyllabusClearPath.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusClearPath.Image")));
             this.btnSyllabusClearPath.Location = new System.Drawing.Point(653, 21);
             this.btnSyllabusClearPath.Margin = new System.Windows.Forms.Padding(0);
             this.btnSyllabusClearPath.Name = "btnSyllabusClearPath";
             this.btnSyllabusClearPath.Size = new System.Drawing.Size(23, 26);
             this.btnSyllabusClearPath.TabIndex = 4;
-            this.btnSyllabusClearPath.Text = "C";
             this.btnSyllabusClearPath.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSyllabusClearPath.UseVisualStyleBackColor = false;
             this.btnSyllabusClearPath.Click += new System.EventHandler(this.btnSyllabusClearPath_Click);
+            this.btnSyllabusClearPath.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // btnSyllabusClear
             // 
-            this.btnSyllabusClear.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSyllabusClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSyllabusClear.FlatAppearance.BorderSize = 0;
             this.btnSyllabusClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSyllabusClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyllabusClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSyllabusClear.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusClear.Location = new System.Drawing.Point(101, 112);
+            this.btnSyllabusClear.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusClear.Image")));
+            this.btnSyllabusClear.Location = new System.Drawing.Point(48, 116);
             this.btnSyllabusClear.Name = "btnSyllabusClear";
-            this.btnSyllabusClear.Size = new System.Drawing.Size(90, 40);
+            this.btnSyllabusClear.Size = new System.Drawing.Size(39, 40);
             this.btnSyllabusClear.TabIndex = 3;
-            this.btnSyllabusClear.Text = "Clear";
             this.btnSyllabusClear.UseVisualStyleBackColor = false;
             this.btnSyllabusClear.Click += new System.EventHandler(this.btnSyllabusClear_Click);
+            this.btnSyllabusClear.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
-            // btnSyllabusLoad
+            // btnSyllabusLoadNames
             // 
-            this.btnSyllabusLoad.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusLoad.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusLoad.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusLoad.Location = new System.Drawing.Point(5, 112);
-            this.btnSyllabusLoad.Name = "btnSyllabusLoad";
-            this.btnSyllabusLoad.Size = new System.Drawing.Size(90, 40);
-            this.btnSyllabusLoad.TabIndex = 2;
-            this.btnSyllabusLoad.Text = "Load";
-            this.btnSyllabusLoad.UseVisualStyleBackColor = false;
-            this.btnSyllabusLoad.Click += new System.EventHandler(this.btnSyllabusLoad_Click);
+            this.btnSyllabusLoadNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusLoadNames.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusLoadNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusLoadNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusLoadNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusLoadNames.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusLoadNames.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusLoadNames.Image")));
+            this.btnSyllabusLoadNames.Location = new System.Drawing.Point(5, 116);
+            this.btnSyllabusLoadNames.Name = "btnSyllabusLoadNames";
+            this.btnSyllabusLoadNames.Size = new System.Drawing.Size(37, 40);
+            this.btnSyllabusLoadNames.TabIndex = 2;
+            this.btnSyllabusLoadNames.UseVisualStyleBackColor = false;
+            this.btnSyllabusLoadNames.Click += new System.EventHandler(this.btnSyllabusLoadNames_Click);
+            this.btnSyllabusLoadNames.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // rtxtSyllabus
             // 
@@ -297,21 +365,22 @@
             this.rtxtSyllabus.TabIndex = 3;
             this.rtxtSyllabus.Text = "";
             // 
-            // btnSyllabusCopy
+            // btnSyllabusClearAll
             // 
-            this.btnSyllabusCopy.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSyllabusCopy.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusCopy.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusCopy.Location = new System.Drawing.Point(389, 112);
-            this.btnSyllabusCopy.Name = "btnSyllabusCopy";
-            this.btnSyllabusCopy.Size = new System.Drawing.Size(90, 40);
-            this.btnSyllabusCopy.TabIndex = 17;
-            this.btnSyllabusCopy.Text = "Copy";
-            this.btnSyllabusCopy.UseVisualStyleBackColor = false;
-            this.btnSyllabusCopy.Click += new System.EventHandler(this.btnSyllabusCopy_Click);
+            this.btnSyllabusClearAll.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusClearAll.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusClearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusClearAll.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusClearAll.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusClearAll.Image")));
+            this.btnSyllabusClearAll.Location = new System.Drawing.Point(321, 116);
+            this.btnSyllabusClearAll.Name = "btnSyllabusClearAll";
+            this.btnSyllabusClearAll.Size = new System.Drawing.Size(38, 40);
+            this.btnSyllabusClearAll.TabIndex = 21;
+            this.btnSyllabusClearAll.UseVisualStyleBackColor = false;
+            this.btnSyllabusClearAll.Click += new System.EventHandler(this.btnSyllabusClearAll_Click);
+            this.btnSyllabusClearAll.MouseHover += new System.EventHandler(this.btnSyllabus_MouseHover);
             // 
             // Syllabus
             // 
@@ -332,7 +401,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtDirectoryPath;
         private System.Windows.Forms.Panel PanelTopSyllabus;
-        private System.Windows.Forms.Button btnSyllabusLoad;
+        private System.Windows.Forms.Button btnSyllabusLoadNames;
         private System.Windows.Forms.Button btnSyllabusClear;
         private System.Windows.Forms.Button btnSyllabusClearPath;
         private System.Windows.Forms.Label lblLevelOfStudy;
@@ -340,14 +409,18 @@
         private System.Windows.Forms.Label lblFieldOfStudy;
         private System.Windows.Forms.ListBox LBFieldOfStudy;
         private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.ListBox LBYear;
         private System.Windows.Forms.Button btnSyllabusGenerate;
         private System.Windows.Forms.Label lblSemester;
         private System.Windows.Forms.ListBox LBSemester;
-        private System.Windows.Forms.Button btnSyllabusSave;
-        private System.Windows.Forms.Button btnSyllabusChangeName;
+        private System.Windows.Forms.Button btnSyllabusSaveAsText;
+        private System.Windows.Forms.Button btnSyllabusChangeNames;
         private System.Windows.Forms.RichTextBox rtxtSyllabus;
         private System.Windows.Forms.Label lblDirectoryPath;
         private System.Windows.Forms.Button btnSyllabusCopy;
+        private System.Windows.Forms.DateTimePicker dtpYearOfStudy;
+        private System.Windows.Forms.Button btnSyllabusCheck;
+        private System.Windows.Forms.ToolTip ttSyllabus;
+        private System.Windows.Forms.Button btnSyllabusSaveAsHTML;
+        private System.Windows.Forms.Button btnSyllabusClearAll;
     }
 }
