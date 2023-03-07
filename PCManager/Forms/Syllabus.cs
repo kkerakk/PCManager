@@ -9,7 +9,6 @@ namespace PCManager.Forms
 {
     public partial class Syllabus : Form
     {
-        //List<DataStorage> dataStorage = new List<DataStorage>();
         public Syllabus()
         {
             InitializeComponent();
@@ -48,17 +47,40 @@ namespace PCManager.Forms
         {
             rtxtSyllabus.Clear();
         }
+        private void ClearAllData()
+        {
+            rtxtSyllabus.Clear();
+            txtDirectoryPath.Clear();
+            LBFieldOfStudy.SelectedItem = null;
+            LBLevelOfStudy.SelectedItem = null;
+            LBSemester.SelectedItem = null;
+            cbHeaderFieldOfStudy.Checked = false;
+            cbHeaderLevelOfStudy.Checked = false;
+        }
         private void CreateViewSyllabus()
         {
             if (string.IsNullOrEmpty(rtxtSyllabus.Text))
                 return;
-
+            var path = txtDirectoryPath.Text;
             var combinedString = $@"{dtpYearOfStudy.Text}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
             var pathBegin = $"<p><a href=\"http://wu.wspol.edu.pl/uploaded/SYLABUSY/";
             var pathMiddle = $"\" target = \"_blank\"><img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\"/><span style = \"font-size: 16px;\">";
             var pathEnd = $"</span></a></p>";
 
             rtxtSyllabus.Clear();
+
+            if (cbHeaderFieldOfStudy.Checked == true)
+            {
+                var headerField = GetFieldOfStudy(LBFieldOfStudy.SelectedItem.ToString());
+                rtxtSyllabus.Text = $"<p><span style=\"font-size:20px;\"><strong>kierunek: {headerField}</strong></span></p>\n";
+            }
+            if (cbHeaderLevelOfStudy.Checked == true)
+            {
+                var headerLevel = GetLevelOfStudy(path,true);
+                var headerSemester = LBSemester.SelectedItem.ToString();
+                rtxtSyllabus.Text += $"<p><span style=\"font-size:16px;\"><strong>{headerLevel} - {headerSemester}</strong></span></p>\n";
+            }
+
             foreach (var item in arrayFI)
             {
                 rtxtSyllabus.Text += $@"{pathBegin}{combinedString}{item
@@ -68,7 +90,7 @@ namespace PCManager.Forms
         }
         private void ChangeNamesInDirectory()
         {
-            string folderPath = txtDirectoryPath.Text;
+            var folderPath = txtDirectoryPath.Text;
             if (!Helper.CheckIfPathExist(folderPath))
                 return;
 
@@ -112,12 +134,46 @@ namespace PCManager.Forms
                 return;
 
             LBFieldOfStudy.SelectedItem = LBFieldOfStudy.Items.Cast<string>().FirstOrDefault(item => path.Contains(item));
-
-            var finalPath = path.Substring(path.Length - 2) == "II" ? "II_stopien" : "I_stopien";
-
+            var finalPath = GetLevelOfStudy(path);
             LBLevelOfStudy.SelectedItem = finalPath;
-
             LBSemester.SelectedItem = LBSemester.Items.Cast<string>().FirstOrDefault(semester => path.Contains(semester));
+        }
+        /// <summary>
+        /// Set bool variable as true only if you want text with polish letters and with space f.e. "I stopień"
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="polishLetters"></param>
+        /// <returns></returns>
+        private string GetLevelOfStudy(string path, bool polishLetters = false)
+        {
+            var finalPath = path.Substring(path.Length - 2);
+            if (finalPath == "II" && polishLetters == false)
+                return finalPath = "II_stopien";
+            if (finalPath == "_I" && polishLetters == false)
+                return finalPath = "I_stopien";
+            if (finalPath == "II" && polishLetters == true)
+                return finalPath = "II stopień";
+            if (finalPath == "_I" && polishLetters == true)
+                return finalPath = "I stopień";
+            return "error GetLevelOfStudy";
+        }
+        private string GetFieldOfStudy(string selectedItem)
+        {
+            selectedItem = LBFieldOfStudy.SelectedItem.ToString();
+
+            switch (selectedItem.ToUpper())
+            {
+                case "BW":
+                    return "Bezpieczeństwo wewnętrzne";
+                case "KRYM":
+                    return "Kryminologia";
+                case "NOP":
+                    return "Nauka o Policji";
+                case "INF":
+                    return "Informatyka";
+                default:
+                    return "error: GetFieldOfStudy";
+            }
         }
         private void btnSyllabus_MouseHover(object sender, EventArgs e)
         {
@@ -161,9 +217,7 @@ namespace PCManager.Forms
                     break;
             }
         }
-
         #endregion
-
         private void btnSyllabusLoadNames_Click(object sender, EventArgs e)
         {
             LoadSyllabus();
@@ -171,6 +225,9 @@ namespace PCManager.Forms
         private void btnSyllabusClearPath_Click(object sender, EventArgs e)
         {
             txtDirectoryPath.Clear();
+            LBFieldOfStudy.SelectedItem = null;
+            LBSemester.SelectedItem = null;
+            LBLevelOfStudy.SelectedItem = null;
         }
         private void btnSyllabusClear_Click(object sender, EventArgs e)
         {
@@ -202,8 +259,7 @@ namespace PCManager.Forms
         }
         private void btnSyllabusClearAll_Click(object sender, EventArgs e)
         {
-            ClearData();
-            txtDirectoryPath.Clear();
+            ClearAllData();
         }
     }
 }   
