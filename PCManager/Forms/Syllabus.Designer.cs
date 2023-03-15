@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Syllabus));
             this.txtDirectoryPath = new System.Windows.Forms.TextBox();
             this.PanelTopSyllabus = new System.Windows.Forms.Panel();
+            this.GBHeader = new System.Windows.Forms.GroupBox();
+            this.cbHeaderLevelOfStudy = new System.Windows.Forms.CheckBox();
+            this.cbHeaderFieldOfStudy = new System.Windows.Forms.CheckBox();
             this.btnSyllabusClearAll = new System.Windows.Forms.Button();
             this.btnSyllabusSaveAsHTML = new System.Windows.Forms.Button();
             this.btnSyllabusCheck = new System.Windows.Forms.Button();
@@ -53,9 +56,6 @@
             this.btnSyllabusLoadNames = new System.Windows.Forms.Button();
             this.rtxtSyllabus = new System.Windows.Forms.RichTextBox();
             this.ttSyllabus = new System.Windows.Forms.ToolTip(this.components);
-            this.cbHeaderLevelOfStudy = new System.Windows.Forms.CheckBox();
-            this.cbHeaderFieldOfStudy = new System.Windows.Forms.CheckBox();
-            this.GBHeader = new System.Windows.Forms.GroupBox();
             this.PanelTopSyllabus.SuspendLayout();
             this.GBHeader.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +98,37 @@
             this.PanelTopSyllabus.Name = "PanelTopSyllabus";
             this.PanelTopSyllabus.Size = new System.Drawing.Size(694, 166);
             this.PanelTopSyllabus.TabIndex = 2;
+            // 
+            // GBHeader
+            // 
+            this.GBHeader.Controls.Add(this.cbHeaderLevelOfStudy);
+            this.GBHeader.Controls.Add(this.cbHeaderFieldOfStudy);
+            this.GBHeader.Location = new System.Drawing.Point(543, 55);
+            this.GBHeader.Name = "GBHeader";
+            this.GBHeader.Size = new System.Drawing.Size(107, 100);
+            this.GBHeader.TabIndex = 24;
+            this.GBHeader.TabStop = false;
+            this.GBHeader.Text = "Headers";
+            // 
+            // cbHeaderLevelOfStudy
+            // 
+            this.cbHeaderLevelOfStudy.AutoSize = true;
+            this.cbHeaderLevelOfStudy.Location = new System.Drawing.Point(6, 20);
+            this.cbHeaderLevelOfStudy.Name = "cbHeaderLevelOfStudy";
+            this.cbHeaderLevelOfStudy.Size = new System.Drawing.Size(92, 17);
+            this.cbHeaderLevelOfStudy.TabIndex = 22;
+            this.cbHeaderLevelOfStudy.Text = "Level of study";
+            this.cbHeaderLevelOfStudy.UseVisualStyleBackColor = true;
+            // 
+            // cbHeaderFieldOfStudy
+            // 
+            this.cbHeaderFieldOfStudy.AutoSize = true;
+            this.cbHeaderFieldOfStudy.Location = new System.Drawing.Point(6, 43);
+            this.cbHeaderFieldOfStudy.Name = "cbHeaderFieldOfStudy";
+            this.cbHeaderFieldOfStudy.Size = new System.Drawing.Size(88, 17);
+            this.cbHeaderFieldOfStudy.TabIndex = 23;
+            this.cbHeaderFieldOfStudy.Text = "Field of study";
+            this.cbHeaderFieldOfStudy.UseVisualStyleBackColor = true;
             // 
             // btnSyllabusClearAll
             // 
@@ -386,37 +417,6 @@
             this.rtxtSyllabus.Size = new System.Drawing.Size(694, 318);
             this.rtxtSyllabus.TabIndex = 3;
             this.rtxtSyllabus.Text = "";
-            // 
-            // cbHeaderLevelOfStudy
-            // 
-            this.cbHeaderLevelOfStudy.AutoSize = true;
-            this.cbHeaderLevelOfStudy.Location = new System.Drawing.Point(6, 20);
-            this.cbHeaderLevelOfStudy.Name = "cbHeaderLevelOfStudy";
-            this.cbHeaderLevelOfStudy.Size = new System.Drawing.Size(92, 17);
-            this.cbHeaderLevelOfStudy.TabIndex = 22;
-            this.cbHeaderLevelOfStudy.Text = "Level of study";
-            this.cbHeaderLevelOfStudy.UseVisualStyleBackColor = true;
-            // 
-            // cbHeaderFieldOfStudy
-            // 
-            this.cbHeaderFieldOfStudy.AutoSize = true;
-            this.cbHeaderFieldOfStudy.Location = new System.Drawing.Point(6, 43);
-            this.cbHeaderFieldOfStudy.Name = "cbHeaderFieldOfStudy";
-            this.cbHeaderFieldOfStudy.Size = new System.Drawing.Size(88, 17);
-            this.cbHeaderFieldOfStudy.TabIndex = 23;
-            this.cbHeaderFieldOfStudy.Text = "Field of study";
-            this.cbHeaderFieldOfStudy.UseVisualStyleBackColor = true;
-            // 
-            // GBHeader
-            // 
-            this.GBHeader.Controls.Add(this.cbHeaderLevelOfStudy);
-            this.GBHeader.Controls.Add(this.cbHeaderFieldOfStudy);
-            this.GBHeader.Location = new System.Drawing.Point(543, 55);
-            this.GBHeader.Name = "GBHeader";
-            this.GBHeader.Size = new System.Drawing.Size(107, 100);
-            this.GBHeader.TabIndex = 24;
-            this.GBHeader.TabStop = false;
-            this.GBHeader.Text = "Headers";
             // 
             // Syllabus
             // 

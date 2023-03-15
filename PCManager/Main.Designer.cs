@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.btnXmlReader = new System.Windows.Forms.Button();
             this.btnSyllabus = new System.Windows.Forms.Button();
             this.btnTimer = new System.Windows.Forms.Button();
             this.btnWebsites = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
             this.panelLeftMenu.Controls.Add(this.btnSettings);
+            this.panelLeftMenu.Controls.Add(this.btnXmlReader);
             this.panelLeftMenu.Controls.Add(this.btnSyllabus);
             this.panelLeftMenu.Controls.Add(this.btnTimer);
             this.panelLeftMenu.Controls.Add(this.btnWebsites);
@@ -73,7 +75,7 @@
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 290);
+            this.btnSettings.Location = new System.Drawing.Point(0, 330);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(150, 40);
             this.btnSettings.TabIndex = 7;
@@ -82,6 +84,26 @@
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnXmlReader
+            // 
+            this.btnXmlReader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnXmlReader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnXmlReader.FlatAppearance.BorderSize = 0;
+            this.btnXmlReader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXmlReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnXmlReader.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnXmlReader.Image = ((System.Drawing.Image)(resources.GetObject("btnXmlReader.Image")));
+            this.btnXmlReader.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXmlReader.Location = new System.Drawing.Point(0, 290);
+            this.btnXmlReader.Name = "btnXmlReader";
+            this.btnXmlReader.Size = new System.Drawing.Size(150, 40);
+            this.btnXmlReader.TabIndex = 8;
+            this.btnXmlReader.Text = "  XML Reader";
+            this.btnXmlReader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXmlReader.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXmlReader.UseVisualStyleBackColor = true;
+            this.btnXmlReader.Click += new System.EventHandler(this.btnXmlReader_Click);
             // 
             // btnSyllabus
             // 
@@ -291,6 +313,7 @@
         private System.Windows.Forms.Button btnSyllabus;
         public System.Windows.Forms.Label lblMessageInfo;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnXmlReader;
     }
 }
 

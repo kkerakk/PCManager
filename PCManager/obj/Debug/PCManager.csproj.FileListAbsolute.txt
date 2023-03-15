@@ -57,3 +57,4 @@ E:\C#\PCManager\PCManager\bin\Debug\System.Memory.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Numerics.Vectors.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Settings.resources
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.XmlReader.resources

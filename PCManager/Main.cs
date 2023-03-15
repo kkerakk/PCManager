@@ -98,6 +98,10 @@ namespace PCManager
         {
             OpenChildForm(new Syllabus(), sender);
         }
+        private void btnXmlReader_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new XmlReader(), sender);
+        }
         private void btnSettings_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Settings(), sender);
@@ -132,6 +136,7 @@ namespace PCManager
             btnWebsites.Text = "";
             btnTimer.Text = "";
             btnSyllabus.Text = "";
+            btnXmlReader.Text = "";
             btnSettings.Text = "";
         }
         private void DefaultSizePanel()
@@ -144,6 +149,7 @@ namespace PCManager
             btnWebsites.Text = "  Websites";
             btnTimer.Text = "  Timer";
             btnSyllabus.Text = "  Syllabus";
+            btnXmlReader.Text = "  XML Reader";
             btnSettings.Text = "  Settings";
         }
 
