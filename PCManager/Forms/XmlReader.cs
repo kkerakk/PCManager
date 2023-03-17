@@ -42,12 +42,12 @@ namespace PCManager.Forms
                 string nazwisko = student.Element("osoba").Element("nazwisko").Value;                
                 string pesel = student.Element("osoba").Element("pesel").Value;
                 string ectsUzyskane = student.Element("daneDotyczaceStudiow").Element("semestry").Element("semestr").Element("ects").Element("ectsUzyskane").Value;
-                string dokTozsamNumer = student.Element("osoba").Element("dokTozsamNumer").Value;
+                //string dokTozsamNumer = student.Element("osoba").Element("dokTozsamNumer").Value;
                 string semestrNr = student.Element("daneDotyczaceStudiow").Element("semestry").Element("semestr").Element("daneSemestru").Element("semestrNr").Value;
                 string rokAkademicki = student.Element("daneDotyczaceStudiow").Element("semestry").Element("semestr").Element("daneSemestru").Element("rokAkademicki").Value;
                 string semestrStudenta = student.Element("daneDotyczaceStudiow").Element("semestry").Element("semestr").Element("daneSemestru").Element("semestrStudenta").Value;
 
-                DGVXmlReader.Rows.Add(nazwisko, imie, pesel, ectsUzyskane, dokTozsamNumer, semestrNr, semestrStudenta, rokAkademicki);
+                DGVXmlReader.Rows.Add(nazwisko, imie, pesel, ectsUzyskane, semestrNr, semestrStudenta, rokAkademicki);
             }
         }
         private void AddColumnToDataGridView()
@@ -59,7 +59,7 @@ namespace PCManager.Forms
                     new DataGridViewTextBoxColumn() { HeaderText = "nazwisko", Name = "nazwisko" },
                     new DataGridViewTextBoxColumn() { HeaderText = "pesel", Name = "pesel" },
                     new DataGridViewTextBoxColumn() { HeaderText = "ectsUzyskane", Name = "ectsUzyskane" },
-                    new DataGridViewTextBoxColumn() { HeaderText = "dokTozsamNumer", Name = "dokTozsamNumer" },
+                    //new DataGridViewTextBoxColumn() { HeaderText = "dokTozsamNumer", Name = "dokTozsamNumer" },
                     new DataGridViewTextBoxColumn() { HeaderText = "semestrNr", Name = "semestrNr" },
                     new DataGridViewTextBoxColumn() { HeaderText = "semestrStudenta", Name = "semestrStudenta" },
                     new DataGridViewTextBoxColumn() { HeaderText = "rokAkademicki", Name = "rokAkademicki" },
