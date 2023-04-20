@@ -22,11 +22,13 @@ namespace PCManager.Forms
         }
         private void DeserializeXml()
         {
-
-            if (string.IsNullOrEmpty(txtDirectoryPath.Text))
+            var pathDirectory = lbSubfoldersPath.SelectedItem.ToString();
+            //if (string.IsNullOrEmpty(txtDirectoryPath.Text))
+            //    return;
+            if (string.IsNullOrEmpty(pathDirectory))
                 return;
             DGVXmlReader.Rows.Clear();
-            var path = txtDirectoryPath.Text;
+            var path = pathDirectory;
 
             if (!File.Exists(path))
             {
@@ -90,6 +92,68 @@ namespace PCManager.Forms
         private void btnClearPath_Click(object sender, EventArgs e)
         {
             txtDirectoryPath.Clear();
+        }
+
+        private void CheckValuesInColumn()
+        {
+            if (DGVXmlReader == null)
+                return;
+
+            // Tworzymy listę z wartościami z kolumny columnName
+            List<string> valuesList = new List<string>();
+            foreach (DataGridViewRow row in DGVXmlReader.Rows)
+            {
+                string value = row.Cells["pesel"].Value.ToString();
+                valuesList.Add(value);
+            }
+
+            // Wyciągamy unikatowe wartości z listy z użyciem metody Distinct() i LINQ
+            List<string> uniqueValues = valuesList.Distinct().ToList();
+            LVUniqueValues.Items.Clear();
+
+            foreach (var value in uniqueValues)
+            {
+                LVUniqueValues.Items.Add(value);
+            }
+
+        }
+
+        private void btnCheckUniqueValues_Click(object sender, EventArgs e)
+        {
+            CheckValuesInColumn();
+        }
+
+        private void GetListFilesFromDirectory()
+        {
+            // Zakładając, że folder główny ma nazwę semestr_letni
+            if (String.IsNullOrEmpty(txtMainPath.Text))
+                return;
+
+            string mainFolder = txtMainPath.Text;
+
+            List<string> xmlFilePaths = new List<string>();
+
+            // Pobieramy nazwy wszystkich podfolderów w folderze głównym
+            string[] subfolders = Directory.GetDirectories(mainFolder);
+
+            foreach (string subfolder in subfolders)
+            {
+                // Pobieramy ścieżki do plików .xml w podfolderze i dodajemy je do listy
+                string[] xmlFiles = Directory.GetFiles(subfolder, "*.xml", SearchOption.TopDirectoryOnly);
+                xmlFilePaths.AddRange(xmlFiles);
+            }
+
+            // W xmlFilePaths znajdują się pełne ścieżki do wszystkich plików .xml we wszystkich podfolderach
+            lbSubfoldersPath.Items.Clear();
+            foreach (var file in xmlFilePaths)
+            {
+                lbSubfoldersPath.Items.Add(file);
+            }
+        }
+
+        private void btnGetPath_Click(object sender, EventArgs e)
+        {
+            GetListFilesFromDirectory();
         }
     }
 }

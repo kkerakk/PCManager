@@ -37,8 +37,16 @@
             this.btnClearAll = new System.Windows.Forms.Button();
             this.DGVXmlReader = new System.Windows.Forms.DataGridView();
             this.PanelTopXMLReader = new System.Windows.Forms.Panel();
+            this.LVUniqueValues = new System.Windows.Forms.ListView();
+            this.btnCheckUniqueValues = new System.Windows.Forms.Button();
+            this.lblMainPath = new System.Windows.Forms.Label();
+            this.txtMainPath = new System.Windows.Forms.TextBox();
+            this.PanelTopSubMenu = new System.Windows.Forms.Panel();
+            this.lbSubfoldersPath = new System.Windows.Forms.ListBox();
+            this.btnGetPath = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVXmlReader)).BeginInit();
             this.PanelTopXMLReader.SuspendLayout();
+            this.PanelTopSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDirectoryPath
@@ -128,11 +136,14 @@
             // 
             // DGVXmlReader
             // 
+            this.DGVXmlReader.AllowUserToAddRows = false;
+            this.DGVXmlReader.AllowUserToDeleteRows = false;
+            this.DGVXmlReader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DGVXmlReader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVXmlReader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVXmlReader.Location = new System.Drawing.Point(0, 107);
+            this.DGVXmlReader.Location = new System.Drawing.Point(0, 323);
             this.DGVXmlReader.Name = "DGVXmlReader";
-            this.DGVXmlReader.Size = new System.Drawing.Size(694, 377);
+            this.DGVXmlReader.Size = new System.Drawing.Size(759, 383);
             this.DGVXmlReader.TabIndex = 23;
             // 
             // PanelTopXMLReader
@@ -147,15 +158,99 @@
             this.PanelTopXMLReader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTopXMLReader.Location = new System.Drawing.Point(0, 0);
             this.PanelTopXMLReader.Name = "PanelTopXMLReader";
-            this.PanelTopXMLReader.Size = new System.Drawing.Size(694, 107);
+            this.PanelTopXMLReader.Size = new System.Drawing.Size(982, 171);
             this.PanelTopXMLReader.TabIndex = 25;
+            // 
+            // LVUniqueValues
+            // 
+            this.LVUniqueValues.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LVUniqueValues.HideSelection = false;
+            this.LVUniqueValues.Location = new System.Drawing.Point(765, 323);
+            this.LVUniqueValues.Name = "LVUniqueValues";
+            this.LVUniqueValues.Size = new System.Drawing.Size(203, 383);
+            this.LVUniqueValues.TabIndex = 26;
+            this.LVUniqueValues.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnCheckUniqueValues
+            // 
+            this.btnCheckUniqueValues.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCheckUniqueValues.FlatAppearance.BorderSize = 0;
+            this.btnCheckUniqueValues.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCheckUniqueValues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckUniqueValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheckUniqueValues.ForeColor = System.Drawing.Color.White;
+            this.btnCheckUniqueValues.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckUniqueValues.Image")));
+            this.btnCheckUniqueValues.Location = new System.Drawing.Point(765, 23);
+            this.btnCheckUniqueValues.Name = "btnCheckUniqueValues";
+            this.btnCheckUniqueValues.Size = new System.Drawing.Size(38, 40);
+            this.btnCheckUniqueValues.TabIndex = 23;
+            this.btnCheckUniqueValues.UseVisualStyleBackColor = false;
+            this.btnCheckUniqueValues.Click += new System.EventHandler(this.btnCheckUniqueValues_Click);
+            // 
+            // lblMainPath
+            // 
+            this.lblMainPath.AutoSize = true;
+            this.lblMainPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMainPath.Location = new System.Drawing.Point(5, 11);
+            this.lblMainPath.Name = "lblMainPath";
+            this.lblMainPath.Size = new System.Drawing.Size(114, 15);
+            this.lblMainPath.TabIndex = 25;
+            this.lblMainPath.Text = "Main Directory Path";
+            // 
+            // txtMainPath
+            // 
+            this.txtMainPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtMainPath.Location = new System.Drawing.Point(5, 29);
+            this.txtMainPath.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMainPath.Name = "txtMainPath";
+            this.txtMainPath.Size = new System.Drawing.Size(645, 26);
+            this.txtMainPath.TabIndex = 24;
+            // 
+            // PanelTopSubMenu
+            // 
+            this.PanelTopSubMenu.Controls.Add(this.btnCheckUniqueValues);
+            this.PanelTopSubMenu.Controls.Add(this.btnGetPath);
+            this.PanelTopSubMenu.Controls.Add(this.lbSubfoldersPath);
+            this.PanelTopSubMenu.Controls.Add(this.lblMainPath);
+            this.PanelTopSubMenu.Controls.Add(this.txtMainPath);
+            this.PanelTopSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTopSubMenu.Location = new System.Drawing.Point(0, 171);
+            this.PanelTopSubMenu.Name = "PanelTopSubMenu";
+            this.PanelTopSubMenu.Size = new System.Drawing.Size(982, 146);
+            this.PanelTopSubMenu.TabIndex = 27;
+            // 
+            // lbSubfoldersPath
+            // 
+            this.lbSubfoldersPath.FormattingEnabled = true;
+            this.lbSubfoldersPath.Location = new System.Drawing.Point(5, 63);
+            this.lbSubfoldersPath.Name = "lbSubfoldersPath";
+            this.lbSubfoldersPath.Size = new System.Drawing.Size(963, 69);
+            this.lbSubfoldersPath.TabIndex = 26;
+            // 
+            // btnGetPath
+            // 
+            this.btnGetPath.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGetPath.FlatAppearance.BorderSize = 0;
+            this.btnGetPath.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGetPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnGetPath.ForeColor = System.Drawing.Color.White;
+            this.btnGetPath.Image = ((System.Drawing.Image)(resources.GetObject("btnGetPath.Image")));
+            this.btnGetPath.Location = new System.Drawing.Point(658, 23);
+            this.btnGetPath.Name = "btnGetPath";
+            this.btnGetPath.Size = new System.Drawing.Size(38, 40);
+            this.btnGetPath.TabIndex = 27;
+            this.btnGetPath.UseVisualStyleBackColor = false;
+            this.btnGetPath.Click += new System.EventHandler(this.btnGetPath_Click);
             // 
             // XmlReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(694, 484);
+            this.ClientSize = new System.Drawing.Size(982, 718);
+            this.Controls.Add(this.PanelTopSubMenu);
+            this.Controls.Add(this.LVUniqueValues);
             this.Controls.Add(this.DGVXmlReader);
             this.Controls.Add(this.PanelTopXMLReader);
             this.Name = "XmlReader";
@@ -163,6 +258,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVXmlReader)).EndInit();
             this.PanelTopXMLReader.ResumeLayout(false);
             this.PanelTopXMLReader.PerformLayout();
+            this.PanelTopSubMenu.ResumeLayout(false);
+            this.PanelTopSubMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -176,5 +273,12 @@
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.DataGridView DGVXmlReader;
         private System.Windows.Forms.Panel PanelTopXMLReader;
+        private System.Windows.Forms.Button btnCheckUniqueValues;
+        private System.Windows.Forms.ListView LVUniqueValues;
+        private System.Windows.Forms.Label lblMainPath;
+        private System.Windows.Forms.TextBox txtMainPath;
+        private System.Windows.Forms.Panel PanelTopSubMenu;
+        private System.Windows.Forms.ListBox lbSubfoldersPath;
+        private System.Windows.Forms.Button btnGetPath;
     }
 }
