@@ -27,4 +27,4 @@ http://repo.wspol.edu.int/raporty/.WSPOL/
 27
 28
 29
-E:\Portable\PuTTYPortable\Putty.exe
+30
