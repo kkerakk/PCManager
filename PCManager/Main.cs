@@ -152,7 +152,5 @@ namespace PCManager
             btnXmlReader.Text = "  XML Reader";
             btnSettings.Text = "  Settings";
         }
-
-
     }
 }

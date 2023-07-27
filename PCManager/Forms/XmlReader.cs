@@ -19,11 +19,6 @@ namespace PCManager.Forms
         {
             InitializeComponent();
             AddColumnToDataGridView();
-            InitialData();
-        }
-        private void InitialData()
-        {
-            btnCheckUniqueValues.Enabled = false;
         }
         private void DeserializeXml()
         {
@@ -59,7 +54,6 @@ namespace PCManager.Forms
             LoadHeaders();
             CheckValuesInColumn();
 
-            btnCheckUniqueValues.Enabled = true;
             lblCounterValue.Text = students.Count.ToString();
         }
         private void LoadHeaders()
@@ -106,7 +100,6 @@ namespace PCManager.Forms
             DGVXmlReader.Rows.Clear();
             lbSubfoldersPath.Items.Clear();
             lbHeader.Items.Clear();
-            btnCheckUniqueValues.Enabled = false;
             lblCounterValue.Text = "0";
         }
 
@@ -118,6 +111,9 @@ namespace PCManager.Forms
         private void CheckValuesInColumn()
         {
             List<string> valuesList = new List<string>();
+            if (lbHeader.Items.Count == 0)
+                return;
+
 
             if (lbHeader.SelectedIndex == -1)
                 lbHeader.SelectedItem = "ectsUzyskane";

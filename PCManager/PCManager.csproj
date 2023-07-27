@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DataEncryption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEncryption.Designer.cs">
+      <DependentUpon>DataEncryption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Helper.cs" />
     <Compile Include="Forms\Managepc.cs">
       <SubType>Form</SubType>
@@ -138,6 +144,9 @@
     <Compile Include="Models\DataStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\DataEncryption.resx">
+      <DependentUpon>DataEncryption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Managepc.resx">
       <DependentUpon>Managepc.cs</DependentUpon>
     </EmbeddedResource>
