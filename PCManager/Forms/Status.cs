@@ -1,7 +1,10 @@
 ﻿using System;
+using System.DirectoryServices.AccountManagement;
+using System.IO;
 using System.Management; //ManagementObjectSearcher  //This namespace is used to work with WMI classes. For using this namespace add reference of System.Management.dll
 using System.Net; //dns, IPAddress
 using System.ServiceProcess; //serviceController
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PCManager.Forms
@@ -13,12 +16,19 @@ namespace PCManager.Forms
         public Status()
         {
             InitializeComponent();
+            TestTime();
             checkServiceStatus("dot3svc");
             GetHostName();
             GetComputerInfo();
             GetPasswordExpiration();
             GetRegisterKeyValue();
             GetDomainName();
+            SystemActivatedInfoAsync();
+            CheckAccountPassIsEnabled();
+        }
+        private void TestTime()
+        {
+            //Helper.MeasureExecutionTime(() => CheckAccountPassIsEnabled());
         }
         private string checkServiceStatus(string service)
         {
@@ -66,12 +76,18 @@ namespace PCManager.Forms
                     }
                 }
             }
-
             Helper.GetComputerComponentInfo("Name","Win32_Processor",lblProcessor);
         }
 
         private void GetPasswordExpiration()
         {
+            if (!Directory.Exists(pathTemp))
+            {
+                txtPasswordExpiration.Text = "No data";
+                return;
+            }
+                           
+
             string str = Helper.LoadDataFromFile(pathTemp);
             if (str != null)
                 txtPasswordExpiration.Text = str;
@@ -105,6 +121,63 @@ namespace PCManager.Forms
             string tempText = Helper.RunViaPowerShell("Get-WmiObject -Namespace root\\cimv2 -Class Win32_ComputerSystem | Select Domain", true);
             string domainName = tempText.Substring(tempText.IndexOf(text) + 1);
             txtDomain.Text = domainName.Remove(domainName.Length-1);
+        }
+        private async Task SystemActivatedInfoAsync()
+        {
+            await Task.Run(() =>
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT LicenseStatus FROM SoftwareLicensingProduct WHERE LicenseStatus = 1");
+                ManagementObjectCollection results = searcher.Get();
+
+                if (results.Count > 0)
+                    SetActivatedStatus("Tak");
+                else
+                    SetActivatedStatus("Nie");                
+            });
+        }
+
+        private void SetActivatedStatus(string status)
+        {
+            if (InvokeRequired)
+                Invoke(new Action(() => txtSystemActivated.Text = status));
+            else
+                txtSystemActivated.Text = status;
+        }
+
+        private void CheckAccountPassIsEnabled()
+        {
+            string username = "Student"; // Zmień na nazwę użytkownika, którego chcesz sprawdzić
+
+            bool isPasswordChangeDisabled = IsPasswordChangeDisabled(username);
+
+            if (isPasswordChangeDisabled)
+            {                
+                txtIsChangePassEnabled.Text = "Zablokowane";
+            }
+            else
+            {
+                txtIsChangePassEnabled.Text = "Odblokowane";
+            }
+        }
+
+        private bool IsPasswordChangeDisabled(string username)
+        {
+            using (PrincipalContext context = new PrincipalContext(ContextType.Machine))
+            {
+                UserPrincipal user = UserPrincipal.FindByIdentity(context, username);
+
+                if (user != null)
+                {
+                    // Sprawdź, czy użytkownik ma zablokowaną możliwość zmiany hasła
+                    return user.UserCannotChangePassword;
+                }
+                else
+                {
+                    return false;
+                    // Użytkownik o podanej nazwie nie został znaleziony
+                    throw new ArgumentException($"Użytkownik {username} nie istnieje.");
+                }
+            }
         }
     }
 }

@@ -65,6 +65,9 @@
             // 
             // btnWeb01
             // 
+            this.btnWeb01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb01.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb01.Location = new System.Drawing.Point(7, 7);
             this.btnWeb01.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb01.Name = "btnWeb01";
@@ -117,6 +120,9 @@
             // 
             // btnWeb02
             // 
+            this.btnWeb02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb02.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb02.Location = new System.Drawing.Point(121, 7);
             this.btnWeb02.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb02.Name = "btnWeb02";
@@ -128,6 +134,9 @@
             // 
             // btnWeb03
             // 
+            this.btnWeb03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb03.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb03.Location = new System.Drawing.Point(235, 7);
             this.btnWeb03.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb03.Name = "btnWeb03";
@@ -139,6 +148,9 @@
             // 
             // btnWeb04
             // 
+            this.btnWeb04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb04.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb04.Location = new System.Drawing.Point(349, 7);
             this.btnWeb04.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb04.Name = "btnWeb04";
@@ -150,6 +162,9 @@
             // 
             // btnWeb05
             // 
+            this.btnWeb05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb05.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb05.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb05.Location = new System.Drawing.Point(463, 7);
             this.btnWeb05.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb05.Name = "btnWeb05";
@@ -161,6 +176,9 @@
             // 
             // btnWeb06
             // 
+            this.btnWeb06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb06.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb06.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb06.Location = new System.Drawing.Point(577, 7);
             this.btnWeb06.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb06.Name = "btnWeb06";
@@ -172,6 +190,9 @@
             // 
             // btnWeb07
             // 
+            this.btnWeb07.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb07.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb07.Location = new System.Drawing.Point(7, 96);
             this.btnWeb07.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb07.Name = "btnWeb07";
@@ -183,6 +204,9 @@
             // 
             // btnWeb08
             // 
+            this.btnWeb08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb08.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb08.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb08.Location = new System.Drawing.Point(121, 96);
             this.btnWeb08.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb08.Name = "btnWeb08";
@@ -194,6 +218,9 @@
             // 
             // btnWeb09
             // 
+            this.btnWeb09.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb09.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb09.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb09.Location = new System.Drawing.Point(235, 96);
             this.btnWeb09.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb09.Name = "btnWeb09";
@@ -205,6 +232,9 @@
             // 
             // btnWeb10
             // 
+            this.btnWeb10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb10.Location = new System.Drawing.Point(349, 96);
             this.btnWeb10.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb10.Name = "btnWeb10";
@@ -216,6 +246,9 @@
             // 
             // btnWeb11
             // 
+            this.btnWeb11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb11.Location = new System.Drawing.Point(463, 96);
             this.btnWeb11.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb11.Name = "btnWeb11";
@@ -227,6 +260,9 @@
             // 
             // btnWeb12
             // 
+            this.btnWeb12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb12.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb12.Location = new System.Drawing.Point(577, 96);
             this.btnWeb12.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb12.Name = "btnWeb12";
@@ -238,6 +274,9 @@
             // 
             // btnWeb13
             // 
+            this.btnWeb13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb13.Location = new System.Drawing.Point(7, 185);
             this.btnWeb13.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb13.Name = "btnWeb13";
@@ -249,6 +288,9 @@
             // 
             // btnWeb14
             // 
+            this.btnWeb14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb14.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb14.Location = new System.Drawing.Point(121, 185);
             this.btnWeb14.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb14.Name = "btnWeb14";
@@ -260,6 +302,9 @@
             // 
             // btnWeb15
             // 
+            this.btnWeb15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb15.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb15.Location = new System.Drawing.Point(235, 185);
             this.btnWeb15.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb15.Name = "btnWeb15";
@@ -271,6 +316,9 @@
             // 
             // btnWeb16
             // 
+            this.btnWeb16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb16.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb16.Location = new System.Drawing.Point(349, 185);
             this.btnWeb16.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb16.Name = "btnWeb16";
@@ -282,6 +330,9 @@
             // 
             // btnWeb17
             // 
+            this.btnWeb17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb17.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb17.Location = new System.Drawing.Point(463, 185);
             this.btnWeb17.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb17.Name = "btnWeb17";
@@ -293,6 +344,9 @@
             // 
             // btnWeb18
             // 
+            this.btnWeb18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb18.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb18.Location = new System.Drawing.Point(577, 185);
             this.btnWeb18.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb18.Name = "btnWeb18";
@@ -304,6 +358,9 @@
             // 
             // btnWeb19
             // 
+            this.btnWeb19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb19.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb19.Location = new System.Drawing.Point(7, 274);
             this.btnWeb19.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb19.Name = "btnWeb19";
@@ -315,6 +372,9 @@
             // 
             // btnWeb20
             // 
+            this.btnWeb20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb20.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb20.Location = new System.Drawing.Point(121, 274);
             this.btnWeb20.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb20.Name = "btnWeb20";
@@ -326,6 +386,9 @@
             // 
             // btnWeb21
             // 
+            this.btnWeb21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb21.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb21.Location = new System.Drawing.Point(235, 274);
             this.btnWeb21.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb21.Name = "btnWeb21";
@@ -337,6 +400,9 @@
             // 
             // btnWeb22
             // 
+            this.btnWeb22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb22.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb22.Location = new System.Drawing.Point(349, 274);
             this.btnWeb22.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb22.Name = "btnWeb22";
@@ -348,6 +414,9 @@
             // 
             // btnWeb23
             // 
+            this.btnWeb23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb23.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb23.Location = new System.Drawing.Point(463, 274);
             this.btnWeb23.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb23.Name = "btnWeb23";
@@ -359,6 +428,9 @@
             // 
             // btnWeb24
             // 
+            this.btnWeb24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb24.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb24.Location = new System.Drawing.Point(577, 274);
             this.btnWeb24.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb24.Name = "btnWeb24";
@@ -370,6 +442,9 @@
             // 
             // btnWeb25
             // 
+            this.btnWeb25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb25.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb25.Location = new System.Drawing.Point(7, 363);
             this.btnWeb25.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb25.Name = "btnWeb25";
@@ -381,6 +456,9 @@
             // 
             // btnWeb26
             // 
+            this.btnWeb26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb26.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb26.Location = new System.Drawing.Point(121, 363);
             this.btnWeb26.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb26.Name = "btnWeb26";
@@ -392,6 +470,9 @@
             // 
             // btnWeb27
             // 
+            this.btnWeb27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb27.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb27.Location = new System.Drawing.Point(235, 363);
             this.btnWeb27.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb27.Name = "btnWeb27";
@@ -403,6 +484,9 @@
             // 
             // btnWeb28
             // 
+            this.btnWeb28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb28.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb28.Location = new System.Drawing.Point(349, 363);
             this.btnWeb28.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb28.Name = "btnWeb28";
@@ -414,6 +498,9 @@
             // 
             // btnWeb29
             // 
+            this.btnWeb29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb29.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb29.Location = new System.Drawing.Point(463, 363);
             this.btnWeb29.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb29.Name = "btnWeb29";
@@ -425,6 +512,9 @@
             // 
             // btnWeb30
             // 
+            this.btnWeb30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWeb30.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnWeb30.Location = new System.Drawing.Point(577, 363);
             this.btnWeb30.Margin = new System.Windows.Forms.Padding(7);
             this.btnWeb30.Name = "btnWeb30";

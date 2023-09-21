@@ -218,6 +218,18 @@ namespace PCManager.Forms
                 }
             }
             return sb.ToString();
-        }        
+        }
+        public static void MeasureExecutionTime(Action action)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            action(); // Wywołaj przekazaną metodę
+
+            stopwatch.Stop();
+
+            long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+            MessageBox.Show($"Czas wykonania metody: {elapsedMilliseconds} ms");
+        }
     }
 }

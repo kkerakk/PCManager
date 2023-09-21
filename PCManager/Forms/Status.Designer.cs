@@ -52,10 +52,21 @@
             this.lblDomain = new System.Windows.Forms.Label();
             this.txtDomain = new System.Windows.Forms.TextBox();
             this.grbSystemInfo = new System.Windows.Forms.GroupBox();
+            this.lblSystemActivated = new System.Windows.Forms.Label();
+            this.txtSystemActivated = new System.Windows.Forms.TextBox();
+            this.grbSystem = new System.Windows.Forms.GroupBox();
+            this.grbAccounts = new System.Windows.Forms.GroupBox();
+            this.txtIsChangePassEnabled = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbRemote.SuspendLayout();
             this.grbServices.SuspendLayout();
             this.grbDeviceSpecification.SuspendLayout();
             this.grbSystemInfo.SuspendLayout();
+            this.grbSystem.SuspendLayout();
+            this.grbAccounts.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCheckServiceStatus
@@ -113,7 +124,7 @@
             // 
             this.lblProcessorArchitecture.AutoSize = true;
             this.lblProcessorArchitecture.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblProcessorArchitecture.Location = new System.Drawing.Point(6, 74);
+            this.lblProcessorArchitecture.Location = new System.Drawing.Point(6, 48);
             this.lblProcessorArchitecture.Name = "lblProcessorArchitecture";
             this.lblProcessorArchitecture.Size = new System.Drawing.Size(111, 13);
             this.lblProcessorArchitecture.TabIndex = 6;
@@ -123,7 +134,7 @@
             // 
             this.lblWindowsVersion.AutoSize = true;
             this.lblWindowsVersion.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblWindowsVersion.Location = new System.Drawing.Point(6, 25);
+            this.lblWindowsVersion.Location = new System.Drawing.Point(14, 22);
             this.lblWindowsVersion.Name = "lblWindowsVersion";
             this.lblWindowsVersion.Size = new System.Drawing.Size(130, 13);
             this.lblWindowsVersion.TabIndex = 7;
@@ -133,7 +144,7 @@
             // 
             this.lblProcessor.AutoSize = true;
             this.lblProcessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblProcessor.Location = new System.Drawing.Point(6, 51);
+            this.lblProcessor.Location = new System.Drawing.Point(6, 25);
             this.lblProcessor.Name = "lblProcessor";
             this.lblProcessor.Size = new System.Drawing.Size(54, 13);
             this.lblProcessor.TabIndex = 8;
@@ -160,7 +171,7 @@
             // 
             this.lblMemory.AutoSize = true;
             this.lblMemory.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblMemory.Location = new System.Drawing.Point(6, 97);
+            this.lblMemory.Location = new System.Drawing.Point(6, 71);
             this.lblMemory.Name = "lblMemory";
             this.lblMemory.Size = new System.Drawing.Size(44, 13);
             this.lblMemory.TabIndex = 12;
@@ -245,13 +256,12 @@
             // 
             // grbDeviceSpecification
             // 
-            this.grbDeviceSpecification.Controls.Add(this.lblWindowsVersion);
             this.grbDeviceSpecification.Controls.Add(this.lblProcessorArchitecture);
             this.grbDeviceSpecification.Controls.Add(this.lblProcessor);
             this.grbDeviceSpecification.Controls.Add(this.lblMemory);
-            this.grbDeviceSpecification.Location = new System.Drawing.Point(12, 188);
+            this.grbDeviceSpecification.Location = new System.Drawing.Point(12, 185);
             this.grbDeviceSpecification.Name = "grbDeviceSpecification";
-            this.grbDeviceSpecification.Size = new System.Drawing.Size(316, 125);
+            this.grbDeviceSpecification.Size = new System.Drawing.Size(316, 104);
             this.grbDeviceSpecification.TabIndex = 21;
             this.grbDeviceSpecification.TabStop = false;
             this.grbDeviceSpecification.Text = "Specyfikacja urządzenia";
@@ -283,12 +293,103 @@
             this.grbSystemInfo.Controls.Add(this.lblHostname);
             this.grbSystemInfo.Controls.Add(this.txtPasswordExpiration);
             this.grbSystemInfo.Controls.Add(this.lblPasswordExpired);
-            this.grbSystemInfo.Location = new System.Drawing.Point(12, 319);
+            this.grbSystemInfo.Location = new System.Drawing.Point(12, 295);
             this.grbSystemInfo.Name = "grbSystemInfo";
             this.grbSystemInfo.Size = new System.Drawing.Size(316, 132);
             this.grbSystemInfo.TabIndex = 24;
             this.grbSystemInfo.TabStop = false;
             this.grbSystemInfo.Text = "Informacje o komputerze";
+            // 
+            // lblSystemActivated
+            // 
+            this.lblSystemActivated.AutoSize = true;
+            this.lblSystemActivated.Location = new System.Drawing.Point(14, 45);
+            this.lblSystemActivated.Name = "lblSystemActivated";
+            this.lblSystemActivated.Size = new System.Drawing.Size(103, 13);
+            this.lblSystemActivated.TabIndex = 25;
+            this.lblSystemActivated.Text = "System aktywowany";
+            // 
+            // txtSystemActivated
+            // 
+            this.txtSystemActivated.Location = new System.Drawing.Point(187, 42);
+            this.txtSystemActivated.Name = "txtSystemActivated";
+            this.txtSystemActivated.ReadOnly = true;
+            this.txtSystemActivated.Size = new System.Drawing.Size(100, 20);
+            this.txtSystemActivated.TabIndex = 24;
+            // 
+            // grbSystem
+            // 
+            this.grbSystem.Controls.Add(this.lblWindowsVersion);
+            this.grbSystem.Controls.Add(this.lblSystemActivated);
+            this.grbSystem.Controls.Add(this.txtSystemActivated);
+            this.grbSystem.Location = new System.Drawing.Point(344, 12);
+            this.grbSystem.Name = "grbSystem";
+            this.grbSystem.Size = new System.Drawing.Size(324, 102);
+            this.grbSystem.TabIndex = 25;
+            this.grbSystem.TabStop = false;
+            this.grbSystem.Text = "System";
+            // 
+            // grbAccounts
+            // 
+            this.grbAccounts.Controls.Add(this.txtIsChangePassEnabled);
+            this.grbAccounts.Controls.Add(this.label4);
+            this.grbAccounts.Controls.Add(this.label3);
+            this.grbAccounts.Controls.Add(this.label2);
+            this.grbAccounts.Controls.Add(this.label1);
+            this.grbAccounts.Location = new System.Drawing.Point(344, 120);
+            this.grbAccounts.Name = "grbAccounts";
+            this.grbAccounts.Size = new System.Drawing.Size(324, 169);
+            this.grbAccounts.TabIndex = 26;
+            this.grbAccounts.TabStop = false;
+            this.grbAccounts.Text = "Konta użytkowników";
+            // 
+            // txtIsChangePassEnabled
+            // 
+            this.txtIsChangePassEnabled.Location = new System.Drawing.Point(140, 60);
+            this.txtIsChangePassEnabled.Name = "txtIsChangePassEnabled";
+            this.txtIsChangePassEnabled.ReadOnly = true;
+            this.txtIsChangePassEnabled.Size = new System.Drawing.Size(163, 20);
+            this.txtIsChangePassEnabled.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Location = new System.Drawing.Point(6, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Wspol";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(6, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Student";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Location = new System.Drawing.Point(6, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Wykladowca";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Administrator";
             // 
             // Status
             // 
@@ -296,6 +397,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(680, 496);
+            this.Controls.Add(this.grbAccounts);
+            this.Controls.Add(this.grbSystem);
             this.Controls.Add(this.grbSystemInfo);
             this.Controls.Add(this.grbDeviceSpecification);
             this.Controls.Add(this.grbServices);
@@ -310,6 +413,10 @@
             this.grbDeviceSpecification.PerformLayout();
             this.grbSystemInfo.ResumeLayout(false);
             this.grbSystemInfo.PerformLayout();
+            this.grbSystem.ResumeLayout(false);
+            this.grbSystem.PerformLayout();
+            this.grbAccounts.ResumeLayout(false);
+            this.grbAccounts.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,5 +447,14 @@
         private System.Windows.Forms.Label lblDomain;
         private System.Windows.Forms.TextBox txtDomain;
         private System.Windows.Forms.GroupBox grbSystemInfo;
+        private System.Windows.Forms.Label lblSystemActivated;
+        private System.Windows.Forms.TextBox txtSystemActivated;
+        private System.Windows.Forms.GroupBox grbSystem;
+        private System.Windows.Forms.GroupBox grbAccounts;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIsChangePassEnabled;
     }
 }

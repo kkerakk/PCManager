@@ -102,9 +102,13 @@ namespace PCManager
         {
             OpenChildForm(new XmlReader(), sender);
         }
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnDataEncryption_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Settings(), sender);
+            OpenChildForm(new DataEncryption(), sender);
+        }
+        private void btnAddressBook_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AddressBook(), sender);
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -137,7 +141,8 @@ namespace PCManager
             btnTimer.Text = "";
             btnSyllabus.Text = "";
             btnXmlReader.Text = "";
-            btnSettings.Text = "";
+            btnDataEncryption.Text = "";
+            btnAddressBook.Text = "";
         }
         private void DefaultSizePanel()
         {
@@ -150,7 +155,8 @@ namespace PCManager
             btnTimer.Text = "  Timer";
             btnSyllabus.Text = "  Syllabus";
             btnXmlReader.Text = "  XML Reader";
-            btnSettings.Text = "  Settings";
+            btnDataEncryption.Text = "  Data Encrypt";
+            btnAddressBook.Text = "  Address Book";
         }
     }
 }
