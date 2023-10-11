@@ -9,6 +9,7 @@ namespace PCManager.Forms
 {
     public partial class Syllabus : Form
     {
+        private bool isVisible = true;
         public Syllabus()
         {
             InitializeComponent();
@@ -54,6 +55,7 @@ namespace PCManager.Forms
             LBFieldOfStudy.SelectedItem = null;
             LBLevelOfStudy.SelectedItem = null;
             LBSemester.SelectedItem = null;
+            LBSemesterNumber.SelectedItem = null;
             cbHeaderFieldOfStudy.Checked = false;
             cbHeaderLevelOfStudy.Checked = false;
         }
@@ -62,7 +64,13 @@ namespace PCManager.Forms
             if (string.IsNullOrEmpty(rtxtSyllabus.Text))
                 return;
             var path = txtDirectoryPath.Text;
-            var combinedString = $@"{dtpYearOfStudy.Text}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
+            var combinedString = "";
+
+            if (LBSemesterNumber.Visible == true)
+                combinedString = $@"{dtpYearOfStudy.Text}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/{LBSemesterNumber.SelectedItem}/";
+            else
+                combinedString = $@"{dtpYearOfStudy.Text}/{LBFieldOfStudy.SelectedItem}/{LBLevelOfStudy.SelectedItem}/{LBSemester.SelectedItem}/";
+
             var pathBegin = $"<p><a href=\"http://wu.wspol.edu.pl/uploaded/SYLABUSY/";
             var pathMiddle = $"\" target = \"_blank\"><img alt=\"Pobierz\" src=\"https://wu.wspol.edu.pl/uploaded/pdf-ikona.png\" style=\"border: 0px currentColor; border-image: none; width: 42px; height: 42px;\"/><span style = \"font-size: 16px;\">";
             var pathEnd = $"</span></a></p>";
@@ -217,6 +225,24 @@ namespace PCManager.Forms
                     break;
             }
         }
+
+        private void ChangeVariant()
+        {
+
+            if (isVisible)
+            {
+                LBSemesterNumber.Visible = false;
+                LBSemesterNumber.SelectedItem = null;
+                lblSemesterNumber.Visible = false;
+                isVisible = false;
+            }
+            else
+            {
+                LBSemesterNumber.Visible = true;
+                lblSemesterNumber.Visible= true;
+                isVisible = true;
+            }               
+        }
         #endregion
         private void btnSyllabusLoadNames_Click(object sender, EventArgs e)
         {
@@ -260,6 +286,10 @@ namespace PCManager.Forms
         private void btnSyllabusClearAll_Click(object sender, EventArgs e)
         {
             ClearAllData();
+        }
+        private void btnSyllabusVariant_Click(object sender, EventArgs e)
+        {
+            ChangeVariant();
         }
     }
 }   
