@@ -24,7 +24,7 @@ namespace PCManager.Forms
             GetRegisterKeyValue();
             GetDomainName();
             SystemActivatedInfoAsync();
-            CheckAccountPassIsEnabled();
+            //CheckAccountPassIsEnabled(); //długo się wykonuje
         }
         private void TestTime()
         {

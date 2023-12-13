@@ -59,3 +59,4 @@ E:\C#\PCManager\PCManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.XmlReader.resources
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.DataEncryption.resources
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.AddressBook.resources
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.FileRename.resources
