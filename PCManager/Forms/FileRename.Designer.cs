@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileRename));
             this.lvFileRename = new System.Windows.Forms.ListView();
             this.lblDirectoryPath = new System.Windows.Forms.Label();
@@ -37,10 +37,11 @@
             this.btnOpenFileDialog = new System.Windows.Forms.Button();
             this.btnLoadNames = new System.Windows.Forms.Button();
             this.PanelTop = new System.Windows.Forms.Panel();
+            this.cbRemoveFirstToSpace = new System.Windows.Forms.CheckBox();
+            this.btnRestoreNames = new System.Windows.Forms.Button();
+            this.btnRenameNames = new System.Windows.Forms.Button();
             this.cbChangePolishLetters = new System.Windows.Forms.CheckBox();
             this.cbRemoveSpace = new System.Windows.Forms.CheckBox();
-            this.btnRenameNames = new System.Windows.Forms.Button();
-            this.btnRestoreNames = new System.Windows.Forms.Button();
             this.PanelTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.lvFileRename.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvFileRename.HideSelection = false;
             this.lvFileRename.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.lvFileRename.Location = new System.Drawing.Point(0, 199);
             this.lvFileRename.Name = "lvFileRename";
             this.lvFileRename.Size = new System.Drawing.Size(698, 251);
@@ -129,6 +130,7 @@
             // 
             // PanelTop
             // 
+            this.PanelTop.Controls.Add(this.cbRemoveFirstToSpace);
             this.PanelTop.Controls.Add(this.btnRestoreNames);
             this.PanelTop.Controls.Add(this.btnRenameNames);
             this.PanelTop.Controls.Add(this.cbChangePolishLetters);
@@ -143,6 +145,48 @@
             this.PanelTop.Name = "PanelTop";
             this.PanelTop.Size = new System.Drawing.Size(698, 199);
             this.PanelTop.TabIndex = 22;
+            // 
+            // cbRemoveFirstToSpace
+            // 
+            this.cbRemoveFirstToSpace.AutoSize = true;
+            this.cbRemoveFirstToSpace.Location = new System.Drawing.Point(6, 111);
+            this.cbRemoveFirstToSpace.Name = "cbRemoveFirstToSpace";
+            this.cbRemoveFirstToSpace.Size = new System.Drawing.Size(124, 17);
+            this.cbRemoveFirstToSpace.TabIndex = 26;
+            this.cbRemoveFirstToSpace.Text = "Change polish letters";
+            this.cbRemoveFirstToSpace.UseVisualStyleBackColor = true;
+            // 
+            // btnRestoreNames
+            // 
+            this.btnRestoreNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRestoreNames.FlatAppearance.BorderSize = 0;
+            this.btnRestoreNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRestoreNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestoreNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRestoreNames.ForeColor = System.Drawing.Color.White;
+            this.btnRestoreNames.Image = ((System.Drawing.Image)(resources.GetObject("btnRestoreNames.Image")));
+            this.btnRestoreNames.Location = new System.Drawing.Point(90, 153);
+            this.btnRestoreNames.Name = "btnRestoreNames";
+            this.btnRestoreNames.Size = new System.Drawing.Size(36, 40);
+            this.btnRestoreNames.TabIndex = 25;
+            this.btnRestoreNames.UseVisualStyleBackColor = false;
+            this.btnRestoreNames.Click += new System.EventHandler(this.btnRestoreNames_Click);
+            // 
+            // btnRenameNames
+            // 
+            this.btnRenameNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRenameNames.FlatAppearance.BorderSize = 0;
+            this.btnRenameNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRenameNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRenameNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRenameNames.ForeColor = System.Drawing.Color.White;
+            this.btnRenameNames.Image = ((System.Drawing.Image)(resources.GetObject("btnRenameNames.Image")));
+            this.btnRenameNames.Location = new System.Drawing.Point(48, 153);
+            this.btnRenameNames.Name = "btnRenameNames";
+            this.btnRenameNames.Size = new System.Drawing.Size(36, 40);
+            this.btnRenameNames.TabIndex = 24;
+            this.btnRenameNames.UseVisualStyleBackColor = false;
+            this.btnRenameNames.Click += new System.EventHandler(this.btnRenameFiles_Click);
             // 
             // cbChangePolishLetters
             // 
@@ -163,37 +207,6 @@
             this.cbRemoveSpace.TabIndex = 22;
             this.cbRemoveSpace.Text = "Remove space";
             this.cbRemoveSpace.UseVisualStyleBackColor = true;
-            // 
-            // btnRenameNames
-            // 
-            this.btnRenameNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnRenameNames.FlatAppearance.BorderSize = 0;
-            this.btnRenameNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRenameNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRenameNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRenameNames.ForeColor = System.Drawing.Color.White;
-            this.btnRenameNames.Image = ((System.Drawing.Image)(resources.GetObject("btnRenameNames.Image")));
-            this.btnRenameNames.Location = new System.Drawing.Point(48, 153);
-            this.btnRenameNames.Name = "btnRenameNames";
-            this.btnRenameNames.Size = new System.Drawing.Size(36, 40);
-            this.btnRenameNames.TabIndex = 24;
-            this.btnRenameNames.UseVisualStyleBackColor = false;
-            this.btnRenameNames.Click += new System.EventHandler(this.btnRenameFiles_Click);
-            // 
-            // btnRestoreNames
-            // 
-            this.btnRestoreNames.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnRestoreNames.FlatAppearance.BorderSize = 0;
-            this.btnRestoreNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRestoreNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestoreNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRestoreNames.ForeColor = System.Drawing.Color.White;
-            this.btnRestoreNames.Image = ((System.Drawing.Image)(resources.GetObject("btnRestoreNames.Image")));
-            this.btnRestoreNames.Location = new System.Drawing.Point(90, 153);
-            this.btnRestoreNames.Name = "btnRestoreNames";
-            this.btnRestoreNames.Size = new System.Drawing.Size(36, 40);
-            this.btnRestoreNames.TabIndex = 25;
-            this.btnRestoreNames.UseVisualStyleBackColor = false;
             // 
             // FileRename
             // 
@@ -224,5 +237,6 @@
         private System.Windows.Forms.CheckBox cbRemoveSpace;
         private System.Windows.Forms.Button btnRestoreNames;
         private System.Windows.Forms.Button btnRenameNames;
+        private System.Windows.Forms.CheckBox cbRemoveFirstToSpace;
     }
 }

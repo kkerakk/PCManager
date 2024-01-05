@@ -114,6 +114,10 @@ namespace PCManager
         {
             OpenChildForm(new FileRename(), sender);
         }
+        private void btnNotes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Notes(), sender);
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool bHandled = false;
@@ -148,6 +152,7 @@ namespace PCManager
             btnDataEncryption.Text = "";
             btnAddressBook.Text = "";
             btnFileRename.Text = "";
+            btnNotes.Text = "";
         }
         private void DefaultSizePanel()
         {
@@ -163,6 +168,7 @@ namespace PCManager
             btnDataEncryption.Text = "  Data Encrypt";
             btnAddressBook.Text = "  Address Book";
             btnFileRename.Text = " File Rename";
+            btnNotes.Text = " File Rename";
         }
     }
 }

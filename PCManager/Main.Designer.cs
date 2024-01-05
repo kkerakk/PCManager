@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
+            this.btnFileRename = new System.Windows.Forms.Button();
             this.btnAddressBook = new System.Windows.Forms.Button();
             this.btnDataEncryption = new System.Windows.Forms.Button();
             this.btnXmlReader = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.panelBottomMenu = new System.Windows.Forms.Panel();
             this.lblMessageInfo = new System.Windows.Forms.Label();
             this.btnSettingss = new System.Windows.Forms.Button();
-            this.btnFileRename = new System.Windows.Forms.Button();
+            this.btnNotes = new System.Windows.Forms.Button();
             this.panelLeftMenu.SuspendLayout();
             this.panelBottomMenu.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnNotes);
             this.panelLeftMenu.Controls.Add(this.btnFileRename);
             this.panelLeftMenu.Controls.Add(this.btnAddressBook);
             this.panelLeftMenu.Controls.Add(this.btnDataEncryption);
@@ -66,6 +68,26 @@
             this.panelLeftMenu.Name = "panelLeftMenu";
             this.panelLeftMenu.Size = new System.Drawing.Size(150, 491);
             this.panelLeftMenu.TabIndex = 0;
+            // 
+            // btnFileRename
+            // 
+            this.btnFileRename.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFileRename.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFileRename.FlatAppearance.BorderSize = 0;
+            this.btnFileRename.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileRename.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFileRename.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnFileRename.Image = ((System.Drawing.Image)(resources.GetObject("btnFileRename.Image")));
+            this.btnFileRename.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFileRename.Location = new System.Drawing.Point(0, 360);
+            this.btnFileRename.Name = "btnFileRename";
+            this.btnFileRename.Size = new System.Drawing.Size(150, 40);
+            this.btnFileRename.TabIndex = 10;
+            this.btnFileRename.Text = "  File Rename";
+            this.btnFileRename.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFileRename.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFileRename.UseVisualStyleBackColor = true;
+            this.btnFileRename.Click += new System.EventHandler(this.btnFileRename_Click);
             // 
             // btnAddressBook
             // 
@@ -291,25 +313,25 @@
             this.btnSettingss.Visible = false;
             this.btnSettingss.Click += new System.EventHandler(this.btnSettingss_Click);
             // 
-            // btnFileRename
+            // btnNotes
             // 
-            this.btnFileRename.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFileRename.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFileRename.FlatAppearance.BorderSize = 0;
-            this.btnFileRename.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFileRename.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFileRename.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnFileRename.Image = ((System.Drawing.Image)(resources.GetObject("btnFileRename.Image")));
-            this.btnFileRename.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFileRename.Location = new System.Drawing.Point(0, 360);
-            this.btnFileRename.Name = "btnFileRename";
-            this.btnFileRename.Size = new System.Drawing.Size(150, 40);
-            this.btnFileRename.TabIndex = 10;
-            this.btnFileRename.Text = "  File Rename";
-            this.btnFileRename.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFileRename.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFileRename.UseVisualStyleBackColor = true;
-            this.btnFileRename.Click += new System.EventHandler(this.btnFileRename_Click);
+            this.btnNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNotes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNotes.FlatAppearance.BorderSize = 0;
+            this.btnNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNotes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
+            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotes.Location = new System.Drawing.Point(0, 400);
+            this.btnNotes.Name = "btnNotes";
+            this.btnNotes.Size = new System.Drawing.Size(150, 40);
+            this.btnNotes.TabIndex = 11;
+            this.btnNotes.Text = "  Notes";
+            this.btnNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotes.UseVisualStyleBackColor = true;
+            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
             // Main
             // 
@@ -348,6 +370,7 @@
         private System.Windows.Forms.Button btnXmlReader;
         private System.Windows.Forms.Button btnAddressBook;
         private System.Windows.Forms.Button btnFileRename;
+        private System.Windows.Forms.Button btnNotes;
     }
 }
 

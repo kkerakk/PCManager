@@ -14,6 +14,7 @@ namespace PCManager.Forms
     public partial class FileRename : Form
     {
         private string[] originalFileNames;
+
         public FileRename()
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace PCManager.Forms
 
                     lvFileRename.Items.Add(listItem);
                 }
-                originalFileNames = files.Clone() as string[];
+                originalFileNames = lvFileRename.Items.Cast<ListViewItem>().Select(item => item.SubItems[0].Text).ToArray();
             }
             else
             {
@@ -63,10 +64,10 @@ namespace PCManager.Forms
         {
             if (originalFileNames != null)
             {
-                foreach (ListViewItem item in lvFileRename.Items)
+                for (int i = 0; i < lvFileRename.Items.Count; i++)
                 {
-                    string originalFilePath = item.SubItems[1].Text;
-                    string newFileName = Path.GetFileName(originalFilePath);
+                    string originalFileName = originalFileNames[i];
+                    string newFileName = originalFileName;
 
                     if (cbRemoveSpace.Checked)
                     {
@@ -78,6 +79,7 @@ namespace PCManager.Forms
                         newFileName = ReplacePolishLetters(newFileName);
                     }
 
+                    string originalFilePath = lvFileRename.Items[i].SubItems[1].Text;
                     string newFilePath = Path.Combine(Path.GetDirectoryName(originalFilePath), newFileName);
 
                     try
@@ -101,9 +103,13 @@ namespace PCManager.Forms
             {
                 for (int i = 0; i < originalFileNames.Length; i++)
                 {
+                    string originalFilePath = lvFileRename.Items[i].SubItems[1].Text;
+                    string originalFileName = originalFileNames[i];
+                    string newFilePath = Path.Combine(Path.GetDirectoryName(originalFilePath), originalFileName);
+
                     try
                     {
-                        File.Move(lvFileRename.Items[i].SubItems[1].Text, originalFileNames[i]);
+                        File.Move(originalFilePath, newFilePath);
                     }
                     catch (Exception ex)
                     {
