@@ -12,7 +12,7 @@ namespace PCManager.Forms
     public partial class Status : Form
     {
 
-        static string pathTemp = @"./../../Media/temp.txt";
+        static string pathTemp = @"./../../Media/Temp.txt";
         public Status()
         {
             InitializeComponent();
@@ -81,12 +81,11 @@ namespace PCManager.Forms
 
         private void GetPasswordExpiration()
         {
-            if (!Directory.Exists(pathTemp))
+            if (!File.Exists(pathTemp))
             {
                 txtPasswordExpiration.Text = "No data";
                 return;
             }
-                           
 
             string str = Helper.LoadDataFromFile(pathTemp);
             if (str != null)

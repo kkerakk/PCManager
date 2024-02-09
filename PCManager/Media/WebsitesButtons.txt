@@ -1,6 +1,6 @@
 WSPOL
 Helpdesk
-EIS
+EIS/DZETA
 WU
 IRK
 IRK-Konfigurator
@@ -14,8 +14,8 @@ WP
 Onet
 ISO River
 Repo Bazus
-17
-18
+SQL-Code
+FS03
 19
 20
 21

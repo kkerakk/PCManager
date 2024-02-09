@@ -14,8 +14,8 @@ www.wp.pl
 www.onet.pl
 https://isoriver.com/
 http://repo.wspol.edu.int/raporty/.WSPOL/
-17
-18
+C:\Users\a.wozniak\Desktop\WebLinks\SQL\sql.html
+\\fs03
 19
 20
 21

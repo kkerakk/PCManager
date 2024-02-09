@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Syllabus));
             this.txtDirectoryPath = new System.Windows.Forms.TextBox();
             this.PanelTopSyllabus = new System.Windows.Forms.Panel();
+            this.btnSyllabusVariant = new System.Windows.Forms.Button();
+            this.lblSemesterNumber = new System.Windows.Forms.Label();
+            this.LBSemesterNumber = new System.Windows.Forms.ListBox();
             this.GBHeader = new System.Windows.Forms.GroupBox();
             this.cbHeaderLevelOfStudy = new System.Windows.Forms.CheckBox();
             this.cbHeaderFieldOfStudy = new System.Windows.Forms.CheckBox();
@@ -56,9 +59,6 @@
             this.btnSyllabusLoadNames = new System.Windows.Forms.Button();
             this.rtxtSyllabus = new System.Windows.Forms.RichTextBox();
             this.ttSyllabus = new System.Windows.Forms.ToolTip(this.components);
-            this.lblSemesterNumber = new System.Windows.Forms.Label();
-            this.LBSemesterNumber = new System.Windows.Forms.ListBox();
-            this.btnSyllabusVariant = new System.Windows.Forms.Button();
             this.PanelTopSyllabus.SuspendLayout();
             this.GBHeader.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,51 @@
             this.PanelTopSyllabus.Name = "PanelTopSyllabus";
             this.PanelTopSyllabus.Size = new System.Drawing.Size(734, 166);
             this.PanelTopSyllabus.TabIndex = 2;
+            // 
+            // btnSyllabusVariant
+            // 
+            this.btnSyllabusVariant.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSyllabusVariant.FlatAppearance.BorderSize = 0;
+            this.btnSyllabusVariant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSyllabusVariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyllabusVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSyllabusVariant.ForeColor = System.Drawing.Color.White;
+            this.btnSyllabusVariant.Location = new System.Drawing.Point(615, 120);
+            this.btnSyllabusVariant.Name = "btnSyllabusVariant";
+            this.btnSyllabusVariant.Size = new System.Drawing.Size(107, 40);
+            this.btnSyllabusVariant.TabIndex = 27;
+            this.btnSyllabusVariant.Text = "Change Variant";
+            this.btnSyllabusVariant.UseVisualStyleBackColor = false;
+            this.btnSyllabusVariant.Click += new System.EventHandler(this.btnSyllabusVariant_Click);
+            // 
+            // lblSemesterNumber
+            // 
+            this.lblSemesterNumber.AutoSize = true;
+            this.lblSemesterNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSemesterNumber.Location = new System.Drawing.Point(463, 54);
+            this.lblSemesterNumber.Name = "lblSemesterNumber";
+            this.lblSemesterNumber.Size = new System.Drawing.Size(108, 15);
+            this.lblSemesterNumber.TabIndex = 26;
+            this.lblSemesterNumber.Text = "Semester Number";
+            // 
+            // LBSemesterNumber
+            // 
+            this.LBSemesterNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LBSemesterNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LBSemesterNumber.FormattingEnabled = true;
+            this.LBSemesterNumber.ItemHeight = 18;
+            this.LBSemesterNumber.Items.AddRange(new object[] {
+            "s1",
+            "s2",
+            "s3",
+            "s4",
+            "s5",
+            "s6",
+            "s7"});
+            this.LBSemesterNumber.Location = new System.Drawing.Point(463, 77);
+            this.LBSemesterNumber.Name = "LBSemesterNumber";
+            this.LBSemesterNumber.Size = new System.Drawing.Size(103, 36);
+            this.LBSemesterNumber.TabIndex = 25;
             // 
             // GBHeader
             // 
@@ -328,12 +373,12 @@
             this.LBFieldOfStudy.FormattingEnabled = true;
             this.LBFieldOfStudy.ItemHeight = 18;
             this.LBFieldOfStudy.Items.AddRange(new object[] {
+            "BWC",
             "BW",
             "INF",
             "KRYM",
-            "NOP",
-            "BWC",
             "KWSP",
+            "NOP",
             "ADM"});
             this.LBFieldOfStudy.Location = new System.Drawing.Point(131, 76);
             this.LBFieldOfStudy.Name = "LBFieldOfStudy";
@@ -426,51 +471,6 @@
             this.rtxtSyllabus.Size = new System.Drawing.Size(734, 318);
             this.rtxtSyllabus.TabIndex = 3;
             this.rtxtSyllabus.Text = "";
-            // 
-            // lblSemesterNumber
-            // 
-            this.lblSemesterNumber.AutoSize = true;
-            this.lblSemesterNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSemesterNumber.Location = new System.Drawing.Point(463, 54);
-            this.lblSemesterNumber.Name = "lblSemesterNumber";
-            this.lblSemesterNumber.Size = new System.Drawing.Size(108, 15);
-            this.lblSemesterNumber.TabIndex = 26;
-            this.lblSemesterNumber.Text = "Semester Number";
-            // 
-            // LBSemesterNumber
-            // 
-            this.LBSemesterNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LBSemesterNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LBSemesterNumber.FormattingEnabled = true;
-            this.LBSemesterNumber.ItemHeight = 18;
-            this.LBSemesterNumber.Items.AddRange(new object[] {
-            "s1",
-            "s2",
-            "s3",
-            "s4",
-            "s5",
-            "s6",
-            "s7"});
-            this.LBSemesterNumber.Location = new System.Drawing.Point(463, 77);
-            this.LBSemesterNumber.Name = "LBSemesterNumber";
-            this.LBSemesterNumber.Size = new System.Drawing.Size(103, 36);
-            this.LBSemesterNumber.TabIndex = 25;
-            // 
-            // btnSyllabusVariant
-            // 
-            this.btnSyllabusVariant.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSyllabusVariant.FlatAppearance.BorderSize = 0;
-            this.btnSyllabusVariant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSyllabusVariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSyllabusVariant.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusVariant.Location = new System.Drawing.Point(615, 120);
-            this.btnSyllabusVariant.Name = "btnSyllabusVariant";
-            this.btnSyllabusVariant.Size = new System.Drawing.Size(107, 40);
-            this.btnSyllabusVariant.TabIndex = 27;
-            this.btnSyllabusVariant.Text = "Change Variant";
-            this.btnSyllabusVariant.UseVisualStyleBackColor = false;
-            this.btnSyllabusVariant.Click += new System.EventHandler(this.btnSyllabusVariant_Click);
             // 
             // Syllabus
             // 

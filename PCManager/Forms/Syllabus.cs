@@ -88,8 +88,7 @@ namespace PCManager.Forms
                 var headerSemester = LBSemester.SelectedItem.ToString();
                 rtxtSyllabus.Text += $"<p><span style=\"font-size:16px;\"><strong>{headerLevel} - {headerSemester}</strong></span></p>\n";
             }
-
-            foreach (var item in arrayFI)
+            foreach (var item in arrayFI.OrderBy(x => x.ToString().DeleteBeforeFirstSpace()))
             {
                 rtxtSyllabus.Text += $@"{pathBegin}{combinedString}{item
                     .ToString().DeleteBeforeFirstSpace().FirstLetterToUpper().ReplacePolishCharacters().ReplaceSpaces('_')}{pathMiddle}{item
@@ -171,6 +170,10 @@ namespace PCManager.Forms
 
             switch (selectedItem.ToUpper())
             {
+                case "KWSP":
+                    return "Kryminalistyka w służbie prawa";
+                case "BWC":
+                    return "Bezpieczeństwo w cyberprzestrzeni";
                 case "BW":
                     return "Bezpieczeństwo wewnętrzne";
                 case "KRYM":
