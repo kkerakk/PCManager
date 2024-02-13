@@ -1,5 +1,6 @@
 ﻿using PCManager.Forms;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PCManager
@@ -16,6 +17,8 @@ namespace PCManager
         {
             InitializeComponent();
             GetPasswordExpiration();
+            ChangeMenuColor();
+            TurnOffModules();
         }
 
         private void ActivateButton(object btnSender)
@@ -169,6 +172,21 @@ namespace PCManager
             btnAddressBook.Text = "  Address Book";
             btnFileRename.Text = " File Rename";
             btnNotes.Text = " File Rename";
+        }
+        private void ChangeMenuColor()
+        {
+            //#0C081A - mocno ciemny
+            panelLeftMenu.BackColor = ColorTranslator.FromHtml("#2b2f3b");
+            //panelDesktop.BackColor = ColorTranslator.FromHtml("#252a34");
+            panelBottomMenu.BackColor = ColorTranslator.FromHtml("#252a34");
+
+        }
+        private void TurnOffModules()
+        {
+            btnTimer.Visible = false;
+            btnDataEncryption.Visible = false;
+            btnAddressBook.Visible = false;
+            btnNotes.Visible = false;
         }
     }
 }
