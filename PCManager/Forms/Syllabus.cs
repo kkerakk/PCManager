@@ -14,6 +14,7 @@ namespace PCManager.Forms
         {
             InitializeComponent();
             GetCurrentAcademicYear();
+            HiddenVariant();
 
             btnSyllabusSaveAsText.Enabled = false;
             btnSyllabusSaveAsHTML.Enabled = false;
@@ -42,6 +43,16 @@ namespace PCManager.Forms
             foreach (var item in arrayFI)
             {
                 rtxtSyllabus.Text += item + Environment.NewLine;
+            }
+        }
+        private void CheckFormStatus(IEnumerable<TextBox> textBoxes)
+        {
+            foreach (var textb in textBoxes)
+            {
+                if (!string.IsNullOrEmpty(textb.Text))
+                {
+
+                }
             }
         }
         private void ClearData()
@@ -246,6 +257,29 @@ namespace PCManager.Forms
                 isVisible = true;
             }               
         }
+        private void HiddenVariant()
+        {
+            LBSemesterNumber.Visible = false;
+            LBSemesterNumber.SelectedItem = null;
+            lblSemesterNumber.Visible = false;
+            isVisible = false;
+        }
+
+        private void OpenFolderDialog()
+        {
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                folderDialog.Description = "Wybierz folder";
+                folderDialog.SelectedPath = @"E:\Dokumenty\PDF\Sylabus";
+
+                DialogResult result = folderDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderDialog.SelectedPath))
+                {
+                    txtDirectoryPath.Text = folderDialog.SelectedPath;
+                }
+            }
+        }
         #endregion
         private void btnSyllabusLoadNames_Click(object sender, EventArgs e)
         {
@@ -293,6 +327,15 @@ namespace PCManager.Forms
         private void btnSyllabusVariant_Click(object sender, EventArgs e)
         {
             ChangeVariant();
+        }
+        private void btnOpenDialog_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog();
+        }
+
+        private void ChangeAppStatus(object sender, EventArgs e)
+        {
+            AppSettings.AppStatusModified = true;
         }
     }
 }   

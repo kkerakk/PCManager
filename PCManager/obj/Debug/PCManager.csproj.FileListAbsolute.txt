@@ -68,3 +68,4 @@ E:\C#\PCManager\PCManager\bin\Debug\EntityFramework.xml
 E:\C#\PCManager\PCManager\bin\Debug\EntityFramework.SqlServer.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Data.SQLite.xml
 E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Notes.resources
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.Settings.resources

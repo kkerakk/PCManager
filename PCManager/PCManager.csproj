@@ -97,6 +97,7 @@
     <Compile Include="Forms\AddressBook.Designer.cs">
       <DependentUpon>AddressBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AppSettings.cs" />
     <Compile Include="Forms\FileRename.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +123,12 @@
     </Compile>
     <Compile Include="Forms\Notes.Designer.cs">
       <DependentUpon>Notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ShutdownComputer.cs">
       <SubType>Form</SubType>
@@ -188,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Notes.resx">
       <DependentUpon>Notes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShutdownComputer.resx">
       <DependentUpon>ShutdownComputer.cs</DependentUpon>

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelLeftMenu = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnNotes = new System.Windows.Forms.Button();
             this.btnFileRename = new System.Windows.Forms.Button();
             this.btnAddressBook = new System.Windows.Forms.Button();
             this.btnDataEncryption = new System.Windows.Forms.Button();
@@ -42,16 +44,13 @@
             this.btnStatus = new System.Windows.Forms.Button();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelBottomMenu = new System.Windows.Forms.Panel();
-            this.lblMessageInfo = new System.Windows.Forms.Label();
-            this.btnSettingss = new System.Windows.Forms.Button();
-            this.btnNotes = new System.Windows.Forms.Button();
             this.panelLeftMenu.SuspendLayout();
-            this.panelBottomMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnSettings);
             this.panelLeftMenu.Controls.Add(this.btnNotes);
             this.panelLeftMenu.Controls.Add(this.btnFileRename);
             this.panelLeftMenu.Controls.Add(this.btnAddressBook);
@@ -64,10 +63,50 @@
             this.panelLeftMenu.Controls.Add(this.btnManagePC);
             this.panelLeftMenu.Controls.Add(this.btnStatus);
             this.panelLeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeftMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelLeftMenu.Location = new System.Drawing.Point(0, 16);
             this.panelLeftMenu.Name = "panelLeftMenu";
-            this.panelLeftMenu.Size = new System.Drawing.Size(150, 491);
+            this.panelLeftMenu.Size = new System.Drawing.Size(150, 529);
             this.panelLeftMenu.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(0, 440);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(150, 40);
+            this.btnSettings.TabIndex = 12;
+            this.btnSettings.Text = "  Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnNotes
+            // 
+            this.btnNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNotes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNotes.FlatAppearance.BorderSize = 0;
+            this.btnNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNotes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
+            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotes.Location = new System.Drawing.Point(0, 400);
+            this.btnNotes.Name = "btnNotes";
+            this.btnNotes.Size = new System.Drawing.Size(150, 40);
+            this.btnNotes.TabIndex = 11;
+            this.btnNotes.Text = "  Notes";
+            this.btnNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotes.UseVisualStyleBackColor = true;
+            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
             // btnFileRename
             // 
@@ -207,7 +246,7 @@
             this.btnWebsites.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWebsites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnWebsites.UseVisualStyleBackColor = true;
-            this.btnWebsites.Click += new System.EventHandler(this.btnWebsites_Click);
+            this.btnWebsites.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnWebsites_MouseDown);
             // 
             // btnShutdownComputer
             // 
@@ -254,6 +293,7 @@
             this.btnStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStatus.FlatAppearance.BorderSize = 0;
+            this.btnStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStatus.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -274,80 +314,36 @@
             this.panelDesktop.AutoSize = true;
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(150, 0);
+            this.panelDesktop.Location = new System.Drawing.Point(150, 16);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(714, 460);
+            this.panelDesktop.Size = new System.Drawing.Size(740, 529);
             this.panelDesktop.TabIndex = 1;
             // 
             // panelBottomMenu
             // 
-            this.panelBottomMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(8)))), ((int)(((byte)(69)))));
-            this.panelBottomMenu.Controls.Add(this.lblMessageInfo);
-            this.panelBottomMenu.Controls.Add(this.btnSettingss);
-            this.panelBottomMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomMenu.Location = new System.Drawing.Point(150, 460);
+            this.panelBottomMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.panelBottomMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBottomMenu.Location = new System.Drawing.Point(0, 0);
             this.panelBottomMenu.Name = "panelBottomMenu";
-            this.panelBottomMenu.Size = new System.Drawing.Size(714, 31);
+            this.panelBottomMenu.Size = new System.Drawing.Size(890, 16);
             this.panelBottomMenu.TabIndex = 1;
-            // 
-            // lblMessageInfo
-            // 
-            this.lblMessageInfo.AutoSize = true;
-            this.lblMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMessageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(8)))), ((int)(((byte)(69)))));
-            this.lblMessageInfo.Location = new System.Drawing.Point(6, 4);
-            this.lblMessageInfo.Name = "lblMessageInfo";
-            this.lblMessageInfo.Size = new System.Drawing.Size(102, 20);
-            this.lblMessageInfo.TabIndex = 1;
-            this.lblMessageInfo.Text = "MessageInfo";
-            // 
-            // btnSettingss
-            // 
-            this.btnSettingss.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSettingss.Location = new System.Drawing.Point(639, 0);
-            this.btnSettingss.Name = "btnSettingss";
-            this.btnSettingss.Size = new System.Drawing.Size(75, 31);
-            this.btnSettingss.TabIndex = 0;
-            this.btnSettingss.Text = "Settings";
-            this.btnSettingss.UseVisualStyleBackColor = true;
-            this.btnSettingss.Visible = false;
-            this.btnSettingss.Click += new System.EventHandler(this.btnSettingss_Click);
-            // 
-            // btnNotes
-            // 
-            this.btnNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNotes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNotes.FlatAppearance.BorderSize = 0;
-            this.btnNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNotes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
-            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotes.Location = new System.Drawing.Point(0, 400);
-            this.btnNotes.Name = "btnNotes";
-            this.btnNotes.Size = new System.Drawing.Size(150, 40);
-            this.btnNotes.TabIndex = 11;
-            this.btnNotes.Text = "  Notes";
-            this.btnNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotes.UseVisualStyleBackColor = true;
-            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(864, 491);
+            this.ClientSize = new System.Drawing.Size(890, 545);
             this.Controls.Add(this.panelDesktop);
-            this.Controls.Add(this.panelBottomMenu);
             this.Controls.Add(this.panelLeftMenu);
-            this.MinimumSize = new System.Drawing.Size(880, 512);
+            this.Controls.Add(this.panelBottomMenu);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(890, 530);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PCManager";
+            this.TopMost = true;
             this.panelLeftMenu.ResumeLayout(false);
-            this.panelBottomMenu.ResumeLayout(false);
-            this.panelBottomMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,15 +358,14 @@
         private System.Windows.Forms.Button btnManagePC;
         private System.Windows.Forms.Button btnShutdownComputer;
         private System.Windows.Forms.Button btnWebsites;
-        private System.Windows.Forms.Button btnSettingss;
         private System.Windows.Forms.Button btnTimer;
         private System.Windows.Forms.Button btnSyllabus;
-        public System.Windows.Forms.Label lblMessageInfo;
         private System.Windows.Forms.Button btnDataEncryption;
         private System.Windows.Forms.Button btnXmlReader;
         private System.Windows.Forms.Button btnAddressBook;
         private System.Windows.Forms.Button btnFileRename;
         private System.Windows.Forms.Button btnNotes;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

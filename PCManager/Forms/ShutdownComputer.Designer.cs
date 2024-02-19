@@ -92,7 +92,7 @@
             // 
             // FLPQuickShutdown
             // 
-            this.FLPQuickShutdown.BackColor = System.Drawing.Color.MidnightBlue;
+            this.FLPQuickShutdown.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.FLPQuickShutdown.Controls.Add(this.panel1);
             this.FLPQuickShutdown.Controls.Add(this.btnShutdownInstant);
             this.FLPQuickShutdown.Controls.Add(this.btnShutdown5min);
@@ -111,7 +111,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblActions);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -127,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblActions.AutoSize = true;
             this.lblActions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblActions.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblActions.ForeColor = System.Drawing.Color.Black;
             this.lblActions.Location = new System.Drawing.Point(34, 9);
             this.lblActions.Name = "lblActions";
             this.lblActions.Size = new System.Drawing.Size(81, 20);
@@ -140,7 +140,7 @@
             this.btnShutdownInstant.FlatAppearance.BorderSize = 0;
             this.btnShutdownInstant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdownInstant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdownInstant.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdownInstant.ForeColor = System.Drawing.Color.Black;
             this.btnShutdownInstant.Location = new System.Drawing.Point(0, 35);
             this.btnShutdownInstant.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdownInstant.Name = "btnShutdownInstant";
@@ -158,7 +158,7 @@
             this.btnShutdown5min.FlatAppearance.BorderSize = 0;
             this.btnShutdown5min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown5min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown5min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown5min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown5min.Location = new System.Drawing.Point(0, 65);
             this.btnShutdown5min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown5min.Name = "btnShutdown5min";
@@ -176,7 +176,7 @@
             this.btnShutdown10min.FlatAppearance.BorderSize = 0;
             this.btnShutdown10min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown10min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown10min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown10min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown10min.Location = new System.Drawing.Point(0, 95);
             this.btnShutdown10min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown10min.Name = "btnShutdown10min";
@@ -194,7 +194,7 @@
             this.btnShutdown15min.FlatAppearance.BorderSize = 0;
             this.btnShutdown15min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown15min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown15min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown15min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown15min.Location = new System.Drawing.Point(0, 125);
             this.btnShutdown15min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown15min.Name = "btnShutdown15min";
@@ -212,7 +212,7 @@
             this.btnShutdown30min.FlatAppearance.BorderSize = 0;
             this.btnShutdown30min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown30min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown30min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown30min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown30min.Location = new System.Drawing.Point(0, 155);
             this.btnShutdown30min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown30min.Name = "btnShutdown30min";
@@ -230,7 +230,7 @@
             this.btnShutdown60min.FlatAppearance.BorderSize = 0;
             this.btnShutdown60min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown60min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown60min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown60min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown60min.Location = new System.Drawing.Point(0, 185);
             this.btnShutdown60min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown60min.Name = "btnShutdown60min";
@@ -248,7 +248,7 @@
             this.btnShutdown120min.FlatAppearance.BorderSize = 0;
             this.btnShutdown120min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown120min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown120min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown120min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown120min.Location = new System.Drawing.Point(0, 215);
             this.btnShutdown120min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown120min.Name = "btnShutdown120min";
@@ -266,7 +266,7 @@
             this.btnShutdown180min.FlatAppearance.BorderSize = 0;
             this.btnShutdown180min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown180min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown180min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown180min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown180min.Location = new System.Drawing.Point(0, 245);
             this.btnShutdown180min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown180min.Name = "btnShutdown180min";
@@ -284,7 +284,7 @@
             this.btnShutdown240min.FlatAppearance.BorderSize = 0;
             this.btnShutdown240min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutdown240min.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShutdown240min.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShutdown240min.ForeColor = System.Drawing.Color.Black;
             this.btnShutdown240min.Location = new System.Drawing.Point(0, 275);
             this.btnShutdown240min.Margin = new System.Windows.Forms.Padding(0);
             this.btnShutdown240min.Name = "btnShutdown240min";
@@ -383,7 +383,6 @@
         private System.Windows.Forms.Button btnCancelShutdown;
         private System.Windows.Forms.Button btnShutdown;
         public System.Windows.Forms.TextBox txtShutdownTime;
-        private System.Windows.Forms.FlowLayoutPanel FLPQuickShutdown;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnShutdownInstant;
         private System.Windows.Forms.Button btnShutdown5min;
@@ -400,5 +399,6 @@
         private System.Windows.Forms.RadioButton rbShutdown;
         private System.Windows.Forms.RadioButton rbLogOff;
         private System.Windows.Forms.Label lblActions;
+        private System.Windows.Forms.FlowLayoutPanel FLPQuickShutdown;
     }
 }

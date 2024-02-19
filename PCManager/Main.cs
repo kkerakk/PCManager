@@ -7,12 +7,13 @@ namespace PCManager
 {
     public partial class Main : Form
     {
-        //Forms.Helper helper = new Forms.Helper();
 
         private Button currentButton;
         private Form activeForm;
         private static string formName;
         private static string path = "./../../Media/Temp.txt";
+        private bool isPanelSizeChanged = false;
+        
         public Main()
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace PCManager
             ChangeMenuColor();
             TurnOffModules();
         }
-
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -34,8 +34,14 @@ namespace PCManager
 
         protected void OpenChildForm(Form childForm, object btnSender)
         {
-            if (activeForm != null)
+            if (activeForm != null && AppSettings.AppStatusModified == true)
+            {
+                DialogResult result = MessageBox.Show("Czy chcesz zamknąć obecne okno?", "Czy zamknąć okno?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                    return;
                 activeForm.Close();
+                AppSettings.AppStatusModified = false;
+            }                
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -48,49 +54,26 @@ namespace PCManager
 
             string form = childForm.Name;
             formName = childForm.Name;
-
-            //private void CheckActiveForm()
-            if (formName == "Websites")
-            {
-                btnSettingss.Enabled = true;
-                btnSettingss.Visible = true;
-            }
-            else
-            {
-                btnSettingss.Enabled = false;
-                btnSettingss.Visible = false;
-            }
-
-            lblMessageInfo.ForeColor = lblMessageInfo.BackColor;
+        }
+        public void OpenWebsitesSettingsForm(object sender)
+        {
+            OpenChildForm(new WebsitesSettings(), sender);
         }
         private void GetPasswordExpiration()
         {
             string str = Helper.RunViaPowerShell($"(net user /domain $env:UserName | Select -Index 11).Substring(35,10) | Set-Content -Path {path}", true);
         }
-
         private void btnStatus_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Status(), sender);
         }
-
         private void btnManagePC_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Managepc(), sender);
         }
-
         private void btnShutdownComputer_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ShutdownComputer(), sender);
-        }
-
-        private void btnWebsites_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Websites(), sender);
-        }
-
-        private void btnSettingss_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new WebsitesSettings(), sender);
         }
 
         private void btnTimer_Click(object sender, EventArgs e)
@@ -116,46 +99,44 @@ namespace PCManager
         private void btnFileRename_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FileRename(), sender);
-        }
+        }        
         private void btnNotes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Notes(), sender);
         }
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Settings(), sender);
+        }
+        
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool bHandled = false;
-            switch (keyData)
+
+            if (keyData == Keys.F8)
             {
-                case Keys.F7:
-                    ChangeSizePanel();
-                    bHandled = true;
-                    break;
-                case Keys.F8:
+                if (isPanelSizeChanged)
+                {
                     DefaultSizePanel();
-                    bHandled = true;
-                    break;
+                }
+                else
+                {
+                    ChangeSizePanel();
+                }
+
+                isPanelSizeChanged = !isPanelSizeChanged;
+                bHandled = true;
             }
+
             return bHandled;
         }
         private void ChangeSizePanel()
         {
-            panelLeftMenu.Width = 35;
-            ////nie działa :(
-            //foreach (Button button in panelLeftMenu.Controls)
-            //{
-            //    //button.Text = "";
-            //}
-            btnStatus.Text = "";
-            btnManagePC.Text = "";
-            btnShutdownComputer.Text = "";
-            btnWebsites.Text = "";
-            btnTimer.Text = "";
-            btnSyllabus.Text = "";
-            btnXmlReader.Text = "";
-            btnDataEncryption.Text = "";
-            btnAddressBook.Text = "";
-            btnFileRename.Text = "";
-            btnNotes.Text = "";
+            panelLeftMenu.Width = 38;
+            foreach (Button button in panelLeftMenu.Controls)
+            {
+                button.Text = "";
+            }
         }
         private void DefaultSizePanel()
         {
@@ -172,14 +153,23 @@ namespace PCManager
             btnAddressBook.Text = "  Address Book";
             btnFileRename.Text = " File Rename";
             btnNotes.Text = " File Rename";
+            btnSettings.Text = " Settings";
         }
         private void ChangeMenuColor()
         {
-            //#0C081A - mocno ciemny
+            //#0de634 //green
+            //#328df8 // jasnoniebieski
+            //#252a34 //ciemny niebieski
+            //#0C081A // mocno ciemny
             panelLeftMenu.BackColor = ColorTranslator.FromHtml("#2b2f3b");
             //panelDesktop.BackColor = ColorTranslator.FromHtml("#252a34");
-            panelBottomMenu.BackColor = ColorTranslator.FromHtml("#252a34");
+            panelBottomMenu.BackColor = ColorTranslator.FromHtml("#2b2f3b");
 
+            foreach (Button button in panelLeftMenu.Controls)
+            {
+                button.ForeColor = Color.White;
+                button.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#328df8");
+            }
         }
         private void TurnOffModules()
         {
@@ -187,6 +177,17 @@ namespace PCManager
             btnDataEncryption.Visible = false;
             btnAddressBook.Visible = false;
             btnNotes.Visible = false;
+        }
+        private void btnWebsites_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                OpenChildForm(new Websites(), sender);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                OpenChildForm(new WebsitesSettings(), sender);
+            }
         }
     }
 }

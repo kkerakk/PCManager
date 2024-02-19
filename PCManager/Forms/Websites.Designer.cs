@@ -65,6 +65,7 @@
             // 
             // btnWeb01
             // 
+            this.btnWeb01.FlatAppearance.BorderSize = 0;
             this.btnWeb01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb01.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -115,11 +116,12 @@
             this.FLPWebsitesMain.Location = new System.Drawing.Point(0, 0);
             this.FLPWebsitesMain.Margin = new System.Windows.Forms.Padding(10);
             this.FLPWebsitesMain.Name = "FLPWebsitesMain";
-            this.FLPWebsitesMain.Size = new System.Drawing.Size(692, 453);
+            this.FLPWebsitesMain.Size = new System.Drawing.Size(692, 465);
             this.FLPWebsitesMain.TabIndex = 0;
             // 
             // btnWeb02
             // 
+            this.btnWeb02.FlatAppearance.BorderSize = 0;
             this.btnWeb02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb02.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -134,6 +136,7 @@
             // 
             // btnWeb03
             // 
+            this.btnWeb03.FlatAppearance.BorderSize = 0;
             this.btnWeb03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb03.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -148,6 +151,7 @@
             // 
             // btnWeb04
             // 
+            this.btnWeb04.FlatAppearance.BorderSize = 0;
             this.btnWeb04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb04.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -162,6 +166,7 @@
             // 
             // btnWeb05
             // 
+            this.btnWeb05.FlatAppearance.BorderSize = 0;
             this.btnWeb05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb05.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb05.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -176,6 +181,7 @@
             // 
             // btnWeb06
             // 
+            this.btnWeb06.FlatAppearance.BorderSize = 0;
             this.btnWeb06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb06.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb06.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -190,6 +196,7 @@
             // 
             // btnWeb07
             // 
+            this.btnWeb07.FlatAppearance.BorderSize = 0;
             this.btnWeb07.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb07.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -204,6 +211,7 @@
             // 
             // btnWeb08
             // 
+            this.btnWeb08.FlatAppearance.BorderSize = 0;
             this.btnWeb08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb08.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb08.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -218,6 +226,7 @@
             // 
             // btnWeb09
             // 
+            this.btnWeb09.FlatAppearance.BorderSize = 0;
             this.btnWeb09.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb09.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb09.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -232,6 +241,7 @@
             // 
             // btnWeb10
             // 
+            this.btnWeb10.FlatAppearance.BorderSize = 0;
             this.btnWeb10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb10.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -246,6 +256,7 @@
             // 
             // btnWeb11
             // 
+            this.btnWeb11.FlatAppearance.BorderSize = 0;
             this.btnWeb11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb11.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -260,6 +271,7 @@
             // 
             // btnWeb12
             // 
+            this.btnWeb12.FlatAppearance.BorderSize = 0;
             this.btnWeb12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb12.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -274,6 +286,7 @@
             // 
             // btnWeb13
             // 
+            this.btnWeb13.FlatAppearance.BorderSize = 0;
             this.btnWeb13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb13.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -288,6 +301,7 @@
             // 
             // btnWeb14
             // 
+            this.btnWeb14.FlatAppearance.BorderSize = 0;
             this.btnWeb14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb14.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -302,6 +316,7 @@
             // 
             // btnWeb15
             // 
+            this.btnWeb15.FlatAppearance.BorderSize = 0;
             this.btnWeb15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb15.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -316,6 +331,7 @@
             // 
             // btnWeb16
             // 
+            this.btnWeb16.FlatAppearance.BorderSize = 0;
             this.btnWeb16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb16.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -330,6 +346,7 @@
             // 
             // btnWeb17
             // 
+            this.btnWeb17.FlatAppearance.BorderSize = 0;
             this.btnWeb17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb17.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -344,6 +361,7 @@
             // 
             // btnWeb18
             // 
+            this.btnWeb18.FlatAppearance.BorderSize = 0;
             this.btnWeb18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb18.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -358,6 +376,7 @@
             // 
             // btnWeb19
             // 
+            this.btnWeb19.FlatAppearance.BorderSize = 0;
             this.btnWeb19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb19.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -372,6 +391,7 @@
             // 
             // btnWeb20
             // 
+            this.btnWeb20.FlatAppearance.BorderSize = 0;
             this.btnWeb20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb20.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -386,6 +406,7 @@
             // 
             // btnWeb21
             // 
+            this.btnWeb21.FlatAppearance.BorderSize = 0;
             this.btnWeb21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb21.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -400,6 +421,7 @@
             // 
             // btnWeb22
             // 
+            this.btnWeb22.FlatAppearance.BorderSize = 0;
             this.btnWeb22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb22.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -414,6 +436,7 @@
             // 
             // btnWeb23
             // 
+            this.btnWeb23.FlatAppearance.BorderSize = 0;
             this.btnWeb23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb23.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -428,6 +451,7 @@
             // 
             // btnWeb24
             // 
+            this.btnWeb24.FlatAppearance.BorderSize = 0;
             this.btnWeb24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb24.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -442,6 +466,7 @@
             // 
             // btnWeb25
             // 
+            this.btnWeb25.FlatAppearance.BorderSize = 0;
             this.btnWeb25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb25.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -456,6 +481,7 @@
             // 
             // btnWeb26
             // 
+            this.btnWeb26.FlatAppearance.BorderSize = 0;
             this.btnWeb26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb26.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -470,6 +496,7 @@
             // 
             // btnWeb27
             // 
+            this.btnWeb27.FlatAppearance.BorderSize = 0;
             this.btnWeb27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb27.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -484,6 +511,7 @@
             // 
             // btnWeb28
             // 
+            this.btnWeb28.FlatAppearance.BorderSize = 0;
             this.btnWeb28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb28.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -498,6 +526,7 @@
             // 
             // btnWeb29
             // 
+            this.btnWeb29.FlatAppearance.BorderSize = 0;
             this.btnWeb29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb29.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -512,6 +541,7 @@
             // 
             // btnWeb30
             // 
+            this.btnWeb30.FlatAppearance.BorderSize = 0;
             this.btnWeb30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWeb30.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -538,7 +568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 453);
+            this.ClientSize = new System.Drawing.Size(692, 465);
             this.Controls.Add(this.FLPWebsitesMain);
             this.Controls.Add(this.FLPWebsitesSettings);
             this.Name = "Websites";

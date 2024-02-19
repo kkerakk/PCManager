@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Syllabus));
             this.txtDirectoryPath = new System.Windows.Forms.TextBox();
             this.PanelTopSyllabus = new System.Windows.Forms.Panel();
+            this.btnOpenDialog = new System.Windows.Forms.Button();
             this.btnSyllabusVariant = new System.Windows.Forms.Button();
             this.lblSemesterNumber = new System.Windows.Forms.Label();
             this.LBSemesterNumber = new System.Windows.Forms.ListBox();
@@ -71,10 +72,12 @@
             this.txtDirectoryPath.Name = "txtDirectoryPath";
             this.txtDirectoryPath.Size = new System.Drawing.Size(645, 26);
             this.txtDirectoryPath.TabIndex = 0;
+            this.txtDirectoryPath.TextChanged += new System.EventHandler(this.ChangeAppStatus);
             // 
             // PanelTopSyllabus
             // 
             this.PanelTopSyllabus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelTopSyllabus.Controls.Add(this.btnOpenDialog);
             this.PanelTopSyllabus.Controls.Add(this.btnSyllabusVariant);
             this.PanelTopSyllabus.Controls.Add(this.lblSemesterNumber);
             this.PanelTopSyllabus.Controls.Add(this.LBSemesterNumber);
@@ -105,6 +108,24 @@
             this.PanelTopSyllabus.Size = new System.Drawing.Size(734, 166);
             this.PanelTopSyllabus.TabIndex = 2;
             // 
+            // btnOpenDialog
+            // 
+            this.btnOpenDialog.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnOpenDialog.FlatAppearance.BorderSize = 0;
+            this.btnOpenDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnOpenDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenDialog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOpenDialog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnOpenDialog.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenDialog.Image")));
+            this.btnOpenDialog.Location = new System.Drawing.Point(686, 21);
+            this.btnOpenDialog.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpenDialog.Name = "btnOpenDialog";
+            this.btnOpenDialog.Size = new System.Drawing.Size(23, 26);
+            this.btnOpenDialog.TabIndex = 28;
+            this.btnOpenDialog.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOpenDialog.UseVisualStyleBackColor = false;
+            this.btnOpenDialog.Click += new System.EventHandler(this.btnOpenDialog_Click);
+            // 
             // btnSyllabusVariant
             // 
             this.btnSyllabusVariant.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -113,7 +134,7 @@
             this.btnSyllabusVariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyllabusVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSyllabusVariant.ForeColor = System.Drawing.Color.White;
-            this.btnSyllabusVariant.Location = new System.Drawing.Point(615, 120);
+            this.btnSyllabusVariant.Location = new System.Drawing.Point(608, 120);
             this.btnSyllabusVariant.Name = "btnSyllabusVariant";
             this.btnSyllabusVariant.Size = new System.Drawing.Size(107, 40);
             this.btnSyllabusVariant.TabIndex = 27;
@@ -154,7 +175,7 @@
             // 
             this.GBHeader.Controls.Add(this.cbHeaderLevelOfStudy);
             this.GBHeader.Controls.Add(this.cbHeaderFieldOfStudy);
-            this.GBHeader.Location = new System.Drawing.Point(615, 55);
+            this.GBHeader.Location = new System.Drawing.Point(608, 55);
             this.GBHeader.Name = "GBHeader";
             this.GBHeader.Size = new System.Drawing.Size(107, 65);
             this.GBHeader.TabIndex = 24;
@@ -224,7 +245,7 @@
             this.btnSyllabusCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSyllabusCheck.ForeColor = System.Drawing.Color.White;
             this.btnSyllabusCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCheck.Image")));
-            this.btnSyllabusCheck.Location = new System.Drawing.Point(572, 76);
+            this.btnSyllabusCheck.Location = new System.Drawing.Point(570, 76);
             this.btnSyllabusCheck.Name = "btnSyllabusCheck";
             this.btnSyllabusCheck.Size = new System.Drawing.Size(36, 34);
             this.btnSyllabusCheck.TabIndex = 19;
@@ -471,6 +492,7 @@
             this.rtxtSyllabus.Size = new System.Drawing.Size(734, 318);
             this.rtxtSyllabus.TabIndex = 3;
             this.rtxtSyllabus.Text = "";
+            this.rtxtSyllabus.TextChanged += new System.EventHandler(this.ChangeAppStatus);
             // 
             // Syllabus
             // 
@@ -520,5 +542,6 @@
         private System.Windows.Forms.Label lblSemesterNumber;
         private System.Windows.Forms.ListBox LBSemesterNumber;
         private System.Windows.Forms.Button btnSyllabusVariant;
+        private System.Windows.Forms.Button btnOpenDialog;
     }
 }
