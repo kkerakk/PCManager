@@ -7,6 +7,8 @@ namespace PCManager
 {
     public partial class Main : Form
     {
+        private readonly ConfigurationManager _configurationManager;
+        //ConfigurationManager configurationManager = new ConfigurationManager();
 
         private Button currentButton;
         private Form activeForm;
@@ -14,8 +16,10 @@ namespace PCManager
         private static string path = "./../../Media/Temp.txt";
         private bool isPanelSizeChanged = false;
         
-        public Main()
+        public Main(ConfigurationManager configurationManager)
         {
+            _configurationManager = configurationManager;
+
             InitializeComponent();
             GetPasswordExpiration();
             ChangeMenuColor();
@@ -23,13 +27,25 @@ namespace PCManager
         }
         private void ActivateButton(object btnSender)
         {
-            if (btnSender != null)
+            try
             {
-                if (currentButton != (Button)btnSender)
+                if (btnSender != null)
                 {
-                    currentButton = (Button)btnSender;
+                    if (currentButton != (Button)btnSender)
+                    {
+                        foreach (Button button in panelLeftMenu.Controls)
+                            button.BackColor = ColorTranslator.FromHtml("#2b2f3b");
+
+                        currentButton = (Button)btnSender;
+                        currentButton.BackColor = ColorTranslator.FromHtml(_configurationManager.Configuration["appsettings:BackColor1"]);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd odczytu koloru z pliku konfiguracyjnego:{ex.Message}");
+                throw;
+            }            
         }
 
         protected void OpenChildForm(Form childForm, object btnSender)
@@ -82,7 +98,7 @@ namespace PCManager
         }
         private void btnSyllabus_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Syllabus(), sender);
+            OpenChildForm(new Syllabus(_configurationManager), sender);
         }
         private void btnXmlReader_Click(object sender, EventArgs e)
         {
@@ -161,7 +177,7 @@ namespace PCManager
             //#328df8 // jasnoniebieski
             //#252a34 //ciemny niebieski
             //#0C081A // mocno ciemny
-            panelLeftMenu.BackColor = ColorTranslator.FromHtml("#2b2f3b");
+            panelLeftMenu.BackColor = ColorTranslator.FromHtml(_configurationManager.Configuration["appsettings:BackColor"]);
             //panelDesktop.BackColor = ColorTranslator.FromHtml("#252a34");
             panelBottomMenu.BackColor = ColorTranslator.FromHtml("#2b2f3b");
 
@@ -181,13 +197,17 @@ namespace PCManager
         private void btnWebsites_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-            {
                 OpenChildForm(new Websites(), sender);
-            }
             else if (e.Button == MouseButtons.Right)
-            {
                 OpenChildForm(new WebsitesSettings(), sender);
-            }
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Czy na pewno chcesz zamknąć aplikację?", "Potwierdzenie zamknięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }

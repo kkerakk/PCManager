@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PCManager.Forms
 {
     public static class AppSettings
@@ -14,10 +15,6 @@ namespace PCManager.Forms
         public static bool AppStatusModified { get; set; } = false;
         public  static string DefaultLanguage { get; set; }
 
-        public static void ChangeAppStatus()
-        {
-            AppStatusModified = true;
-        }
     }
 
 }

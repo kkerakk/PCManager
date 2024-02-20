@@ -9,15 +9,18 @@ namespace PCManager.Forms
 {
     public partial class Syllabus : Form
     {
+        private readonly Forms.ConfigurationManager _configurationManager;
         private bool isVisible = true;
-        public Syllabus()
+        public Syllabus(ConfigurationManager configurationManager)
         {
+            _configurationManager = configurationManager;
+
             InitializeComponent();
             GetCurrentAcademicYear();
             HiddenVariant();
 
             btnSyllabusSaveAsText.Enabled = false;
-            btnSyllabusSaveAsHTML.Enabled = false;
+            btnSyllabusSaveAsHTML.Enabled = false;            
         }
         FileInfo[] arrayFI;
         #region Methods

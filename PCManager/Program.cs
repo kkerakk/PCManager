@@ -1,5 +1,8 @@
-﻿using System;
+﻿
+using PCManager.Forms;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +17,11 @@ namespace PCManager
         [STAThread]
         static void Main()
         {
+            ConfigurationManager configurationManager = new ConfigurationManager();
+            configurationManager.AddConfiguration();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Main(configurationManager));
         }
     }
 }

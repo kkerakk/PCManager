@@ -337,12 +337,12 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelLeftMenu);
             this.Controls.Add(this.panelBottomMenu);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(890, 530);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PCManager";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.panelLeftMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
