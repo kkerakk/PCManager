@@ -44,12 +44,14 @@
             this.btnStatus = new System.Windows.Forms.Button();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelBottomMenu = new System.Windows.Forms.Panel();
+            this.btnRDP = new System.Windows.Forms.Button();
             this.panelLeftMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftMenu
             // 
             this.panelLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(8)))), ((int)(((byte)(26)))));
+            this.panelLeftMenu.Controls.Add(this.btnRDP);
             this.panelLeftMenu.Controls.Add(this.btnSettings);
             this.panelLeftMenu.Controls.Add(this.btnNotes);
             this.panelLeftMenu.Controls.Add(this.btnFileRename);
@@ -328,6 +330,26 @@
             this.panelBottomMenu.Size = new System.Drawing.Size(890, 16);
             this.panelBottomMenu.TabIndex = 1;
             // 
+            // btnRDP
+            // 
+            this.btnRDP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRDP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRDP.FlatAppearance.BorderSize = 0;
+            this.btnRDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRDP.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRDP.Image = ((System.Drawing.Image)(resources.GetObject("btnRDP.Image")));
+            this.btnRDP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRDP.Location = new System.Drawing.Point(0, 480);
+            this.btnRDP.Name = "btnRDP";
+            this.btnRDP.Size = new System.Drawing.Size(150, 40);
+            this.btnRDP.TabIndex = 13;
+            this.btnRDP.Text = "  RDP";
+            this.btnRDP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRDP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRDP.UseVisualStyleBackColor = true;
+            this.btnRDP.Click += new System.EventHandler(this.btnRDP_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +388,7 @@
         private System.Windows.Forms.Button btnFileRename;
         private System.Windows.Forms.Button btnNotes;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnRDP;
     }
 }
 

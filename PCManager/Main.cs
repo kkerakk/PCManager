@@ -100,31 +100,42 @@ namespace PCManager
         {
             OpenChildForm(new Syllabus(_configurationManager), sender);
         }
+
         private void btnXmlReader_Click(object sender, EventArgs e)
         {
             OpenChildForm(new XmlReader(), sender);
         }
+
         private void btnDataEncryption_Click(object sender, EventArgs e)
         {
             OpenChildForm(new DataEncryption(), sender);
         }
+
         private void btnAddressBook_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AddressBook(), sender);
         }
+
         private void btnFileRename_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FileRename(), sender);
-        }        
+        }    
+        
         private void btnNotes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Notes(), sender);
         }
+
         private void btnSettings_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Settings(), sender);
         }
-        
+
+        private void btnRDP_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new RDP(_configurationManager), sender);
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool bHandled = false;
@@ -209,5 +220,7 @@ namespace PCManager
             if (result == DialogResult.No)
                 e.Cancel = true;
         }
+
+
     }
 }

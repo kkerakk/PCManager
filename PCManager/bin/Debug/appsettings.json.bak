@@ -1,6 +1,8 @@
 {
   "AppSettings": {
     "BackColor": "#2b2f3b",
-    "BackColor1": "##328df8"
+    "BackColor1": "#328df8",
+	"bcGreen": "#90ae00",
+	"bg":""
   }
 }

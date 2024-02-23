@@ -95,3 +95,4 @@ E:\C#\PCManager\PCManager\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Text.Encodings.Web.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Text.Json.xml
 E:\C#\PCManager\PCManager\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\C#\PCManager\PCManager\obj\Debug\PCManager.Forms.RDP.resources
